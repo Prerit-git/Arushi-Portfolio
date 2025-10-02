@@ -1,0 +1,14 @@
+name: Deploy dev branch to Vercel
+
+on:
+  push:
+    branches:
+      - dev
+
+jobs:
+  trigger-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Trigger Vercel Deploy Hook
+        run: |
+          curl -X POST https://api.vercel.com/v1/integrations/deploy/prj_qU60G4xNEc1MfqRVdtIMhjagocn7/dl4AGRjbf0
