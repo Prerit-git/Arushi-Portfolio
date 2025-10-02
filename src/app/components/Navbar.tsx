@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, SVGProps } from "react";
 import Image from "next/image";
 import { motion, AnimatePresence, MotionProps } from "framer-motion";
 import Link from "next/link";
@@ -17,8 +17,10 @@ const navItems: NavItem[] = [
   { name: "Contact", href: "#contact" },
 ];
 
+type MotionPathProps = MotionProps & SVGProps<SVGPathElement>;
+
 // --- Hamburger Path ---
-const Path = (props: MotionProps) => (
+const Path = (props: MotionPathProps) => (
   <motion.path
     fill="transparent"
     strokeWidth="3"
