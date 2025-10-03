@@ -132,7 +132,7 @@ const MobileNav = ({
           animate="open"
           exit="closed"
           variants={sidebar}
-          className="fixed h-screen inset-0 z-40 lg:hidden bg-gray-900 flex items-center justify-center p-8"
+          className="fixed h-screen inset-0 z-40 lg:hidden bg-[#FFE2E2] flex items-center justify-center p-8"
         >
           <motion.ul
             variants={menuVariants}
@@ -148,7 +148,7 @@ const MobileNav = ({
                 <Link
                   href={item.href}
                   onClick={toggle}
-                  className="text-4xl font-extrabold text-white hover:text-teal-400 transition-colors duration-300 block p-2"
+                  className="text-4xl font-extrabold text-[#1e1e1e] hover:text-teal-400 transition-colors duration-300 block p-2"
                 >
                   {item.name}
                 </Link>
@@ -165,7 +165,7 @@ const Navbar: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
   const toggleOpen = () => setIsOpen(!isOpen);
 
-  const logoUrl = "/vercel.svg";
+  const logoUrl = "/ArushiLogo.svg";
 
   return (
     <motion.nav
@@ -180,26 +180,26 @@ const Navbar: React.FC = () => {
             <Image
               src={logoUrl}
               alt="Logo"
-              width={100}
+              width={150}
               height={40}
-              className="h-8 w-auto bg-black border"
+              className="h-15 lg:h-20 w-auto"
               priority
             />
           </Link>
 
-          <span className="hidden sm:inline-block text-sm font-semibold text-lime-400 lg:hidden">
+          {/* <span className="hidden sm:inline-block text-sm font-semibold text-lime-400 lg:hidden">
             Online
-          </span>
+          </span> */}
         </div>
 
         {/* Center: Desktop Navigation */}
         <div className="hidden lg:flex items-center justify-center">
-          <div className="flex space-x-8 p-3 bg-black/80 backdrop-blur-sm rounded-full shadow-2xl border border-gray-700">
+          <div className="flex space-x-8 p-3 bg-[#333333] backdrop-blur-sm rounded-2xl shadow-2xl">
             {navItems.map((item) => (
               <Link
                 key={item.name}
                 href={item.href}
-                className="text-white text-lg font-medium hover:text-teal-400 transition-colors duration-200 px-3 py-1 rounded-full"
+                className="text-white text-lg font-medium hover:text-[#FF0000] transition-colors duration-200 px-3 py-1 rounded-full"
               >
                 {item.name}
               </Link>
