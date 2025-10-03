@@ -4,8 +4,19 @@ html {
   scroll-behavior: smooth;
 }
 
+:root {
+  --font-heading: var(--font-oswald);
+  --font-body: var(--font-raleway);
+}
+
 body{
   background-color: #1E1E1E;
+  font-family: var(--font-body), sans-serif;
+
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading), sans-serif;
 }
 
 /* 
