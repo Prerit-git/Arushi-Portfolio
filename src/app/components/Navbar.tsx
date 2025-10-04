@@ -172,11 +172,11 @@ const Navbar: React.FC = () => {
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       transition={{ type: "spring", stiffness: 100, damping: 20 }}
-      className="fixed top-0 left-0 right-0 z-50 p-4 bg-transparent backdrop-blur-md"
+      className="fixed top-0 left-0 right-0 z-50 p-4 bg-transparent"
     >
       <div className="max-w-7xl mx-auto flex items-center justify-between">
         <div className="flex items-center space-x-4">
-          <Link href="/" className="flex items-center space-x-2">
+          <Link href="/" className="flex md:hidden items-center space-x-2 ">
             <Image
               src={logoUrl}
               alt="Logo"
@@ -186,20 +186,26 @@ const Navbar: React.FC = () => {
               priority
             />
           </Link>
-
-          {/* <span className="hidden sm:inline-block text-sm font-semibold text-lime-400 lg:hidden">
-            Online
-          </span> */}
         </div>
 
         {/* Center: Desktop Navigation */}
         <div className="hidden lg:flex items-center justify-center">
-          <div className="flex space-x-8 p-3 bg-[#333333] backdrop-blur-sm rounded-2xl shadow-2xl">
+          <div className="flex space-x-[24px] px-[32px] py-[8px] items-center bg-custom-gradient backdrop-blur-sm rounded-sm">
+             <Link href="/" className="flex items-center">
+            <Image
+              src={logoUrl}
+              alt="Logo"
+              width={54}
+              height={54}
+              className="h-15 lg:h-[54px] w-[54px]"
+              priority
+            />
+          </Link>
             {navItems.map((item) => (
               <Link
                 key={item.name}
                 href={item.href}
-                className="text-white text-lg font-medium hover:text-[#FF0000] transition-colors duration-200 px-3 py-1 rounded-full"
+                className="text-white text-[18px] hover:text-[#FF0000] uppercase transition-colors duration-200 px-3"
               >
                 {item.name}
               </Link>

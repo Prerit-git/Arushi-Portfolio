@@ -1,5 +1,3 @@
-// app/layout.tsx
-
 import "./globals.css";
 import { Oswald, Raleway } from "next/font/google";
 import type { Metadata } from "next";
@@ -19,6 +17,7 @@ const raleway = Raleway({
 export const metadata: Metadata = {
   title: "Designed by Arushi - A Product Designer",
   description: "Designed by Arushi",
+  robots: "noindex, nofollow",
 };
 
 export default function RootLayout({
