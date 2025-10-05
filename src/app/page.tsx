@@ -37,7 +37,7 @@ export default function Home() {
           </motion.div>
 
           {/* Other static components */}
-          <About />
+          {/* <About /> */}
           <CaseStudies />
           <Contact />
         </div>
