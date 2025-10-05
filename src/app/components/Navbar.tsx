@@ -39,19 +39,19 @@ const MenuToggle = ({
 }) => (
   <button
     onClick={toggle}
-    className="relative z-50 p-3 rounded-full bg-black/60 backdrop-blur-md focus:outline-none transition duration-300"
+    className="relative z-50 p-3 rounded-full bg-[#333333] backdrop-blur-md focus:outline-none transition duration-300"
     aria-label="Toggle Navigation"
   >
-    <svg width="23" height="23" viewBox="0 0 23 23">
+    <svg width="24" height="24" viewBox="0 0 24 24">
       <Path
         variants={{
-          closed: { d: "M 2 2.5 L 20 2.5" },
-          open: { d: "M 3 17 L 17 3" },
+          closed: { d: "M 3 6 L 21 6" },
+          open: { d: "M 6 6 L 18 18" },
         }}
         animate={isOpen ? "open" : "closed"}
       />
       <Path
-        d="M 2 9.423 L 20 9.423"
+        d="M 3 12 L 21 12"
         variants={{
           closed: { opacity: 1 },
           open: { opacity: 0 },
@@ -61,8 +61,8 @@ const MenuToggle = ({
       />
       <Path
         variants={{
-          closed: { d: "M 2 16.346 L 20 16.346" },
-          open: { d: "M 3 3 L 17 17" },
+          closed: { d: "M 3 18 L 21 18" },
+          open: { d: "M 6 18 L 18 6" },
         }}
         animate={isOpen ? "open" : "closed"}
       />
@@ -189,27 +189,29 @@ const Navbar: React.FC = () => {
         </div>
 
         {/* Center: Desktop Navigation */}
-        <div className="hidden lg:flex items-center justify-center mt-10">
-          <div className="flex space-x-[24px] px-[32px] py-[8px] items-center bg-custom-gradient backdrop-blur-sm rounded-sm">
-             <Link href="/" className="flex items-center">
-            <Image
-              src={logoUrl}
-              alt="Logo"
-              width={54}
-              height={54}
-              className="h-15 lg:h-[54px] w-[54px]"
-              priority
-            />
-          </Link>
-            {navItems.map((item) => (
-              <Link
-                key={item.name}
-                href={item.href}
-                className="text-white text-[18px] hover:text-[#FF0000] uppercase transition-colors duration-200 px-3"
-              >
-                {item.name}
+        <div className="hidden lg:flex items-center justify-center mt-10 w-full">
+          <div className="w-full max-w-7xl px-4 md:px-8 flex justify-center mx-auto">
+            <div className="flex gap-[24px] px-[32px] py-[8px] items-center bg-custom-gradient backdrop-blur-sm rounded-sm">
+              <Link href="/" className="flex items-center">
+                <Image
+                  src={logoUrl}
+                  alt="Logo"
+                  width={54}
+                  height={54}
+                  className="h-[54px] w-[54px]"
+                  priority
+                />
               </Link>
-            ))}
+              {navItems.map((item) => (
+                <Link
+                  key={item.name}
+                  href={item.href}
+                  className="text-white text-[18px] hover:text-[#FF0000] hover:font-bold uppercase transition-colors duration-200 px-3"
+                >
+                  {item.name}
+                </Link>
+              ))}
+            </div>
           </div>
         </div>
 
