@@ -4,10 +4,10 @@ import { motion } from 'framer-motion';
 
 export default function Hero() {
   return (
-    <section className="flex flex-col md:flex-row justify-center items-center h-screen w-full lg:max-w-8xl mx-auto pt-0 md:pt-25 bg-noise-dark">
+    <section className="flex flex-col md:flex-row justify-center items-center h-screen w-full mx-auto pt-0 md:pt-25 bg-noise-dark px-0 md:px-[90px]">
       {/* Left section */}
-      <div className="flex-1 flex flex-col items-center md:items-start justify-end md:justify-center pb-4 md:pb-30 px-5">
-        <h1 className="text-[48px] font-normal text-[#FF0000]">Arushi Mathur</h1>
+      <div className="flex-1 flex flex-col items-center md:items-end justify-end md:justify-center pb-4 md:pb-30 px-5">
+        <h1 className="md:self-start text-[48px] font-normal text-[#FF0000]">Arushi Mathur</h1>
         <h2 className="text-6xl md:text-[128px] text-[#FFE2E2]">PRODUCT</h2>
       </div>
 

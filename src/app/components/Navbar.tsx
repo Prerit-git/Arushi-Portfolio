@@ -189,7 +189,7 @@ const Navbar: React.FC = () => {
         </div>
 
         {/* Center: Desktop Navigation */}
-        <div className="hidden lg:flex items-center justify-center">
+        <div className="hidden lg:flex items-center justify-center mt-10">
           <div className="flex space-x-[24px] px-[32px] py-[8px] items-center bg-custom-gradient backdrop-blur-sm rounded-sm">
              <Link href="/" className="flex items-center">
             <Image
