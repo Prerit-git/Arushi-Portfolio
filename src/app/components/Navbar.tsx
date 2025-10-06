@@ -11,7 +11,7 @@ interface NavItem {
 }
 
 const navItems: NavItem[] = [
-  { name: "Home", href: "/" },
+  { name: "Home", href: "#" },
   { name: "About me", href: "#about" },
   { name: "Case Studies", href: "#case-studies" },
   { name: "Contact", href: "#contact" },
@@ -176,7 +176,7 @@ const Navbar: React.FC = () => {
     >
       <div className="max-w-7xl mx-auto flex items-center justify-between">
         <div className="flex items-center space-x-4">
-          <Link href="/" className="flex md:hidden items-center space-x-2 ">
+          <Link href="#" className="flex md:hidden items-center space-x-2 ">
             <Image
               src={logoUrl}
               alt="Logo"
@@ -189,10 +189,10 @@ const Navbar: React.FC = () => {
         </div>
 
         {/* Center: Desktop Navigation */}
-        <div className="hidden lg:flex items-center justify-center mt-10 w-full">
+        <div className="hidden lg:flex items-center justify-center mt-10 w-full pl-4">
           <div className="w-full max-w-7xl px-4 md:px-8 flex justify-center mx-auto">
             <div className="flex gap-[24px] px-[32px] py-[8px] items-center bg-custom-gradient backdrop-blur-sm rounded-sm">
-              <Link href="/" className="flex items-center">
+              <Link href="#" className="flex items-center">
                 <Image
                   src={logoUrl}
                   alt="Logo"

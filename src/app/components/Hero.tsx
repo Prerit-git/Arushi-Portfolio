@@ -47,7 +47,7 @@ export default function Hero() {
       {/* HERO SECTION */}
       <section
         ref={sectionRef}
-        className="flex flex-col md:flex-row justify-center items-center h-screen w-full mx-auto px-0 md:px-[90px] pt-0 md:pt-20"
+        className="flex flex-col lg:flex-row justify-center items-center h-screen w-full mx-auto px-0 md:px-[90px] pt-0 md:pt-20"
       >
         {/* Left section */}
         <div className="flex-1 flex flex-col items-center md:items-end justify-end md:justify-center pb-4 md:pb-30 px-5">
