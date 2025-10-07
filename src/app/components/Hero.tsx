@@ -56,7 +56,14 @@ export default function Hero() {
         </div>
 
         {/* Center Image */}
-        <motion.div className="flex justify-center items-center rounded-xl p-0">
+        <motion.div className="flex justify-center items-center rounded-xl p-0 relative">
+          <motion.button
+      whileHover={{ scale: 1.05, y: -2 }}
+      whileTap={{ scale: 0.95, y: 2 }}
+      className="hidden absolute -bottom-5 -left-20 z-40 bg-[#FFE2E2] text-black p-[10px] font-extrabold text-[16px] w-[172px] h-[46px] rounded-[4px] border-r-7 border-b-7 border-red-800 md:flex items-center justify-center cursor-pointer"
+    >
+      Get in touch
+    </motion.button>
           <img
             ref={imageRef}
             src="/hero-illustration.svg"
