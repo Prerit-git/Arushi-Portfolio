@@ -4,7 +4,7 @@ import { useEffect, useRef } from 'react';
 import { motion } from 'framer-motion';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-// import About from './About';
+import About from './About';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -44,7 +44,7 @@ export default function Hero() {
 
   return (
     <>
-      <section className="w-full fixed top-0 p-[10px] md:p-[24px] flex flex-col justify-center items-center bg-[#A90D0D]/80 z-99">
+      {/* <section className="w-full fixed top-0 p-[10px] md:p-[24px] flex flex-col justify-center items-center bg-[#A90D0D]/80 z-99">
         <p className="text-white text-[18px] md:text-[24px] text-center">
           Under construction, because thoughtful design deserves time. For
           projects or collaborations,
@@ -52,7 +52,7 @@ export default function Hero() {
         <p className="text-white text-[18px] md:text-[24px] text-center">
           contact me at <span className='text-[#FFD2D2] font-semibold'><a href="mailto:arurajatmathur@gmail.com">arurajatmathur@gmail.com</a></span> or <span className='text-[#FFD2D2] font-semibold'><a href="tel:+917447604055">+917447604055</a></span>
         </p>
-      </section>
+      </section> */}
       {/* HERO SECTION */}
       <section
         ref={sectionRef}
@@ -93,11 +93,11 @@ export default function Hero() {
         </div>
       </section>
 
-      {/* <section
+      <section
         ref={nextSectionRef}
       >
         <About/>
-      </section> */}
+      </section>
     </>
   );
 }
