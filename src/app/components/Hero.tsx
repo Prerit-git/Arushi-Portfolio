@@ -71,10 +71,16 @@ export default function Hero() {
           <motion.button
             whileHover={{ scale: 1.05, y: -2 }}
             whileTap={{ scale: 0.95, y: 2 }}
-            className="hidden absolute -bottom-5 -left-20 z-40 bg-[#FFE2E2] text-black p-[10px] font-extrabold text-[16px] w-[172px] h-[46px] rounded-[4px] border-r-7 border-b-7 border-red-800 md:flex items-center justify-center cursor-pointer"
+            className="hidden absolute -bottom-4 -left-20 z-41 bg-[#FFE2E2] text-black p-[10px] font-extrabold text-[16px] w-[172px] h-[46px] rounded-[4px] md:flex items-center justify-center cursor-pointer"
           >
             Get in touch
           </motion.button>
+          <motion.div
+            whileHover={{ scale: 1.05, y: -2 }}
+            whileTap={{ scale: 0.95, y: 2 }}
+            className="hidden absolute -bottom-6 -left-18 z-40 bg-red-800 text-black p-[10px] font-extrabold text-[16px] w-[172px] h-[46px] rounded-[4px] md:flex items-center justify-center cursor-pointer"
+          >
+          </motion.div>
           <img
             ref={imageRef}
             src="/hero-illustration.svg"

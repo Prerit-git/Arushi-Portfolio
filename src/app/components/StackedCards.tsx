@@ -3,33 +3,38 @@
 import React, { useEffect, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { motion } from "framer-motion";
 
 gsap.registerPlugin(ScrollTrigger);
 
 const cardsData = [
   {
-    title: "Case Study 1",
+    tag: "2024",
+    title: "Opendoor/Mainstay • BLOX design system",
+    description:
+      "Developed the company-wide design system for Mainstay, Opendoor's enterprise branch, including typography, iconography, color systems, and design components and patterns.",
+    image:
+      "https://images.unsplash.com/photo-1620207418302-439b387441b0?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=100",
+  },
+  {
+    tag: "2025",
+    title: "Opendoor/Mainstay • BLOX design system",
     description:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab dicta error nam eaque. Eum fuga laborum quos expedita iste saepe similique, unde possimus quia at magnam sed cupiditate? Reprehenderit, harum!",
     image:
       "https://images.unsplash.com/photo-1620207418302-439b387441b0?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=100",
   },
   {
-    title: "Case Study 2",
+    tag: "2025",
+    title: "Opendoor/Mainstay • BLOX design system",
     description:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab dicta error nam eaque. Eum fuga laborum quos expedita iste saepe similique, unde possimus quia at magnam sed cupiditate? Reprehenderit, harum!",
     image:
       "https://images.unsplash.com/photo-1620207418302-439b387441b0?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=100",
   },
   {
-    title: "Case Study 3",
-    description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab dicta error nam eaque. Eum fuga laborum quos expedita iste saepe similique, unde possimus quia at magnam sed cupiditate? Reprehenderit, harum!",
-    image:
-      "https://images.unsplash.com/photo-1620207418302-439b387441b0?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=100",
-  },
-  {
-    title: "Case Study 4",
+    tag: "2025",
+    title: "Opendoor/Mainstay • BLOX design system",
     description:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab dicta error nam eaque. Eum fuga laborum quos expedita iste saepe similique, unde possimus quia at magnam sed cupiditate? Reprehenderit, harum!",
     image:
@@ -98,7 +103,7 @@ const StackedCards: React.FC = () => {
         } as React.CSSProperties
       }
     >
-      {cardsData.map(({ title, description, image }, i) => (
+      {cardsData.map(({ tag, title, description, image }, i) => (
         <div
           key={i}
           className="card sticky top-10 md:top-35"
@@ -107,27 +112,47 @@ const StackedCards: React.FC = () => {
           }}
           data-index={i}
         >
-          <div className="card-inner will-change-transform bg-white rounded-4xl flex overflow-hidden transform-origin-top">
-            <div className="card-image-container flex-shrink-0 w-2/5">
+          <div className="card-inner will-change-transform bg-white rounded-[16px] flex flex-col md:flex-row overflow-hidden transform-origin-top px-15 py-18 gap-2 shadow-lg h-[520px]">
+            <div className="flex-1 flex flex-col gap-[8px] justify-end">
+              <div className="text-[#9A211F] font-bold bg-[#fce8e8] p-[10px] rounded w-fit">
+                <h6 className="text-[18px]">{tag}</h6>
+              </div>
+
+              <h1 className="text-[24px] font-semibold text-[#16263a] mb-4">
+                {title.split("•")[0].trim()}{" "}
+                <span className="text-[#9A211F]">
+                  • {title.split("•")[1]?.trim()}
+                </span>
+              </h1>
+
+              <p className="text-[#1E1E1E] text-[14px] mb-15 pr-8">
+                {description}
+              </p>
+
+              <motion.div
+                whileHover={{ scale: 1.05, y: -2 }}
+                whileTap={{ scale: 0.95, y: 2 }}
+                className="flex items-center rounded-xl p-0 relative"
+              >
+                <motion.button className="hidden absolute -bottom-4 z-41 bg-[#FFE2E2] text-black p-[10px] font-extrabold text-[16px] w-[172px] h-[46px] rounded-[4px] md:flex items-center justify-center cursor-pointer">
+                  View Case Study
+                </motion.button>
+                <motion.div className="hidden absolute -bottom-6 left-2 z-40 bg-red-800 text-black p-[10px] font-extrabold text-[16px] w-[172px] h-[46px] rounded-[4px] md:flex items-center justify-center cursor-pointer"></motion.div>
+              </motion.div>
+            </div>
+
+            {/* Right image */}
+            <div className="w-full md:w-1/2 flex-shrink-0">
               <img
                 src={image}
                 alt={`Card image ${i + 1}`}
-                className="card-image object-cover w-full h-full aspect-square"
+                className="object-contain w-full h-auto rounded"
               />
-            </div>
-            <div className="card-content p-10 flex flex-col">
-              <h1 className="card-title text-4xl font-semibold mb-4 text-[#16263a]">
-                {title}
-              </h1>
-              <p className="card-description text-lg text-[#16263a] leading-relaxed">
-                {description}
-              </p>
             </div>
           </div>
         </div>
       ))}
 
-      {/* Extra space below cards to allow scrolling */}
       <div style={{ height: "90vh" }} />
     </div>
   );
