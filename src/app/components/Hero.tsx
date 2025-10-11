@@ -68,26 +68,26 @@ export default function Hero() {
 
         {/* Center Image */}
         <motion.div className="flex justify-center items-center rounded-xl p-0 relative">
-          <motion.button
-            whileHover={{ scale: 1.05, y: -2 }}
-            whileTap={{ scale: 0.95, y: 2 }}
-            className="hidden absolute -bottom-4 -left-20 z-41 bg-[#FFE2E2] text-black p-[10px] font-extrabold text-[16px] w-[172px] h-[46px] rounded-[4px] md:flex items-center justify-center cursor-pointer"
-          >
-            Get in touch
-          </motion.button>
-          <motion.div
-            whileHover={{ scale: 1.05, y: -2 }}
-            whileTap={{ scale: 0.95, y: 2 }}
-            className="hidden absolute -bottom-6 -left-18 z-40 bg-red-800 text-black p-[10px] font-extrabold text-[16px] w-[172px] h-[46px] rounded-[4px] md:flex items-center justify-center cursor-pointer"
-          >
-          </motion.div>
-          <img
-            ref={imageRef}
-            src="/hero-illustration.svg"
-            alt="Portrait"
-            className="h-[280px] md:h-[468px] w-auto md:w-[364px] object-cover rounded-xl"
-          />
-        </motion.div>
+  <motion.div
+    whileHover={{ scale: 1.05, y: -2 }}
+    whileTap={{ scale: 0.95, y: 2 }}
+    className="hidden absolute -bottom-4 -left-20 z-40 md:flex flex-col items-center justify-center"
+  >
+    <div className="absolute -bottom-2 left-2 z-[-1] bg-red-800 w-[172px] h-[46px] rounded-[4px]" />
+
+    <button className="z-10 bg-[#FFE2E2] text-black p-[10px] font-extrabold text-[16px] w-[172px] h-[46px] rounded-[4px] flex items-center justify-center cursor-pointer">
+      Get in touch
+    </button>
+  </motion.div>
+
+  <img
+    ref={imageRef}
+    src="/hero-illustration.svg"
+    alt="Portrait"
+    className="h-[280px] md:h-[468px] w-auto md:w-[364px] object-cover rounded-xl"
+  />
+</motion.div>
+
 
         {/* Right section */}
         <div className="flex-1 flex flex-col items-center md:items-start justify-start md:justify-center px-10 md:px-5 pt-2 md:pt-0">

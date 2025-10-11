@@ -4,6 +4,7 @@ import React, { useEffect, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { motion } from "framer-motion";
+import Image from "next/image";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -15,6 +16,7 @@ const cardsData = [
       "Developed the company-wide design system for Mainstay, Opendoor's enterprise branch, including typography, iconography, color systems, and design components and patterns.",
     image:
       "https://images.unsplash.com/photo-1620207418302-439b387441b0?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=100",
+    logo: "CHL_Logo.svg"
   },
   {
     tag: "2025",
@@ -23,6 +25,7 @@ const cardsData = [
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab dicta error nam eaque. Eum fuga laborum quos expedita iste saepe similique, unde possimus quia at magnam sed cupiditate? Reprehenderit, harum!",
     image:
       "https://images.unsplash.com/photo-1620207418302-439b387441b0?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=100",
+    logo: "CHL_Logo.svg"
   },
   {
     tag: "2025",
@@ -31,6 +34,7 @@ const cardsData = [
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab dicta error nam eaque. Eum fuga laborum quos expedita iste saepe similique, unde possimus quia at magnam sed cupiditate? Reprehenderit, harum!",
     image:
       "https://images.unsplash.com/photo-1620207418302-439b387441b0?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=100",
+    logo: "CHL_Logo.svg"
   },
   {
     tag: "2025",
@@ -39,6 +43,7 @@ const cardsData = [
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab dicta error nam eaque. Eum fuga laborum quos expedita iste saepe similique, unde possimus quia at magnam sed cupiditate? Reprehenderit, harum!",
     image:
       "https://images.unsplash.com/photo-1620207418302-439b387441b0?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=100",
+    logo: "CHL_Logo.svg"
   },
 ];
 
@@ -51,7 +56,6 @@ const StackedCards: React.FC = () => {
 
     const cards = cardsRef.current.filter(Boolean) as HTMLDivElement[];
 
-    // Set CSS variables for cards count and card height dynamically
     containerRef.current.style.setProperty("--cards-count", `${cards.length}`);
     containerRef.current.style.setProperty(
       "--card-height",
@@ -62,11 +66,10 @@ const StackedCards: React.FC = () => {
       const cardInner = card.querySelector(".card-inner") as HTMLElement;
       if (!cardInner) return;
 
-      // Padding top offset for stacking effect
       const offsetTop = 20 + index * 20;
       card.style.paddingTop = `${offsetTop}px`;
 
-      if (index === cards.length - 1) return; // Skip last card
+      if (index === cards.length - 1) return;
 
       const toScale = 1 - (cards.length - 1 - index) * 0.1;
       const nextCard = cards[index + 1];
@@ -103,7 +106,7 @@ const StackedCards: React.FC = () => {
         } as React.CSSProperties
       }
     >
-      {cardsData.map(({ tag, title, description, image }, i) => (
+      {cardsData.map(({ tag, title, description, image, logo }, i) => (
         <div
           key={i}
           className="card sticky top-10 md:top-35"
@@ -113,8 +116,12 @@ const StackedCards: React.FC = () => {
           data-index={i}
         >
           <div className="card-inner will-change-transform bg-white rounded-[16px] flex flex-col md:flex-row overflow-hidden transform-origin-top px-15 py-18 gap-2 shadow-lg h-[520px]">
-            <div className="flex-1 flex flex-col gap-[8px] justify-end">
-              <div className="text-[#9A211F] font-bold bg-[#fce8e8] p-[10px] rounded w-fit">
+            <div className="flex-1 flex flex-col gap-[8px] justify-between">
+              <div>
+              <Image src={logo} alt="logo" width={135} height={40}/>
+              </div>
+              <div>
+              <div className="text-[#9A211F] font-bold bg-[#fce8e8] p-[10px] rounded w-fit mb-3">
                 <h6 className="text-[18px]">{tag}</h6>
               </div>
 
@@ -139,6 +146,8 @@ const StackedCards: React.FC = () => {
                 </motion.button>
                 <motion.div className="hidden absolute -bottom-6 left-2 z-40 bg-red-800 text-black p-[10px] font-extrabold text-[16px] w-[172px] h-[46px] rounded-[4px] md:flex items-center justify-center cursor-pointer"></motion.div>
               </motion.div>
+
+              </div>
             </div>
 
             {/* Right image */}
