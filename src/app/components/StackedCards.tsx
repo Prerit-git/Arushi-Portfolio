@@ -137,8 +137,8 @@ const StackedCards: React.FC = () => {
               </p>
 
               <motion.div
-                whileHover={{ scale: 1.05, y: -2 }}
-                whileTap={{ scale: 0.95, y: 2 }}
+                whileHover={{ y: -2 }}
+                whileTap={{ y: 2 }}
                 className="flex items-center rounded-xl p-0 relative mb-2 md:mb-0"
               >
                 <motion.button className="static md:absolute -bottom-4 z-41 bg-[#FFE2E2] text-black p-[2px] md:p-[10px] font-bold md:font-extrabold text-[12px] md:text-[16px] w-[130px] md:w-[172px] h-[40px] md:h-[46px] rounded-[4px] md:flex items-center justify-center cursor-pointer">
