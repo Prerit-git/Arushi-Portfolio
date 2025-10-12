@@ -115,36 +115,36 @@ const StackedCards: React.FC = () => {
           }}
           data-index={i}
         >
-          <div className="card-inner will-change-transform bg-white rounded-[16px] flex flex-col md:flex-row overflow-hidden transform-origin-top px-15 py-18 gap-2 shadow-lg h-[520px]">
+          <div className="card-inner will-change-transform bg-white rounded-[16px] flex flex-col md:flex-row overflow-hidden transform-origin-top px-5 md:px-15 py-6 md:py-18 gap-2 shadow-lg h-auto md:h-[520px]">
             <div className="flex-1 flex flex-col gap-[8px] justify-between">
               <div>
               <Image src={logo} alt="logo" width={135} height={40}/>
               </div>
               <div>
-              <div className="text-[#9A211F] font-bold bg-[#fce8e8] p-[10px] rounded w-fit mb-3">
-                <h6 className="text-[18px]">{tag}</h6>
+              <div className="text-[#9A211F] font-bold bg-[#fce8e8] p-[10px] rounded w-fit mb-0 md:mb-3">
+                <h6 className="text-[14px] md:text-[18px]">{tag}</h6>
               </div>
 
-              <h1 className="text-[24px] font-semibold text-[#16263a] mb-4">
+              <h1 className="text-[20px] md:text-[24px] font-semibold text-[#16263a] mb-4 leading-[110%]">
                 {title.split("•")[0].trim()}{" "}
                 <span className="text-[#9A211F]">
                   • {title.split("•")[1]?.trim()}
                 </span>
               </h1>
 
-              <p className="text-[#1E1E1E] text-[14px] mb-15 pr-8">
+              <p className="text-[#1E1E1E] text-[14px] mb-4 md:mb-15 pr-0 md:pr-8 leading-[130%]">
                 {description}
               </p>
 
               <motion.div
                 whileHover={{ scale: 1.05, y: -2 }}
                 whileTap={{ scale: 0.95, y: 2 }}
-                className="flex items-center rounded-xl p-0 relative"
+                className="flex items-center rounded-xl p-0 relative mb-2 md:mb-0"
               >
-                <motion.button className="hidden absolute -bottom-4 z-41 bg-[#FFE2E2] text-black p-[10px] font-extrabold text-[16px] w-[172px] h-[46px] rounded-[4px] md:flex items-center justify-center cursor-pointer">
+                <motion.button className="static md:absolute -bottom-4 z-41 bg-[#FFE2E2] text-black p-[2px] md:p-[10px] font-bold md:font-extrabold text-[12px] md:text-[16px] w-[130px] md:w-[172px] h-[40px] md:h-[46px] rounded-[4px] md:flex items-center justify-center cursor-pointer">
                   View Case Study
                 </motion.button>
-                <motion.div className="hidden absolute -bottom-6 left-2 z-40 bg-red-800 text-black p-[10px] font-extrabold text-[16px] w-[172px] h-[46px] rounded-[4px] md:flex items-center justify-center cursor-pointer"></motion.div>
+                <motion.div className="absolute -bottom-2 md:-bottom-6 left-2 z-40 bg-red-800 text-black p-[2px] md:p-[10px] font-bold md:font-extrabold text-[12px] md:text-[16px] w-[130px] md:w-[172px] h-[40px] md:h-[46px] rounded-[4px] md:flex items-center justify-center cursor-pointer"></motion.div>
               </motion.div>
 
               </div>
