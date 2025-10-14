@@ -73,7 +73,7 @@ export default function Hero() {
     whileTap={{ scale: 0.95, y: 2 }}
     className="hidden absolute -bottom-4 -left-20 z-40 md:flex flex-col items-center justify-center"
   >
-    <div className="absolute -bottom-2 left-2 z-[-1] bg-red-800 w-[172px] h-[46px] rounded-[4px]" />
+    <div className="absolute -bottom-[5px] left-[6px] z-[-1] bg-red-800 w-[172px] h-[46px] rounded-[4px]" />
 
     <button className="z-10 bg-[#FFE2E2] text-black p-[10px] font-extrabold text-[16px] w-[172px] h-[46px] rounded-[4px] flex items-center justify-center cursor-pointer">
       Get in touch

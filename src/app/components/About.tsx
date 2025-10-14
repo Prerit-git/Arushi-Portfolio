@@ -3,12 +3,12 @@ import { motion } from "framer-motion";
 const About = () => {
   return (
     <section
-      className="h-screen flex items-start md:items-center bg-white px-5 md:px-[90px] py-20 md:py-0"
+      className="h-screen flex items-start md:items-center bg-about px-5 md:px-[90px] py-20 md:py-0"
       id="about"
     >
       <div className="w-full md:max-w-3xl flex flex-col gap-2">
         <motion.h3
-          className="text-[30px] md:text-[48px] text-[#333333]"
+          className="text-[30px] md:text-[48px] text-[#000000]"
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, ease: "easeOut" }}
@@ -25,7 +25,7 @@ const About = () => {
             Get in touch
           </motion.button>
           <motion.div
-            className="hidden absolute -bottom-10 left-2 z-40 bg-red-800 text-black p-[10px] font-extrabold text-[16px] w-[172px] h-[46px] rounded-[4px] md:flex items-center justify-center cursor-pointer"
+            className="hidden absolute -bottom-[37px] left-[5px] z-40 bg-red-800 text-black p-[10px] font-extrabold text-[16px] w-[172px] h-[46px] rounded-[4px] md:flex items-center justify-center cursor-pointer"
           >
           </motion.div>
         </motion.div>
