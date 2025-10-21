@@ -5,6 +5,7 @@ import { motion } from 'framer-motion';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import About from './About';
+import { HiDownload } from 'react-icons/hi';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -67,7 +68,7 @@ export default function Hero() {
         </div>
 
         {/* Center Image */}
-        <motion.div className="flex justify-center items-center rounded-xl p-0 relative">
+        <motion.div className="flex justify-center items-center rounded-xl p-0 relative z-2">
   <motion.div
     whileHover={{ scale: 1.05, y: -2 }}
     whileTap={{ scale: 0.95, y: 2 }}
@@ -75,8 +76,8 @@ export default function Hero() {
   >
     <div className="absolute -bottom-[5px] left-[6px] z-[-1] bg-red-800 w-[172px] h-[46px] rounded-[4px]" />
 
-    <button className="z-10 bg-[#FFE2E2] text-black p-[10px] font-extrabold text-[16px] w-[172px] h-[46px] rounded-[4px] flex items-center justify-center cursor-pointer">
-      Get in touch
+    <button className="z-10 bg-[#FFE2E2] text-black p-[10px] font-extrabold text-[16px] w-[172px] h-[46px] rounded-[4px] gap-2 flex items-center justify-center cursor-pointer">
+      Resume <span><HiDownload  /></span>
     </button>
   </motion.div>
 
