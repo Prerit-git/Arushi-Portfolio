@@ -1,7 +1,18 @@
 "use client";
 import React from "react";
 
-export default function ProjectBrief({ data }: any) {
+interface ProjectBriefProps {
+  data: {
+    brief: string;
+    role: string;
+    team: string;
+    timeline: string;
+    skills: string;
+    title: string;
+  };
+}
+
+export default function ProjectBrief({ data }: ProjectBriefProps) {
   return (
     <section className="w-full max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-10 pb-16">
       {/* LEFT COLUMN — PROJECT BRIEF */}

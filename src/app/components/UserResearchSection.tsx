@@ -2,18 +2,31 @@
 
 import React from "react";
 
-export default function UserResearchSection({ intro, insights, footer }:any) {
+interface InsightItem {
+  id: number;
+  text: string;
+  quote: string;
+}
+
+interface UserResearchSectionProps {
+  intro: string;
+  insights: InsightItem[];
+  footer: string;
+}
+
+export default function UserResearchSection({
+  intro,
+  insights,
+  footer,
+}: UserResearchSectionProps) {
   return (
     <section className="w-full pb-16">
-
       <div className="grid grid-cols-12 gap-10">
-
         {/* LEFT EMPTY COLUMN (to match PROBLEM layout spacing) */}
         <div className="col-span-4"></div>
 
         {/* RIGHT COLUMN */}
         <div className="col-span-8 space-y-14">
-
           {/* Title */}
           <h2 className="text-4xl font-bold text-[#1E1E1E]">User Research</h2>
 
@@ -24,9 +37,8 @@ export default function UserResearchSection({ intro, insights, footer }:any) {
 
           {/* Insights */}
           <div className="space-y-20">
-            {insights.map((item:any) => (
+            {insights.map((item) => (
               <div key={item.id} className="space-y-6">
-
                 {/* Numbered Insight */}
                 <p className="text-[18px] leading-[170%] text-[#1E1E1E]">
                   <span className="font-semibold mr-2">{item.id}.</span>
@@ -42,14 +54,14 @@ export default function UserResearchSection({ intro, insights, footer }:any) {
                   {/* Bubble Tail */}
                   <div className="absolute -bottom-3 left-14 w-6 h-6 bg-[#1A8CFF] rounded-bl-2xl rotate-45"></div>
                 </div>
-
               </div>
             ))}
           </div>
 
           {/* Footer */}
-          <p className="text-[20px] text-[#1E1E1E] font-semibold leading-[140%] max-w-3xl">{footer}</p>
-
+          <p className="text-[20px] text-[#1E1E1E] font-semibold leading-[140%] max-w-3xl">
+            {footer}
+          </p>
         </div>
       </div>
     </section>

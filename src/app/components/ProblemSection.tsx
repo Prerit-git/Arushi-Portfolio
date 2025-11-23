@@ -2,7 +2,12 @@
 
 import React from "react";
 
-export default function ProblemSection({ title, content }:any) {
+interface ProblemSectionProps {
+  title: string;
+  content: string;
+}
+
+export default function ProblemSection({ title, content }: ProblemSectionProps) {
   return (
     <section className="w-full max-w-6xl mx-auto pb-20 grid grid-cols-1 md:grid-cols-3 gap-12">
 
