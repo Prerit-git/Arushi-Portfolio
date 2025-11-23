@@ -37,3 +37,19 @@ h1, h2, h3, h4, h5, h6 {
   background-size: cover;
   opacity: 1;
 }
+
+@keyframes slideLeftIn {
+  0% {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0px);
+  }
+}
+
+.animate-slideLeftIn {
+  animation: slideLeftIn 0.5s ease-out both;
+}
+

@@ -6,11 +6,13 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import { MdKeyboardDoubleArrowRight } from "react-icons/md";
+import Link from "next/link";
 
 gsap.registerPlugin(ScrollTrigger);
 
 const cardsData = [
   {
+    slug: "canara-hsbc-study",
     tag: "2024",
     title: "Opendoor/Mainstay • BLOX design system",
     description:
@@ -20,6 +22,7 @@ const cardsData = [
     logo: "CHL_Logo.svg"
   },
   {
+    slug: "mg-case-study",
     tag: "2025",
     title: "Opendoor/Mainstay • BLOX design system",
     description:
@@ -29,6 +32,7 @@ const cardsData = [
     logo: "CHL_Logo.svg"
   },
   {
+    slug: "case-study-3",
     tag: "2025",
     title: "Opendoor/Mainstay • BLOX design system",
     description:
@@ -38,6 +42,7 @@ const cardsData = [
     logo: "CHL_Logo.svg"
   },
   {
+    slug: "case-study-4",
     tag: "2025",
     title: "Opendoor/Mainstay • BLOX design system",
     description:
@@ -107,7 +112,7 @@ const StackedCards: React.FC = () => {
         } as React.CSSProperties
       }
     >
-      {cardsData.map(({ tag, title, description, image, logo }, i) => (
+      {cardsData.map(({slug, tag, title, description, image, logo }, i) => (
         <div
           key={i}
           className="card sticky top-10 md:top-35"
@@ -149,12 +154,14 @@ const StackedCards: React.FC = () => {
                   whileTap={{ y: 2 }}
                   className="flex items-center rounded-xl p-0 relative mb-2 md:mb-0"
                 >
+                  <Link href={`/case-study/${slug}`}>
                   <motion.button className="static md:absolute -bottom-4 z-41 bg-[#FFE2E2] text-black p-[2px] md:p-[10px] font-bold md:font-semibold text-[12px] md:text-[16px] w-[130px] md:w-[172px] h-[40px] md:h-[46px] rounded-[4px] flex items-center justify-center cursor-pointer">
                     View Case Study{" "}
                     <span>
                       <MdKeyboardDoubleArrowRight />
                     </span>
                   </motion.button>
+                  </Link>
                   <motion.div className="absolute -bottom-1 md:-bottom-5 left-1 z-40 bg-red-800 text-black p-[2px] md:p-[10px] font-bold md:font-extrabold text-[12px] md:text-[16px] w-[130px] md:w-[172px] h-[40px] md:h-[46px] rounded-[4px] md:flex items-center justify-center cursor-pointer"></motion.div>
                 </motion.div>
               </div>
