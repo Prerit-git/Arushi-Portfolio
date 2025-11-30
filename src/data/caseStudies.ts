@@ -53,6 +53,62 @@ export const caseStudies = [
   ],
   footer: `How can Messenger maintain its casual messaging concept while holding users accountable for consistently messaging their friends?`
 },
+impactSection: {
+  heading: "Overall Impact of the Website UX Revamp",
+  intro: `The comprehensive UX revamp of the Canara HSBC Life website delivered <strong>significant improvements across key performance indicators</strong>, fundamentally transforming the digital experience for all users and directly contributing to critical business objectives. By meticulously addressing issues in information architecture, campaign-to-landing page transitions, and the usability of core sections like calculators and product pages, the project achieved a more engaged, intuitive, and conversion-focused platform.`,
+  
+  topItems: [
+    {
+      title: "Reduced drop-off rates",
+      description: `Immediately reduced homepage drop-off by 15% within three months, with an overall 25% site-wide drop-off reduction from the homepage, indicating enhanced user engagement.`,
+    },
+    {
+      title: "Enhanced user engagement",
+      description: `Redesigned interactive elements, like conversational calculators and engaging product pages, significantly increased user engagement, helping users better understand products.`,
+    },
+    {
+      title: "Improved lead quality and conversion",
+      description: `Optimized campaign landing pages with sales funnel-aware design and personalized forms led to a significant increase in lead capture and quality, with agents reporting more accurate information.`,
+    },
+    {
+      title: "Elevated user satisfaction and accessibility",
+      description: `A mobile-first, minimalist design ensures a consistent, accessible, and pleasing experience across all devices. Simplifying interactions and clarifying content made the site more intuitive and efficient for diverse groups.`,
+    },
+  ],
+},
+accordionSection: [
+  {
+    id: 1,
+    title: "Homepage Redesign",
+    content: `
+      <p>The initial sections of the homepage were specifically redesigned to be more inviting and conversion-focused…</p>
+    `,
+  },
+  {
+    id: 2,
+    title: "Interactive Calculators",
+    content: `
+      <p>Calculator modules were redesigned to improve clarity and reduce friction for users…</p>
+    `,
+  },
+  {
+    id: 3,
+    title: "Streamlined Product Pages",
+    content: `
+      <ul>
+        <li><strong>Visual Information Hierarchy:</strong> Simplified graphical representation…</li>
+        <li><strong>Sticky Index Navigation:</strong> Provided users with at-a-glance overview…</li>
+      </ul>
+    `,
+  },
+  {
+    id: 4,
+    title: "Overall Aesthetic & Accessibility",
+    content: `
+      <p>A modern, accessible, mobile-first UI system…</p>
+    `,
+  }
+],
     image:
       "https://images.unsplash.com/photo-1620207418302-439b387441b0?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=100",
     logo: "/CHL_Logo.svg",

@@ -7,6 +7,8 @@ export default function LeftSidebarNav() {
     { id: "project-brief", label: "Project Brief" },
     { id: "problem", label: "Problem" },
     { id: "user-research", label: "User Research" },
+    { id: "impact", label: "Overall Impact" },
+    { id: "accordion", label: "Solution" },
   ];
 
   const [visibleOrder, setVisibleOrder] = useState<string[]>([]);

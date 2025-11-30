@@ -1,3 +1,5 @@
+import AccordionSection from "@/app/components/AccordionSection";
+import ImpactSection from "@/app/components/ImpactSection";
 import LeftSidebarNav from "@/app/components/LeftSidebarNav";
 import ProblemSection from "@/app/components/ProblemSection";
 import ProjectBrief from "@/app/components/ProjectBrief";
@@ -77,6 +79,22 @@ export default function CaseStudyDetail({ params }: CaseStudyPageProps) {
                 insights={data.userResearch?.insights ?? []}
                 footer={data.userResearch?.footer ?? ""}
               />
+            </section>
+
+            {/* Impact section */}
+            <section id="impact">
+              <ImpactSection
+                data={{
+                  heading: data.impactSection?.heading ?? "",
+                  intro: data.impactSection?.intro ?? "",
+                  topItems: data.impactSection?.topItems ?? [],
+                }}
+              />
+            </section>
+
+            {/* Accordion Section */}
+            <section id="accordion">
+              <AccordionSection items={data.accordionSection ?? []} />
             </section>
           </div>
         </div>
