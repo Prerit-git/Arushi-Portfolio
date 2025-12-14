@@ -8,18 +8,15 @@ import { caseStudies } from "@/data/caseStudies";
 import Image from "next/image";
 
 interface CaseStudyPageProps {
-  params: {
-    slug: string;
-  };
+  params: Promise<{ slug: string }>;
 }
 
-export default function CaseStudyDetail({ params }: CaseStudyPageProps) {
-  const data = caseStudies.find((item) => item.slug === params.slug);
+export default async function CaseStudyDetail({ params }: CaseStudyPageProps) {
+  const { slug } = await params;
+  const data = caseStudies.find((item) => item.slug === slug);
 
   if (!data) {
-    return (
-      <div className="text-center py-20 text-2xl">Case study not found.</div>
-    );
+    return <div className="text-center py-20 text-2xl">Case study not found.</div>;
   }
 
   return (
