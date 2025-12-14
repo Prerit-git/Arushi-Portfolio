@@ -23,10 +23,10 @@ export default function UserResearchSection({
     <section className="w-full pb-16">
       <div className="grid grid-cols-12 gap-10">
         {/* LEFT EMPTY COLUMN (to match PROBLEM layout spacing) */}
-        <div className="col-span-4"></div>
+        <div className="hidden md:block col-span-4"></div>
 
         {/* RIGHT COLUMN */}
-        <div className="col-span-8 space-y-14">
+        <div className="col-span-10 md:col-span-8 space-y-14">
           {/* Title */}
           <h2 className="text-4xl font-bold text-[#1E1E1E]">User Research</h2>
 
@@ -46,7 +46,7 @@ export default function UserResearchSection({
                 </p>
 
                 {/* Chat Bubble */}
-                <div className="bg-[#1A8CFF] text-white p-8 rounded-3xl max-w-3xl shadow-lg relative">
+                <div className="bg-[#1A8CFF] text-white p-8 rounded-3xl w-90 md:max-w-3xl shadow-lg relative">
                   <p className="text-[18px] leading-[170%] whitespace-pre-line">
                     {item.quote.trim()}
                   </p>
@@ -59,7 +59,7 @@ export default function UserResearchSection({
           </div>
 
           {/* Footer */}
-          <p className="text-[20px] text-[#1E1E1E] font-semibold leading-[140%] max-w-3xl">
+          <p className="text-[20px] text-[#1E1E1E] font-semibold leading-[140%] w-full md:max-w-3xl">
             {footer}
           </p>
         </div>

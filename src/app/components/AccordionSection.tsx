@@ -25,10 +25,10 @@ export default function AccordionSection({ items }: Props) {
       <div className="grid grid-cols-12 gap-10">
 
         {/* LEFT EMPTY COLUMN */}
-        <div className="col-span-4"></div>
+        <div className="hidden md:block col-span-4"></div>
 
         {/* RIGHT COLUMN */}
-        <div className="col-span-8 space-y-8">
+        <div className="col-span-10 md:col-span-8 space-y-8">
              <h2 className="text-4xl font-bold text-[#1E1E1E]">Process and Solution</h2>
           {items.map((item) => {
             const isOpen = openId === item.id;
@@ -76,7 +76,7 @@ function AccordionRow({
   }, [isOpen]);
 
   return (
-    <div className="w-full">
+    <div className="w-90 md:w-full">
       {/* Header */}
       <button
         onClick={onClick}

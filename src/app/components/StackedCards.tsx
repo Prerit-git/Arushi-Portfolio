@@ -150,20 +150,46 @@ const StackedCards: React.FC = () => {
                 </p>
 
                 <motion.div
-                  whileHover={{ y: -2 }}
-                  whileTap={{ y: 2 }}
-                  className="flex items-center rounded-xl p-0 relative mb-2 md:mb-0"
-                >
-                  <Link href={`/case-study/${slug}`}>
-                  <motion.button className="static md:absolute -bottom-4 z-41 bg-[#FFE2E2] text-black p-[2px] md:p-[10px] font-bold md:font-semibold text-[12px] md:text-[16px] w-[130px] md:w-[172px] h-[40px] md:h-[46px] rounded-[4px] flex items-center justify-center cursor-pointer">
-                    View Case Study{" "}
-                    <span>
-                      <MdKeyboardDoubleArrowRight />
-                    </span>
-                  </motion.button>
-                  </Link>
-                  <motion.div className="absolute -bottom-1 md:-bottom-5 left-1 z-40 bg-red-800 text-black p-[2px] md:p-[10px] font-bold md:font-extrabold text-[12px] md:text-[16px] w-[130px] md:w-[172px] h-[40px] md:h-[46px] rounded-[4px] md:flex items-center justify-center cursor-pointer"></motion.div>
-                </motion.div>
+  whileHover={{ y: -2 }}
+  whileTap={{ y: 2 }}
+  className="flex items-center rounded-xl p-0 relative mb-2 md:mb-0"
+>
+  <Link href={`/case-study/${slug}`} className="relative z-50">
+    <motion.button
+      className="
+        static md:absolute -bottom-4 z-50
+        bg-[#FFE2E2] text-black
+        p-[2px] md:p-[10px]
+        font-bold md:font-semibold
+        text-[12px] md:text-[16px]
+        w-[130px] md:w-[172px]
+        h-[40px] md:h-[46px]
+        rounded-[4px]
+        flex items-center justify-center
+        cursor-pointer
+      "
+    >
+      View Case Study{" "}
+      <span>
+        <MdKeyboardDoubleArrowRight />
+      </span>
+    </motion.button>
+  </Link>
+
+  {/* Shadow / offset layer — DESKTOP ONLY */}
+  <motion.div
+    className="
+      hidden md:flex
+      absolute -bottom-5 left-1
+      z-40
+      bg-red-800
+      pointer-events-none
+      w-[172px] h-[46px]
+      rounded-[4px]
+      items-center justify-center
+    "
+  />
+</motion.div>
               </div>
             </div>
 

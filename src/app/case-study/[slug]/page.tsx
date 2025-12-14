@@ -23,8 +23,8 @@ export default function CaseStudyDetail({ params }: CaseStudyPageProps) {
   }
 
   return (
-    <div className="bg-white">
-      <div className="max-w-6xl mx-auto pt-10 pb-32 px-4">
+    <div className="bg-white w-full">
+      <div className="w-full md:max-w-6xl mx-0 md:mx-auto pt-10 pb-32 px-4">
         <div className="mb-5">
           <Image
             src={data.logo}
@@ -38,17 +38,16 @@ export default function CaseStudyDetail({ params }: CaseStudyPageProps) {
 
         <img
           src={data.image}
-          alt="Case study featured"
-          className="w-full h-[500px] rounded-lg mb-10"
+          className="w-full h-auto md:h-[500px] object-cover rounded-lg mb-10"
         />
 
         {/* LEFT SIDEBAR NAV */}
-        <div className="fixed left-5 top-90">
+        <div className="sticky top-0 md:fixed md:left-5 md:top-24 z-40">
           <LeftSidebarNav />
         </div>
 
         {/* MAIN GRID */}
-        <div className="grid grid-cols-12 gap-10">
+        <div className="grid grid-cols-12 gap-6 md:gap-10">
           <div className="col-span-12 space-y-32">
             {/* PROJECT BRIEF */}
             <section id="project-brief">

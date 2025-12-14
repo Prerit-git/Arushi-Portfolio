@@ -25,7 +25,7 @@ export default function ProjectBrief({ data }: ProjectBriefProps) {
       </div>
 
       {/* RIGHT CONTENT (2 COLUMNS) */}
-      <div className="md:col-span-2 grid grid-cols-1 gap-10 border-b border-gray-300 pb-16">
+      <div className="md:col-span-2 grid grid-cols-1 gap-10 border-0 md:border-b border-gray-300 pb-16">
         <div className="flex flex-col gap-5">
           <div>
             <h1 className="text-4xl font-bold text-[#1E1E1E] mb-2">
