@@ -1,4 +1,5 @@
 import AccordionSection from "@/app/components/AccordionSection";
+import DecisionandOutcome from "@/app/components/DecisionandOutcome";
 import ImpactSection from "@/app/components/ImpactSection";
 import LeftSidebarNav from "@/app/components/LeftSidebarNav";
 import ProblemSection from "@/app/components/ProblemSection";
@@ -21,7 +22,8 @@ export default async function CaseStudyDetail({ params }: CaseStudyPageProps) {
 
   return (
     <div className="bg-white w-full">
-      <div className="w-full md:max-w-6xl mx-0 md:mx-auto pt-10 pb-32 px-4">
+      <div className="w-full  mx-0 md:mx-auto pt-10 pb-32 px-4">
+        <div className="w-full max-w-6xl mx-auto">
         <div className="mb-5">
           <Image
             src={data.logo}
@@ -37,17 +39,18 @@ export default async function CaseStudyDetail({ params }: CaseStudyPageProps) {
           src={data.image}
           className="w-full h-auto md:h-[500px] object-cover rounded-lg mb-10"
         />
+        </div>
 
         {/* LEFT SIDEBAR NAV */}
-        <div className="sticky top-0 md:fixed md:left-5 md:top-24 z-40">
+        <div className="sticky top-0 md:left-5 z-40 md:top-24">
           <LeftSidebarNav />
         </div>
 
         {/* MAIN GRID */}
-        <div className="grid grid-cols-12 gap-6 md:gap-10">
-          <div className="col-span-12 space-y-32">
+        <div className="grid grid-cols-12 gap-6 md:gap-10 max-w-6xl mx-auto">
+          <div className="col-span-12 space-y-[96px]">
             {/* PROJECT BRIEF */}
-            <section id="project-brief">
+            <section id="project-brief" className="scroll-mt-24">
               <ProjectBrief
                 data={{
                   brief: data.projectBrief?.brief ?? "",
@@ -56,29 +59,31 @@ export default async function CaseStudyDetail({ params }: CaseStudyPageProps) {
                   timeline: data.projectBrief?.timeline ?? "",
                   skills: data.projectBrief?.skills ?? "",
                   title: data.title ?? "",
+                  responsibilities: data.projectBrief?.responsibilities ?? [],
                 }}
               />
             </section>
 
             {/* PROBLEM SECTION */}
-            <section id="problem">
+            <section id="problem" className="scroll-mt-24">
               <ProblemSection
-                title={data.problem?.title ?? ""}
+                problemBrief={data.problem?.problemBrief ?? ""}
                 content={data.problem?.content ?? ""}
+                keyInsight={data.problem?.keyInsight ?? ""}
               />
             </section>
 
             {/* USER RESEARCH SECTION */}
-            <section id="user-research">
+            {/* <section id="user-research">
               <UserResearchSection
                 intro={data.userResearch?.intro ?? ""}
                 insights={data.userResearch?.insights ?? []}
                 footer={data.userResearch?.footer ?? ""}
               />
-            </section>
+            </section> */}
 
             {/* Impact section */}
-            <section id="impact">
+            <section id="strategy" className="scroll-mt-24">
               <ImpactSection
                 data={{
                   heading: data.impactSection?.heading ?? "",
@@ -88,8 +93,12 @@ export default async function CaseStudyDetail({ params }: CaseStudyPageProps) {
               />
             </section>
 
+            <section id="dec-outcome" className="scroll-mt-24">
+              <DecisionandOutcome/>
+            </section>
+
             {/* Accordion Section */}
-            <section id="accordion">
+            <section id="constraints">
               <AccordionSection items={data.accordionSection ?? []} />
             </section>
           </div>

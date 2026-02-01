@@ -21,15 +21,18 @@ export default function AccordionSection({ items }: Props) {
   };
 
   return (
-    <section className="w-full pb-20">
-      <div className="grid grid-cols-12 gap-10">
-
-        {/* LEFT EMPTY COLUMN */}
-        <div className="hidden md:block col-span-4"></div>
+    <section className="w-full max-w-6xl mx-auto pb-20 grid grid-cols-1 md:grid-cols-2 gap-[0px] md:gap-[100px]">
+      <div className="pr-0 md:pr-20">
+            <h4 className="text-[#9CA3C7] tracking-widest font-semibold mb-2 text-[18px]">
+             CONSTRAINTS
+            </h4>
+            <div className="w-full h-[2px] bg-[#A90D0D] mb-6" />
+            <p>The website wasn’t failing because of content volume —it was failing because <strong>users couldn’t make sense of it fast enough.</strong></p>
+          </div>
 
         {/* RIGHT COLUMN */}
-        <div className="col-span-10 md:col-span-8 space-y-8">
-             <h2 className="text-4xl font-bold text-[#1E1E1E]">Process and Solution</h2>
+        <div className="col-span-4 md:col-span-1 space-y-8 mt-20">
+             {/* <h2 className="text-4xl font-bold text-[#1E1E1E]">Process and Solution</h2> */}
           {items.map((item) => {
             const isOpen = openId === item.id;
 
@@ -44,7 +47,6 @@ export default function AccordionSection({ items }: Props) {
             );
           })}
         </div>
-      </div>
     </section>
   );
 }
@@ -76,7 +78,7 @@ function AccordionRow({
   }, [isOpen]);
 
   return (
-    <div className="w-90 md:w-full">
+    <div className="w-full">
       {/* Header */}
       <button
         onClick={onClick}
@@ -98,7 +100,7 @@ function AccordionRow({
       >
         <div
           ref={ref}
-          className="p-6 text-[16px] leading-[170%] text-[#1E1E1E]"
+          className="p-6 text-[16px] leading-[130%] text-[#1E1E1E]"
           dangerouslySetInnerHTML={{ __html: content }}
         />
       </div>

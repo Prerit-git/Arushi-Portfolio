@@ -5,15 +5,21 @@ import { useEffect, useState } from "react";
 const sections = [
   { id: "project-brief", label: "Project Brief" },
   { id: "problem", label: "Problem" },
-  { id: "user-research", label: "User Research" },
-  { id: "impact", label: "Overall Impact" },
-  { id: "accordion", label: "Solution" },
+  { id: "strategy", label: "Strategy" },
+  { id: "dec-outcome", label: "Decision & Outcome" },
+  { id: "constraints", label: "Constraints" },
 ];
 
 export default function LeftSidebarNav() {
   const [visibleOrder, setVisibleOrder] = useState<string[]>([]);
   const [selected, setSelected] = useState<string>("");
 
+  // 👇 shared scroll visibility state
+  const [isScrolling, setIsScrolling] = useState(true);
+
+  /* -------------------------------------
+     INTERSECTION OBSERVER
+  ------------------------------------- */
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
@@ -29,7 +35,10 @@ export default function LeftSidebarNav() {
           }
         });
       },
-      { threshold: 0.4 }
+      {
+        threshold: 0.1,
+        rootMargin: "0px 0px -30% 0px",
+      }
     );
 
     sections.forEach((sec) => {
@@ -40,6 +49,29 @@ export default function LeftSidebarNav() {
     return () => observer.disconnect();
   }, []);
 
+  /* -------------------------------------
+     SCROLL SHOW / HIDE (MOBILE + DESKTOP)
+  ------------------------------------- */
+  useEffect(() => {
+    let timeout: NodeJS.Timeout;
+
+    const handleScroll = () => {
+      setIsScrolling(true);
+
+      clearTimeout(timeout);
+      timeout = setTimeout(() => {
+        setIsScrolling(false);
+      }, 3000);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+      clearTimeout(timeout);
+    };
+  }, []);
+
   const scrollToSection = (id: string) => {
     const el = document.getElementById(id);
     if (!el) return;
@@ -47,10 +79,20 @@ export default function LeftSidebarNav() {
   };
 
   /* -------------------------------------
-     DESKTOP SIDEBAR
+     DESKTOP SIDEBAR (UPDATED)
   ------------------------------------- */
   const desktopNav = (
-    <div className="space-y-4 hidden md:block">
+    <div
+      className={`
+        space-y-4 hidden md:block
+        transition-all duration-300 ease-in-out
+        ${
+          isScrolling
+            ? "opacity-100 translate-x-0"
+            : "opacity-0 -translate-x-4 pointer-events-none"
+        }
+      `}
+    >
       {visibleOrder.map((id) => {
         const sec = sections.find((s) => s.id === id);
         if (!sec) return null;
@@ -74,10 +116,21 @@ export default function LeftSidebarNav() {
   );
 
   /* -------------------------------------
-     MOBILE DROPDOWN
+     MOBILE DROPDOWN (UNCHANGED LOGIC)
   ------------------------------------- */
   const mobileDropdown = (
-    <div className="md:hidden sticky top-0 z-50 bg-white border-b px-4 py-3">
+    <div
+      className={`
+        md:hidden sticky top-0 z-50
+        bg-white border-b px-4 py-3
+        transition-all duration-300 ease-in-out
+        ${
+          isScrolling
+            ? "opacity-100 translate-y-0"
+            : "opacity-0 -translate-y-3 pointer-events-none"
+        }
+      `}
+    >
       <select
         value={selected}
         onChange={(e) => {

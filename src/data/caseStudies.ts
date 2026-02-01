@@ -2,54 +2,67 @@ export const caseStudies = [
   {
     slug: "canara-hsbc-study",
     tag: "2024",
-    title: "Opendoor/Mainstay • BLOX design system",
+    // title: "Opendoor/Mainstay • BLOX design system",
     description:
       "Developed the company-wide design system for Mainstay, Opendoor's enterprise branch, including typography, iconography, color systems, and design components and patterns.",
     projectBrief: {
-      brief: `Integrating a pinning feature on Facebook Messenger designed to support consistent and frictionless communication.`,
-      role: "Product Designer",
-      team: "Me",
-      timeline: "Feb 2020 – May 2020",
-      skills: "Ideation, Prototyping, Figma",
+      brief: `Canara HSBC Life Insurance serves a wide spectrum of users—from digitally savvy buyers to elderly customers and field agents.
+
+As digital acquisition grew, the existing website struggled to support discovery, comprehension, and conversion.
+
+The company initiated a full UX revamp to align the experience with modern user expectations and business growth goals.`,
+      role: "Lead UX Designer",
+      team: "UX Director, 2 UX Designers, Product Managers, Tech Lead, Developers",
+      timeline: "6 months",
+      skills: "Figma, Adobe Experience Manager (AEM)",
+      responsibilities: [
+      "Audited the existing experience",
+      "Defined user problems and success metrics",
+      "Redesigned information architecture and key journeys",
+      "Shipped wireframes, prototypes, and visual direction",
+      "Partnered with business, marketing, SEO, and engineering teams",
+      "Validated solutions through testing and iteration"
+    ]
     },
     problem: {
-      title: "Left on Read (again)",
+      problemBrief: "The website wasn’t failing because of content volume —it was failing because users couldn’t make sense of it fast enough.",
+      // title: "Left on Read (again)",
       content: `
-        <p>“Was it something I said?” We all know the dreadful feeling of being left on read in the middle of a text conversation. Until the next inevitable message comes a couple of days later when the other person responds, claiming they forgot to respond.</p>
-
-        <p>Why does this happen? Why do users forget to respond to messages when we have notification banners and “marking as unread” that aim to prevent forgetfulness? When people message each other on Messenger, they want to maintain a natural flow in conversation by following up in a timely manner, but can’t do that well because:</p>
-
-        <ol>
-          <li>1. They are too busy to respond right away.</li>
-          <li>2. Newer chats bury the opened chats in the inbox.</li>
-        </ol>
-
-        <p>With this problem statement in mind, I conducted user research to further understand user habits on Facebook Messenger.</p>
+        <ul">
+          <li>75% homepage drop-off for new users</li>
+          <li>Overloaded navigation and deep hierarchies</li>
+          <li>Marketing traffic landing on pages that felt disconnected from ads</li>
+          <li>One-size-fits-all lead forms, regardless of user intent</li>
+          <li>Calculators and product pages that increased cognitive load instead of clarity</li>
+        </ul>
       `,
+      keyInsight: `<p>
+          Insurance users don’t want more information. <br>They want confidence, clarity, and guidance — especially when they are only partially aware of the product.
+      </p>`
     },
     userResearch: {
-  intro: `
-    My goal in user research was to understand how Messenger helps foster
-    relationships among users. Here are my findings:
-  `,
+  // intro: `
+  //   My goal in user research was to understand how Messenger helps foster
+  //   relationships among users. Here are my findings:
+  // `,
   insights: [
     {
-      id: 1,
-      text: "Users want to reply to messages at a later convenient time, but sometimes forget to reply when that time comes.",
+      // id: 1,
+      // text: "Users want to reply to messages at a later convenient time, but sometimes forget to reply when that time comes.",
       quote: `
         Sometimes I accidentally leave people on read or it’s shown that I’m active
         but I don’t respond. I don’t do this intentionally— I'm just busy at the moment.
         But when I'm online again, sometimes I forget that I’ve already opened it.
       `
     },
-    {
-      id: 2,
-      text: `Users want to organize their Messenger chats to suit their preferences (e.g. “Favorites”, or “Priority”).`,
-      quote: `
-        When I'm getting a lot of messages, sometimes I don’t see the message that I 
-        already read once I open the app, because the new messages hide the older ones.
-      `
-    }
+    // {
+    //   id: 2,
+    //   text: `Users want to organize their Messenger chats to suit their preferences (e.g. “Favorites”, or “Priority”).`,
+    //   quote: `
+    //     When I'm getting a lot of messages, sometimes I don’t see the message that I 
+    //     already read once I open the app, because the new messages hide the older ones.
+    //   `
+    // }
   ],
   footer: `How can Messenger maintain its casual messaging concept while holding users accountable for consistently messaging their friends?`
 },
@@ -59,19 +72,19 @@ impactSection: {
   
   topItems: [
     {
-      title: "Reduced drop-off rates",
+      title: "Making the website behave like an e-commerce journey, not a document repository",
       description: `Immediately reduced homepage drop-off by 15% within three months, with an overall 25% site-wide drop-off reduction from the homepage, indicating enhanced user engagement.`,
     },
     {
-      title: "Enhanced user engagement",
+      title: "Aligning experiences to user intent and funnel stage",
       description: `Redesigned interactive elements, like conversational calculators and engaging product pages, significantly increased user engagement, helping users better understand products.`,
     },
     {
-      title: "Improved lead quality and conversion",
+      title: "Designing for low digital confidence users without hurting power users",
       description: `Optimized campaign landing pages with sales funnel-aware design and personalized forms led to a significant increase in lead capture and quality, with agents reporting more accurate information.`,
     },
     {
-      title: "Elevated user satisfaction and accessibility",
+      title: "Prioritizing mobile-first clarity across the system",
       description: `A mobile-first, minimalist design ensures a consistent, accessible, and pleasing experience across all devices. Simplifying interactions and clarifying content made the site more intuitive and efficient for diverse groups.`,
     },
   ],
@@ -79,21 +92,21 @@ impactSection: {
 accordionSection: [
   {
     id: 1,
-    title: "Homepage Redesign",
+    title: "Content vs usability",
     content: `
       <p>The initial sections of the homepage were specifically redesigned to be more inviting and conversion-focused…</p>
     `,
   },
   {
     id: 2,
-    title: "Interactive Calculators",
+    title: "Component limits",
     content: `
       <p>Calculator modules were redesigned to improve clarity and reduce friction for users…</p>
     `,
   },
   {
     id: 3,
-    title: "Streamlined Product Pages",
+    title: "Confidential metrics",
     content: `
       <ul>
         <li><strong>Visual Information Hierarchy:</strong> Simplified graphical representation…</li>
@@ -101,13 +114,6 @@ accordionSection: [
       </ul>
     `,
   },
-  {
-    id: 4,
-    title: "Overall Aesthetic & Accessibility",
-    content: `
-      <p>A modern, accessible, mobile-first UI system…</p>
-    `,
-  }
 ],
     image:
       "https://images.unsplash.com/photo-1620207418302-439b387441b0?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=100",

@@ -9,55 +9,75 @@ interface ProjectBriefProps {
     timeline: string;
     skills: string;
     title: string;
+    responsibilities: string[];
   };
 }
 
 export default function ProjectBrief({ data }: ProjectBriefProps) {
   return (
-    <section className="w-full max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-10 pb-16">
-      {/* LEFT COLUMN — PROJECT BRIEF */}
-      <div>
-        <h4 className="text-[#9CA3C7] tracking-widest text-lg font-semibold mb-4">
+    <section className="w-full max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-[0px] md:gap-[100px] py-16">
+      
+      {/* LEFT COLUMN */}
+      <div className="pr-0 md:pr-20">
+        <h4 className="text-[#9CA3C7] tracking-widest font-semibold mb-2 text-[18px]">
           PROJECT BRIEF
         </h4>
+        <div className="w-full h-[2px] bg-[#A90D0D] mb-6" />
 
-        <p className="text-[16px] text-gray-700 leading-[160%]">{data.brief}</p>
+        <p className="text-[14px] text-[#4F4D4D] leading-[130%] whitespace-pre-line">
+          {data.brief}
+        </p>
       </div>
 
-      {/* RIGHT CONTENT (2 COLUMNS) */}
-      <div className="md:col-span-2 grid grid-cols-1 gap-10 border-0 md:border-b border-gray-300 pb-16">
-        <div className="flex flex-col gap-5">
+      {/* RIGHT COLUMN */}
+      <div>
+        
+        {/* TITLE */}
+        {/* <h1 className="text-3xl font-semibold text-[#1E1E1E] mb-10">
+          {data.title}
+        </h1> */}
+
+        {/* META GRID */}
+        <div className="grid grid-cols-2 gap-x-[57px] gap-y-[28px] mb-[28px] mt-15">
           <div>
-            <h1 className="text-4xl font-bold text-[#1E1E1E] mb-2">
-              {data.title}
-            </h1>
-            {/* <p className="text-gray-500 text-lg">{data.subtitle}</p> */}
+            <p className="text-[16px] text-[#4F4D4D] font-bold">
+              Role
+            </p>
+            <p className="text-[#4F4D4D] text-[14px]">{data.role}</p>
           </div>
 
-          <div className="flex gap-15">
-            <div>
-              <h5 className="text-lg text-gray-400 tracking-widest mb-1">
-                ROLE
-              </h5>
-              <p className="text-gray-800 mb-4">{data.role}</p>
-
-              <h5 className="text-lg text-gray-400 tracking-widest mb-1">
-                TEAM
-              </h5>
-              <p className="text-gray-800">{data.team}</p>
-            </div>
-            <div>
-              <h5 className="text-lg text-gray-400 tracking-widest mb-1">
-                TIMELINE
-              </h5>
-              <p className="text-gray-800 mb-4">{data.timeline}</p>
-
-              <h5 className="text-lg text-gray-400 tracking-widest mb-1">
-                SKILLS/TOOLS
-              </h5>
-              <p className="text-gray-800">{data.skills}</p>
-            </div>
+          <div>
+            <p className="text-[16px] text-[#4F4D4D] font-bold">
+              Timeline
+            </p>
+            <p className="text-[#4F4D4D] text-[14px]">{data.timeline}</p>
           </div>
+
+          <div>
+            <p className="text-[16px] text-[#4F4D4D] font-bold">
+              Team
+            </p>
+            <p className="text-[#4F4D4D] text-[14px]">{data.team}</p>
+          </div>
+
+          <div>
+            <p className="text-[16px] text-[#4F4D4D] font-bold">
+              Tools
+            </p>
+            <p className="text-[#4F4D4D] text-[14px]">{data.skills}</p>
+          </div>
+        </div>
+
+        {/* BULLET LIST */}
+        <div>
+          <p className="text-[#4F4D4D] font-bold text-[14px] mb-4">
+            I led UX strategy and execution end-to-end:
+          </p>
+          <ul className="list-disc list-inside text-[#4F4D4D] text-[14px] leading-[130%]">
+            {data.responsibilities.map((item: string, index: number) => (
+              <li key={index}>{item}</li>
+            ))}
+          </ul>
         </div>
       </div>
     </section>
