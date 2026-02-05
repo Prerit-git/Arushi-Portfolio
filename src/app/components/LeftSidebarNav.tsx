@@ -85,7 +85,7 @@ export default function LeftSidebarNav() {
     <div
       className={`
         space-y-4 hidden md:block
-        transition-all duration-300 ease-in-out
+        transition-all duration-300 ease-in-out absolute z-99 top-15
         ${
           isScrolling
             ? "opacity-100 translate-x-0"

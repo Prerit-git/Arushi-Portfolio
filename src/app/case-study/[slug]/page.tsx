@@ -37,7 +37,7 @@ export default async function CaseStudyDetail({ params }: CaseStudyPageProps) {
 
         <img
           src={data.image}
-          className="w-full h-auto md:h-[500px] object-cover rounded-lg mb-10"
+          className="w-full h-auto md:h-[500px] object-cover rounded-lg"
         />
         </div>
 

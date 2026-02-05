@@ -48,14 +48,14 @@ export default function ImpactSection({ data }: Props) {
           /> */}
 
           {/* FLIP CARDS */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-[32px]">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-[25px]">
             {topItems.map((item, index) => {
               const [flipped, setFlipped] = useState(false);
 
               return (
                 <div
                   key={index}
-                  className="perspective h-[230px] w-[299px] cursor-pointer"
+                  className="perspective h-[230px] w-[250px] cursor-pointer"
                   onClick={() => setFlipped(!flipped)}
                 >
                   <div
