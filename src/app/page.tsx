@@ -12,31 +12,40 @@ export default function Home() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    const timer = setTimeout(() => setLoading(false), 3000);
+  if (!loading && window.location.hash) {
+    const id = window.location.hash.replace("#", "");
+
+    requestAnimationFrame(() => {
+      const el = document.getElementById(id);
+      if (el) {
+        el.scrollIntoView({ behavior: "smooth" });
+      }
+    });
+  }
+}, [loading]);
+
+
+  useEffect(() => {
+    const timer = setTimeout(() => setLoading(false), 1000);
     return () => clearTimeout(timer);
   }, []);
 
   return (
     <>
-      {/* Loader animation */}
-      <AnimatePresence>{loading && <Loader />}</AnimatePresence>
+      {/* <AnimatePresence>{loading && <Loader />}</AnimatePresence> */}
 
-      {/* Main content after loader */}
       {!loading && (
         <div className="bg-[#1E1E1E] text-[#FFE2E2]">
-          {/* <div className="absolute inset-0 bg-black opacity-60 z-99"></div> */}
-          {/* Only animate content */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 1, ease: "easeOut" }}
           >
-            <Navbar />
+            {/* <Navbar /> */}
             <Hero />
           </motion.div>
 
-          {/* Other static components */}
           <CaseStudies />
           <Contact />
         </div>

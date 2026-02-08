@@ -115,9 +115,6 @@ export default function LeftSidebarNav() {
     </div>
   );
 
-  /* -------------------------------------
-     MOBILE DROPDOWN (UNCHANGED LOGIC)
-  ------------------------------------- */
   const mobileDropdown = (
     <div
       className={`

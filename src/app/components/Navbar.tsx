@@ -11,10 +11,10 @@ interface NavItem {
 }
 
 const navItems: NavItem[] = [
-  { name: "Home", href: "#" },
-  { name: "About me", href: "#about" },
-  { name: "Case Studies", href: "#case-studies" },
-  { name: "Contact", href: "#contact" },
+  { name: "Home", href: "/" },
+  { name: "About me", href: "/#about" },
+  { name: "Case Studies", href: "/#case-studies" },
+  { name: "Contact", href: "/#contact" },
 ];
 
 type MotionPathProps = MotionProps & SVGProps<SVGPathElement>;

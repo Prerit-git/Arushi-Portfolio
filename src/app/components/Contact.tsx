@@ -6,7 +6,7 @@ const Contact = () => {
   const linkedinLogo = "/linkedin.svg";
   return (
     <>
-      <section className="h-fit bg-[#FF0000] w-full flex flex-col px-[20px] md:px-[90px] pt-10 md:pt-20 pb-5 md:pb-15 gap-[24px]">
+      <section className="h-fit bg-[#FF0000] w-full flex flex-col px-[20px] md:px-[90px] pt-10 md:pt-20 pb-5 md:pb-15 gap-[24px]" id="contact">
         <p className="uppercase text-[20px] md:text-[24px] font-medium">Let&apos;s Connect</p>
         <p className="font-extrabold text-[24px] md:text-[32px] leading-[110%]">
           Looking for a product designer? <br />Drop me a line.

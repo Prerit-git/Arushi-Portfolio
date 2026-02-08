@@ -2,6 +2,7 @@ import AccordionSection from "@/app/components/AccordionSection";
 import DecisionandOutcome from "@/app/components/DecisionandOutcome";
 import ImpactSection from "@/app/components/ImpactSection";
 import LeftSidebarNav from "@/app/components/LeftSidebarNav";
+import Navbar from "@/app/components/Navbar";
 import ProblemSection from "@/app/components/ProblemSection";
 import ProjectBrief from "@/app/components/ProjectBrief";
 import UserResearchSection from "@/app/components/UserResearchSection";
@@ -21,7 +22,11 @@ export default async function CaseStudyDetail({ params }: CaseStudyPageProps) {
   }
 
   return (
-    <div className="bg-white w-full">
+    <>
+    <div>
+    <Navbar/>
+    </div>
+    <div className="bg-white w-full pt-10 md:pt-25">
       <div className="w-full  mx-0 md:mx-auto pt-10 pb-32 px-4">
         <div className="w-full max-w-6xl mx-auto">
         <div className="mb-5">
@@ -42,7 +47,7 @@ export default async function CaseStudyDetail({ params }: CaseStudyPageProps) {
         </div>
 
         {/* LEFT SIDEBAR NAV */}
-        <div className="sticky top-0 md:left-5 z-40 md:top-24">
+        <div className="sticky top-0 md:left-5 z-60 md:top-24">
           <LeftSidebarNav />
         </div>
 
@@ -105,5 +110,6 @@ export default async function CaseStudyDetail({ params }: CaseStudyPageProps) {
         </div>
       </div>
     </div>
+    </>
   );
 }

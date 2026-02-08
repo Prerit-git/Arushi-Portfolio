@@ -1,6 +1,7 @@
 import "./globals.css";
 import { Oswald, Raleway } from "next/font/google";
 import type { Metadata } from "next";
+import Providers from "./Providers";
 
 const oswald = Oswald({
   subsets: ["latin"],
@@ -28,7 +29,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${oswald.variable} ${raleway.variable} antialiased`}>
-        {children}
+        <Providers>{children}</Providers>
       </body>
     </html>
   );
