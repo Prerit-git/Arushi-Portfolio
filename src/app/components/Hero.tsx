@@ -29,7 +29,7 @@ export default function Hero() {
             const angle = progress * 180;
 
             if (angle > 90) {
-              imageRef.current!.src = "/2nd image home page.svg";
+              imageRef.current!.src = "/2ndImageHomePage.png";
             } else {
               imageRef.current!.src = "/Homepage banner image.svg";
             }
