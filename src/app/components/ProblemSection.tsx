@@ -30,10 +30,24 @@ export default function ProblemSection({ problemBrief, keyInsight, content }: Pr
           className="text-[14px] text-[#4F4D4D] leading-[140%] space-y-6 px-[10px] md:px-0"
           dangerouslySetInnerHTML={{ __html: content }}
         />
-      <div className="bg-[#178CFE] rounded-[8px] p-[32px] text-white mt-[32px]">
-        <p className="font-bold text-[18px]">Key Insight</p>
-        <p dangerouslySetInnerHTML={{ __html: keyInsight }} className="text=[14px] font-bold leading-[130%] mt-[16px]"></p>
-      </div>
+      <div className="flex justify-start mt-[32px]">
+  <div className="relative bg-[#178CFE] rounded-[8px] p-[32px] text-white max-w-[100%]">
+    
+    <div
+      className="absolute bottom-[-8px] left-[24px] w-0 h-0
+                 border-l-[10px] border-l-transparent
+                 border-r-[10px] border-r-transparent
+                 border-t-[10px] border-t-[#178CFE]">
+    </div>
+
+    <p className="font-bold text-[18px]">Key Insight</p>
+    <p
+      dangerouslySetInnerHTML={{ __html: keyInsight }}
+      className="text-[14px] font-bold leading-[130%] mt-[16px]"
+    ></p>
+  </div>
+</div>
+
       </div>
     </section>
   );

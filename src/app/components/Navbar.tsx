@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, SVGProps } from "react";
+import React, { useState, useEffect, SVGProps } from "react";
 import Image from "next/image";
 import { motion, AnimatePresence, MotionProps } from "framer-motion";
 import Link from "next/link";
@@ -19,7 +19,6 @@ const navItems: NavItem[] = [
 
 type MotionPathProps = MotionProps & SVGProps<SVGPathElement>;
 
-// --- Hamburger Path ---
 const Path = (props: MotionPathProps) => (
   <motion.path
     fill="transparent"
@@ -78,25 +77,24 @@ const MobileNav = ({
   isOpen: boolean;
 }) => {
   const sidebar = {
-  open: (height = 1000) => ({
-    clipPath: `circle(${height * 2 + 200}px at 40px 40px)`,
-    transition: {
-      type: 'spring' as const,
-      stiffness: 20,
-      restDelta: 2,
+    open: (height = 1000) => ({
+      clipPath: `circle(${height * 2 + 200}px at 40px 40px)`,
+      transition: {
+        type: "spring" as const,
+        stiffness: 20,
+        restDelta: 2,
+      },
+    }),
+    closed: {
+      clipPath: "circle(20px at calc(100% - 40px) 40px)",
+      transition: {
+        delay: 0.5,
+        type: "spring" as const,
+        stiffness: 400,
+        damping: 40,
+      },
     },
-  }),
-  closed: {
-    clipPath: 'circle(20px at calc(100% - 40px) 40px)',
-    transition: {
-      delay: 0.5,
-      type: 'spring' as const,
-      stiffness: 400,
-      damping: 40,
-    },
-  },
-};
-
+  };
 
   const menuVariants = {
     open: {
@@ -163,14 +161,36 @@ const MobileNav = ({
 
 const Navbar: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const toggleOpen = () => setIsOpen(!isOpen);
+  const [isVisible, setIsVisible] = useState(true);
 
+  const toggleOpen = () => setIsOpen(!isOpen);
   const logoUrl = "/ArushiLogo.svg";
+
+  useEffect(() => {
+    let timeout: NodeJS.Timeout;
+
+    const handleScroll = () => {
+      setIsVisible(true);
+
+      if (timeout) clearTimeout(timeout);
+
+      timeout = setTimeout(() => {
+        setIsVisible(false);
+      }, 2000);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+      if (timeout) clearTimeout(timeout);
+    };
+  }, []);
 
   return (
     <motion.nav
       initial={{ y: -100 }}
-      animate={{ y: 0 }}
+      animate={{ y: isVisible ? 0 : -120 }}
       transition={{ type: "spring", stiffness: 100, damping: 20 }}
       className="fixed top-0 left-0 right-0 z-50 p-4 bg-transparent"
     >
@@ -188,7 +208,6 @@ const Navbar: React.FC = () => {
           </Link>
         </div>
 
-        {/* Center: Desktop Navigation */}
         <div className="hidden lg:flex items-center justify-center mt-10 w-full pl-4">
           <div className="w-full max-w-7xl px-4 md:px-8 flex justify-center mx-auto">
             <div className="flex gap-[24px] px-[32px] py-[8px] items-center bg-custom-gradient backdrop-blur-sm rounded-sm">
@@ -215,16 +234,13 @@ const Navbar: React.FC = () => {
           </div>
         </div>
 
-        {/* Right: Hamburger on mobile */}
         <div className="lg:hidden">
           <MenuToggle toggle={toggleOpen} isOpen={isOpen} />
         </div>
 
-        {/* Spacer for desktop */}
         <div className="hidden lg:block w-10 h-10" />
       </div>
 
-      {/* Mobile nav overlay */}
       <MobileNav toggle={toggleOpen} isOpen={isOpen} />
     </motion.nav>
   );

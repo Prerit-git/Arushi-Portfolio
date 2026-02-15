@@ -2,10 +2,8 @@ import AccordionSection from "@/app/components/AccordionSection";
 import DecisionandOutcome from "@/app/components/DecisionandOutcome";
 import ImpactSection from "@/app/components/ImpactSection";
 import LeftSidebarNav from "@/app/components/LeftSidebarNav";
-import Navbar from "@/app/components/Navbar";
 import ProblemSection from "@/app/components/ProblemSection";
 import ProjectBrief from "@/app/components/ProjectBrief";
-import UserResearchSection from "@/app/components/UserResearchSection";
 import { caseStudies } from "@/data/caseStudies";
 import Image from "next/image";
 
@@ -24,7 +22,7 @@ export default async function CaseStudyDetail({ params }: CaseStudyPageProps) {
   return (
     <>
     <div>
-    <Navbar/>
+    {/* <Navbar/> */}
     </div>
     <div className="bg-white w-full pt-10 md:pt-25">
       <div className="w-full  mx-0 md:mx-auto pt-10 pb-32 px-4">

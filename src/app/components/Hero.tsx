@@ -35,7 +35,7 @@ export default function Hero() {
             }
           },
         },
-        y: 700,         
+        y: "150%",         
         x: 500,        
         rotateY: 180,   
         ease: "none",
