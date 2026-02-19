@@ -26,18 +26,22 @@ const Contact = () => {
             priority
           />
           <div className="flex gap-2">
+            <a href="mailto:designedbyarushi@gmail.com">
             <Image
             src={mailLogo}
             alt="mail-logo"
             width={32}
             height={32}
             />
+            </a>
+            <a href="https://www.linkedin.com/in/arushi-mathur-068a30124/">
             <Image
             src={linkedinLogo}
             alt="linkedin-logo"
             width={32}
             height={32}
             />
+            </a>
           </div>
         </div>
       </section>

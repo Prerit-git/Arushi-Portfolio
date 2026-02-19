@@ -2,27 +2,27 @@
 
 import { useState } from "react";
 
-export interface ImpactItem {
+export interface KeyItem {
   title: string;
   description: string;
 }
 
-export interface ImpactSectionData {
+export interface KeyLearningsData {
   heading: string;
   intro: string;
-  topItems: ImpactItem[];
+  keyItems: KeyItem[];
 }
 
 interface Props {
-  data: ImpactSectionData;
+  data: KeyLearningsData;
 }
 
-export default function ImpactSection({ data }: Props) {
-  const { topItems } = data;
+export default function KeyLearnings({ data }: Props) {
+  const { keyItems } = data;
 
   // Mobile click state
   const [flipped, setFlipped] = useState<boolean[]>(
-    Array(topItems.length).fill(false)
+    Array(keyItems.length).fill(false)
   );
 
   const toggleFlip = (index: number) => {
@@ -34,18 +34,18 @@ export default function ImpactSection({ data }: Props) {
   return (
     <section className="w-full max-w-6xl mx-auto pb-20 grid grid-cols-1 md:grid-cols-2 gap-0 md:gap-[50px]">
       <div className="pr-0 md:pr-20">
-        <h4 className="text-[#9CA3C7] tracking-widest font-semibold mb-2 text-[18px]">
-          STRATEGY
+        <h4 className="text-[#9CA3C7] tracking-widest font-semibold mb-2 text-[18px] uppercase">
+          Key Learnings
         </h4>
         <div className="w-full h-[2px] bg-[#A90D0D] mb-6" />
         <p className="text-[14px] text-[#4F4D4D] leading-[130%]">
-          I focused on <strong>reducing cognitive load</strong> at every decision point by:
+          Beyond the metrics, this revamp shaped my perspective on scalable personalization, stakeholder negotiation, and designing within real-world constraints.
         </p>
       </div>
 
       <div>
         <div className="flex md:grid grid-cols-1 md:grid-cols-2 gap-[25px] flex-col items-center">
-          {topItems.map((item, index) => (
+          {keyItems.map((item, index) => (
             <div
               key={index}
               className="flip-card h-[230px] w-[280px] perspective cursor-pointer"

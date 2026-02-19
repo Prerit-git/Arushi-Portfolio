@@ -96,32 +96,6 @@ const MobileNav = ({
     },
   };
 
-  const menuVariants = {
-    open: {
-      transition: { staggerChildren: 0.07, delayChildren: 0.2 },
-    },
-    closed: {
-      transition: { staggerChildren: 0.05, staggerDirection: -1 },
-    },
-  };
-
-  const itemVariants = {
-    open: {
-      y: 0,
-      opacity: 1,
-      transition: {
-        y: { stiffness: 1000, velocity: -100 },
-      },
-    },
-    closed: {
-      y: 50,
-      opacity: 0,
-      transition: {
-        y: { stiffness: 1000 },
-      },
-    },
-  };
-
   return (
     <AnimatePresence>
       {isOpen && (
@@ -132,17 +106,9 @@ const MobileNav = ({
           variants={sidebar}
           className="fixed h-screen inset-0 z-40 lg:hidden bg-[#FFE2E2] flex items-center justify-center p-8"
         >
-          <motion.ul
-            variants={menuVariants}
-            className="flex flex-col space-y-8 text-center"
-          >
+          <ul className="flex flex-col space-y-8 text-center">
             {navItems.map((item) => (
-              <motion.li
-                key={item.name}
-                variants={itemVariants}
-                whileHover={{ scale: 1.1 }}
-                whileTap={{ scale: 0.95 }}
-              >
+              <li key={item.name}>
                 <Link
                   href={item.href}
                   onClick={toggle}
@@ -150,9 +116,9 @@ const MobileNav = ({
                 >
                   {item.name}
                 </Link>
-              </motion.li>
+              </li>
             ))}
-          </motion.ul>
+          </ul>
         </motion.div>
       )}
     </AnimatePresence>
@@ -162,83 +128,101 @@ const MobileNav = ({
 const Navbar: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isVisible, setIsVisible] = useState(true);
+  const [hasScrolled, setHasScrolled] = useState(false);
 
   const toggleOpen = () => setIsOpen(!isOpen);
   const logoUrl = "/ArushiLogo.svg";
 
   useEffect(() => {
-    let timeout: NodeJS.Timeout;
+    let lastScrollY = window.scrollY;
 
     const handleScroll = () => {
-      setIsVisible(true);
+      const hero = document.getElementById("hero");
+      if (!hero) return;
 
-      if (timeout) clearTimeout(timeout);
+      const rect = hero.getBoundingClientRect();
+      const inHero = rect.bottom > 0;
 
-      timeout = setTimeout(() => {
+      if (inHero) {
+        setIsVisible(true);
+        return;
+      }
+
+      if (!hasScrolled && window.scrollY > 10) {
+        setHasScrolled(true);
+      }
+
+      if (!hasScrolled) return;
+
+      if (window.scrollY > lastScrollY) {
         setIsVisible(false);
-      }, 2000);
+      } else {
+        setIsVisible(true);
+      }
+
+      lastScrollY = window.scrollY;
     };
 
     window.addEventListener("scroll", handleScroll);
 
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-      if (timeout) clearTimeout(timeout);
-    };
-  }, []);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, [hasScrolled]);
 
   return (
     <motion.nav
+      onMouseEnter={() => setIsVisible(true)}
+      onMouseLeave={() => {
+        const hero = document.getElementById("hero");
+        if (!hero) return;
+        const rect = hero.getBoundingClientRect();
+        if (rect.bottom < 0) {
+          setIsVisible(false);
+        }
+      }}
       initial={{ y: -100 }}
       animate={{ y: isVisible ? 0 : -120 }}
       transition={{ type: "spring", stiffness: 100, damping: 20 }}
       className="fixed top-0 left-0 right-0 z-50 p-4 bg-transparent"
     >
       <div className="max-w-7xl mx-auto flex items-center justify-between">
-        <div className="flex items-center space-x-4">
-          <Link href="#" className="flex md:hidden items-center space-x-2 ">
-            <Image
-              src={logoUrl}
-              alt="Logo"
-              width={150}
-              height={40}
-              className="h-15 lg:h-20 w-auto"
-              priority
-            />
-          </Link>
-        </div>
+        <Link href="#" className="flex md:hidden items-center space-x-2 ">
+          <Image
+            src={logoUrl}
+            alt="Logo"
+            width={150}
+            height={40}
+            className="h-15 lg:h-20 w-auto"
+            priority
+          />
+        </Link>
 
         <div className="hidden lg:flex items-center justify-center mt-10 w-full pl-4">
-          <div className="w-full max-w-7xl px-4 md:px-8 flex justify-center mx-auto">
-            <div className="flex gap-[24px] px-[32px] py-[8px] items-center bg-custom-gradient backdrop-blur-sm rounded-sm">
-              <Link href="#" className="flex items-center">
-                <Image
-                  src={logoUrl}
-                  alt="Logo"
-                  width={54}
-                  height={54}
-                  className="h-[54px] w-[54px]"
-                  priority
-                />
+          <div className="flex gap-[24px] px-[32px] py-[8px] items-center bg-custom-gradient backdrop-blur-sm rounded-sm">
+            <Link href="#" className="flex items-center">
+              <Image
+                src={logoUrl}
+                alt="Logo"
+                width={54}
+                height={54}
+                className="h-[54px] w-[54px]"
+                priority
+              />
+            </Link>
+            {navItems.map((item) => (
+              <Link
+                key={item.name}
+                href={item.href}
+                className="text-white text-[18px] hover:text-[#FF0000] hover:font-bold uppercase transition-colors duration-200 px-3"
+              >
+                {item.name}
               </Link>
-              {navItems.map((item) => (
-                <Link
-                  key={item.name}
-                  href={item.href}
-                  className="text-white text-[18px] hover:text-[#FF0000] hover:font-bold uppercase transition-colors duration-200 px-3"
-                >
-                  {item.name}
-                </Link>
-              ))}
-            </div>
+            ))}
           </div>
         </div>
 
         <div className="lg:hidden">
           <MenuToggle toggle={toggleOpen} isOpen={isOpen} />
         </div>
-
-        <div className="hidden lg:block w-10 h-10" />
       </div>
 
       <MobileNav toggle={toggleOpen} isOpen={isOpen} />

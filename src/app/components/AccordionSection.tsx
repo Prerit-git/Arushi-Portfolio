@@ -21,13 +21,13 @@ export default function AccordionSection({ items }: Props) {
   };
 
   return (
-    <section className="w-full max-w-6xl mx-auto pb-20 grid grid-cols-1 md:grid-cols-2 gap-[0px] md:gap-[100px]">
+    <section className="w-full max-w-6xl mx-auto pb-20 grid grid-cols-1 md:grid-cols-2 gap-[0px] md:gap-[20px]">
       <div className="pr-0 md:pr-20">
             <h4 className="text-[#9CA3C7] tracking-widest font-semibold mb-2 text-[18px]">
              CONSTRAINTS
             </h4>
             <div className="w-full h-[2px] bg-[#A90D0D] mb-6" />
-            <p>The website wasn’t failing because of content volume —it was failing because <strong>users couldn’t make sense of it fast enough.</strong></p>
+            <p>A key challenge throughout the project was balancing competing priorities across business, engineering, and compliance while making deliberate trade-offs to protect scalability and impact.</p>
           </div>
 
         {/* RIGHT COLUMN */}
@@ -78,18 +78,18 @@ function AccordionRow({
   }, [isOpen]);
 
   return (
-    <div className="w-full">
+    <div className="w-full md:w-[628px]">
       {/* Header */}
       <button
         onClick={onClick}
-        className="w-full flex items-center justify-between bg-[#1E1E1E] text-white py-4 px-6 rounded-md text-[18px] font-semibold cursor-pointer"
+        className="w-full flex items-center justify-between bg-[#1E1E1E] text-white py-4 px-6 rounded-md text-[18px] font-semibold cursor-pointer text-left"
       >
         {title}
 
         <FaChevronDown
           className={`transition-transform duration-300 ${
             isOpen ? "rotate-180" : "rotate-0"
-          }`}
+          } w-5 h-5`}
         />
       </button>
 

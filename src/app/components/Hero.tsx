@@ -6,6 +6,7 @@ import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import About from './About';
 import { HiDownload } from 'react-icons/hi';
+import { MdOutlineFileDownload } from 'react-icons/md';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -56,6 +57,7 @@ export default function Hero() {
       </section> */}
       {/* HERO SECTION */}
       <section
+        id="hero"
         ref={sectionRef}
         className="flex flex-col lg:flex-row justify-center items-center h-screen w-full mx-auto px-0 md:px-[90px] pt-0 md:pt-20"
       >
@@ -77,7 +79,7 @@ export default function Hero() {
     <div className="absolute -bottom-[5px] left-[6px] z-[-1] bg-red-800 w-[172px] h-[46px] rounded-[4px]" />
 
     <button className="z-10 bg-[#FFE2E2] text-black p-[10px] font-extrabold text-[16px] w-[172px] h-[46px] rounded-[4px] gap-2 flex items-center justify-center cursor-pointer">
-      Resume <span><HiDownload  /></span>
+      Download CV <span><MdOutlineFileDownload className='w-5 h-5'/></span>
     </button>
   </motion.div>
 

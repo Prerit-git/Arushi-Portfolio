@@ -2,7 +2,7 @@ export const caseStudies = [
   {
     slug: "canara-hsbc-study",
     tag: "2024",
-    // title: "Opendoor/Mainstay • BLOX design system",
+    title: "Opendoor/Mainstay • BLOX design system",
     description:
       "Developed the company-wide design system for Mainstay, Opendoor's enterprise branch, including typography, iconography, color systems, and design components and patterns.",
     projectBrief: {
@@ -73,50 +73,82 @@ impactSection: {
   topItems: [
     {
       title: "Making the website behave like an e-commerce journey, not a document repository",
-      description: `Immediately reduced homepage drop-off by 15% within three months, with an overall 25% site-wide drop-off reduction from the homepage, indicating enhanced user engagement.`,
+      description: `The existing website presented dense information and layered navigation, requiring users to interpret insurance terminology and determine their own path forward without guided progression.`,
     },
     {
       title: "Aligning experiences to user intent and funnel stage",
-      description: `Redesigned interactive elements, like conversational calculators and engaging product pages, significantly increased user engagement, helping users better understand products.`,
+      description: `Users entered the website at different levels of awareness and readiness, yet the experience treated exploratory visitors, comparing users, and high-intent users the same.`,
     },
     {
       title: "Designing for low digital confidence users without hurting power users",
-      description: `Optimized campaign landing pages with sales funnel-aware design and personalized forms led to a significant increase in lead capture and quality, with agents reporting more accurate information.`,
+      description: `The platform needed to serve elderly and low-confidence digital users alongside agents and repeat users, whose expectations around clarity, reassurance, and speed differed significantly.`,
     },
     {
       title: "Prioritizing mobile-first clarity across the system",
-      description: `A mobile-first, minimalist design ensures a consistent, accessible, and pleasing experience across all devices. Simplifying interactions and clarifying content made the site more intuitive and efficient for diverse groups.`,
+      description: `A large share of traffic was mobile, but the information density and interaction patterns were not optimized for small screens or quick decision-making contexts.`,
     },
   ],
 },
 accordionSection: [
   {
     id: 1,
-    title: "Content vs usability",
+    title: "Business and SEO required content-heavy product pages that conflicted with usability goals.",
     content: `
-      <p>The initial sections of the homepage were specifically redesigned to be more inviting and conversion-focused…</p>
+      <p>Instead of cutting content, I restructured it into modular, visually digestible blocks with sticky index navigation and progressive disclosure preserving business depth while reducing perceived complexity.</p>
     `,
   },
   {
     id: 2,
-    title: "Component limits",
+    title: "Technical constraints limited component scalability while stakeholders expected highly unique designs.",
     content: `
-      <p>Calculator modules were redesigned to improve clarity and reduce friction for users…</p>
+      <p>I prioritized differentiation in high-impact journeys, standardized the rest through modular patterns, expanded the system to ~70 components where necessary, and deferred non-critical complexity to Phase 2 to protect timeline and scalability.</p>
     `,
   },
   {
     id: 3,
-    title: "Confidential metrics",
+    title: "Data confidentiality restricted access to exact conversion and revenue metrics.",
     content: `
-      <ul>
-        <li><strong>Visual Information Hierarchy:</strong> Simplified graphical representation…</li>
-        <li><strong>Sticky Index Navigation:</strong> Provided users with at-a-glance overview…</li>
-      </ul>
+      I aligned early on proxy success metrics (drop-offs, engagement depth, task completion) to demonstrate measurable UX impact while maintaining executive trust and data confidentiality.
     `,
   },
 ],
+keyLearningSection: {
+  heading: "Overall Impact of the Website UX Revamp",
+  intro: `The comprehensive UX revamp of the Canara HSBC Life website delivered <strong>significant improvements across key performance indicators</strong>, fundamentally transforming the digital experience for all users and directly contributing to critical business objectives. By meticulously addressing issues in information architecture, campaign-to-landing page transitions, and the usability of core sections like calculators and product pages, the project achieved a more engaged, intuitive, and conversion-focused platform.`,
+  
+  keyItems: [
+    {
+      title: "The power of phased personalisation ",
+      description: `Effective personalization isn’t about uniqueness everywhere, it’s about smart segmentation that aligns with business readiness and scale.`,
+    },
+    {
+      title: "Collaboration is King for complex projects",
+      description: `Sustainable UX outcomes require deep collaboration across business, marketing, SEO, and engineering especially when priorities conflict.`,
+    },
+    {
+      title: "Strategic compromise and phased rollouts",
+      description: `Shipping within constraints often means prioritizing core impact now while intentionally designing a roadmap for future evolution.`,
+    },
+    {
+      title: "UX is a continuous journey",
+      description: `Launching the revamp was a milestone, not a finish line.  Continuous measurement and optimization remain essential.`,
+    },
+  ],
+},
+footerImpact: {
+      impactBrief: "The revamp transformed the website into a guided decision-making experience while laying a scalable foundation for future growth.",
+      // title: "Left on Read (again)",
+      content: `
+        <ul">
+          <li>Reduced homepage drop-offs by 15% in three months, increasing overall homepage engagement by 25%.</li>
+          <li>Increased calculator completion and improved lead quality through funnel-aligned landing experiences.</li>
+          <li>Simplified the information architecture to improve discoverability and user progression.</li>
+          <li>Built a scalable UX foundation enabling faster experimentation and continuous performance optimization.</li>
+        </ul>
+      `,
+    },
     image:
-      "https://images.unsplash.com/photo-1620207418302-439b387441b0?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=100",
+      "/CHSBC_Banner.png",
     logo: "/CHL_Logo.svg",
     content: `
       <h2>Project Overview 1</h2>

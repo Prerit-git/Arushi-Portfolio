@@ -1,6 +1,8 @@
 import AccordionSection from "@/app/components/AccordionSection";
 import DecisionandOutcome from "@/app/components/DecisionandOutcome";
+import FooterImpactSection from "@/app/components/FooterImpactSection";
 import ImpactSection from "@/app/components/ImpactSection";
+import KeyLearnings from "@/app/components/KeyLearnings";
 import LeftSidebarNav from "@/app/components/LeftSidebarNav";
 import ProblemSection from "@/app/components/ProblemSection";
 import ProjectBrief from "@/app/components/ProjectBrief";
@@ -31,16 +33,18 @@ export default async function CaseStudyDetail({ params }: CaseStudyPageProps) {
           <Image
             src={data.logo}
             alt={`${data.title} Logo`}
-            width={200}
-            height={100}
+            width={135}
+            height={40}
             className="bg-white p-2"
             priority
           />
         </div>
 
+        <h2 className="text-[20px] md:text-[40px] pb-2">{data.title}</h2>
+
         <img
           src={data.image}
-          className="w-full h-auto md:h-[500px] object-cover rounded-lg"
+          className="w-full h-auto md:h-[618px] rounded-lg"
         />
         </div>
 
@@ -103,6 +107,22 @@ export default async function CaseStudyDetail({ params }: CaseStudyPageProps) {
             {/* Accordion Section */}
             <section id="constraints">
               <AccordionSection items={data.accordionSection ?? []} />
+            </section>
+
+            <section id="keyLearning" className="scroll-mt-24">
+              <KeyLearnings
+                data={{
+                  heading: data.keyLearningSection?.heading ?? "",
+                  intro: data.keyLearningSection?.intro ?? "",
+                  keyItems: data.keyLearningSection?.keyItems ?? [],
+                }}
+              />
+            </section>
+
+            <section id="footerImpact" className="scroll-mt-24">
+              <FooterImpactSection
+                impactBrief={data.footerImpact?.impactBrief ?? ""}
+                content={data.footerImpact?.content ?? ""}              />
             </section>
           </div>
         </div>

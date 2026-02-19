@@ -7,6 +7,7 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 import { MdKeyboardDoubleArrowRight } from "react-icons/md";
 import Link from "next/link";
+import { RxDoubleArrowRight } from "react-icons/rx";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -41,16 +42,16 @@ const cardsData = [
       "https://images.unsplash.com/photo-1620207418302-439b387441b0?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=100",
     logo: "CHL_Logo.svg"
   },
-  {
-    slug: "case-study-4",
-    tag: "2025",
-    title: "Opendoor/Mainstay • BLOX design system",
-    description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab dicta error nam eaque. Eum fuga laborum quos expedita iste saepe similique, unde possimus quia at magnam sed cupiditate? Reprehenderit, harum!",
-    image:
-      "https://images.unsplash.com/photo-1620207418302-439b387441b0?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=100",
-    logo: "CHL_Logo.svg"
-  },
+  // {
+  //   slug: "case-study-4",
+  //   tag: "2025",
+  //   title: "Opendoor/Mainstay • BLOX design system",
+  //   description:
+  //     "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab dicta error nam eaque. Eum fuga laborum quos expedita iste saepe similique, unde possimus quia at magnam sed cupiditate? Reprehenderit, harum!",
+  //   image:
+  //     "https://images.unsplash.com/photo-1620207418302-439b387441b0?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=100",
+  //   logo: "CHL_Logo.svg"
+  // },
 ];
 
 const StackedCards: React.FC = () => {
@@ -160,18 +161,18 @@ const StackedCards: React.FC = () => {
         static md:absolute -bottom-4 z-50
         bg-[#FFE2E2] text-black
         p-[2px] md:p-[10px]
-        font-bold md:font-semibold
+        font-bold md:font-bold
         text-[12px] md:text-[16px]
         w-[130px] md:w-[172px]
         h-[40px] md:h-[46px]
         rounded-[4px]
         flex items-center justify-center
-        cursor-pointer
+        cursor-pointer gap-1
       "
     >
-      View Case Study{" "}
+      View Case Study 
       <span>
-        <MdKeyboardDoubleArrowRight />
+        <RxDoubleArrowRight className="w-4 h-4"/>
       </span>
     </motion.button>
   </Link>

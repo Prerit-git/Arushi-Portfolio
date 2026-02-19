@@ -6,8 +6,10 @@ const sections = [
   { id: "project-brief", label: "Project Brief" },
   { id: "problem", label: "Problem" },
   { id: "strategy", label: "Strategy" },
-  { id: "dec-outcome", label: "Decision & Outcome" },
+  { id: "dec-outcome", label: "Key Decisions" },
   { id: "constraints", label: "Constraints" },
+  { id: "keyLearning", label: "Key Learnings" },
+  { id: "footerImpact", label: "Impact" },
 ];
 
 export default function LeftSidebarNav() {

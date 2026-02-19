@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { MdKeyboardDoubleArrowRight } from "react-icons/md";
+import { RxDoubleArrowRight } from "react-icons/rx";
 
 const About = () => {
   return (
@@ -24,10 +25,7 @@ const About = () => {
             transition={{ duration: 1, ease: "easeOut" }}
             viewport={{ amount: 0.5 }}
           >
-            For over 4 years, I’ve helped startups transform ideas into
-            market-ready digital products. I specialize in designing intuitive,
-            user-centered web and mobile experiences, building scalable design
-            systems,
+            Hi, I’m Arushi Mathur, a Product Designer with 7+ years of experience creating user-friendly, scalable digital products. I blend research, strategy, and visual design to build intuitive solutions that deliver real impact.
           </motion.h3>
 
           <motion.div
@@ -38,7 +36,7 @@ const About = () => {
             <motion.button
               className="absolute -bottom-8 z-30 bg-[#FFE2E2] text-black p-[10px] font-semibold text-[16px] w-[172px] h-[46px] rounded-[4px] flex items-center justify-center cursor-pointer gap-2"
             >
-              Get in touch <span><MdKeyboardDoubleArrowRight /></span>
+              Give it a try <span><RxDoubleArrowRight className="w-5 h-5"/></span>
             </motion.button>
             <motion.div
               className="absolute -bottom-[37px] left-[5px] z-20 bg-red-800 text-black p-[10px] font-extrabold text-[16px] w-[172px] h-[46px] rounded-[4px] flex items-center justify-center cursor-pointer"
