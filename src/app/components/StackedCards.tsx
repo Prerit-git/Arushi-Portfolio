@@ -15,12 +15,13 @@ const cardsData = [
   {
     slug: "canara-hsbc-study",
     tag: "2024",
-    title: "Opendoor/Mainstay • BLOX design system",
+    title: "Canara HSBC Life • UX Revamp",
     description:
-      "Developed the company-wide design system for Mainstay, Opendoor's enterprise branch, including typography, iconography, color systems, and design components and patterns.",
+      "Redesigned a high-traffic insurance website to reduce a 75% homepage drop-off and improve lead quality by simplifying information architecture, personalizing campaign journeys, and rethinking complex financial interactions.",
     image:
-      "https://images.unsplash.com/photo-1620207418302-439b387441b0?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=100",
-    logo: "CHL_Logo.svg"
+      "/Casestudy1cover.svg",
+    logo: "CHL_Logo.svg",
+    backgroundImg: "/CaseStudy1BG.svg"
   },
   {
     slug: "mg-case-study",
@@ -29,8 +30,9 @@ const cardsData = [
     description:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab dicta error nam eaque. Eum fuga laborum quos expedita iste saepe similique, unde possimus quia at magnam sed cupiditate? Reprehenderit, harum!",
     image:
-      "https://images.unsplash.com/photo-1620207418302-439b387441b0?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=100",
-    logo: "CHL_Logo.svg"
+      "/Casestudy1cover.svg",
+    logo: "CHL_Logo.svg",
+    backgroundImg: "/CaseStudy1BG.svg"
   },
   {
     slug: "case-study-3",
@@ -39,8 +41,9 @@ const cardsData = [
     description:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab dicta error nam eaque. Eum fuga laborum quos expedita iste saepe similique, unde possimus quia at magnam sed cupiditate? Reprehenderit, harum!",
     image:
-      "https://images.unsplash.com/photo-1620207418302-439b387441b0?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=100",
-    logo: "CHL_Logo.svg"
+      "/Casestudy1cover.svg",
+    logo: "CHL_Logo.svg",
+    backgroundImg: "/CaseStudy1BG.svg"
   },
   // {
   //   slug: "case-study-4",
@@ -113,7 +116,7 @@ const StackedCards: React.FC = () => {
         } as React.CSSProperties
       }
     >
-      {cardsData.map(({slug, tag, title, description, image, logo }, i) => (
+      {cardsData.map(({slug, tag, title, description, image, logo, backgroundImg }, i) => (
         <div
           key={i}
           className="card sticky top-10 md:top-35"
@@ -122,7 +125,7 @@ const StackedCards: React.FC = () => {
           }}
           data-index={i}
         >
-          <div className="card-inner will-change-transform bg-white rounded-[16px] flex flex-col md:flex-row overflow-hidden transform-origin-top px-5 md:px-15 py-6 md:py-18 gap-2 shadow-lg h-auto md:h-[520px]">
+          <div className="card-inner will-change-transform bg-cover bg-center rounded-[16px] flex flex-col md:flex-row overflow-hidden transform-origin-top px-5 md:px-15 py-6 md:py-18 gap-2 shadow-lg h-auto md:h-[520px]" style={{ backgroundImage: `url(${backgroundImg})` }}>
             <div className="flex-1 flex flex-col gap-[8px] justify-between">
               <div className="relative w-[100px] h-[30px] md:w-[135px] md:h-[40px] mb-2 md:mb-0">
                 <Image
@@ -195,11 +198,11 @@ const StackedCards: React.FC = () => {
             </div>
 
             {/* Right image */}
-            <div className="w-full md:w-1/2 flex-shrink-0">
+            <div className="w-full md:w-1/2">
               <img
                 src={image}
                 alt={`Card image ${i + 1}`}
-                className="object-contain w-full h-auto rounded"
+                className="object-fit w-full h-[277px] md:h-[477px]"
               />
             </div>
           </div>

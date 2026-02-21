@@ -2,9 +2,9 @@ export const caseStudies = [
   {
     slug: "canara-hsbc-study",
     tag: "2024",
-    title: "Opendoor/Mainstay • BLOX design system",
+    title: "UX Revamp for Canara HSBC Life Insurance",
     description:
-      "Developed the company-wide design system for Mainstay, Opendoor's enterprise branch, including typography, iconography, color systems, and design components and patterns.",
+      "Led an end-to-end UX revamp for a large-scale insurance platform serving diverse user groups including elderly users and field agents.",
     projectBrief: {
       brief: `Canara HSBC Life Insurance serves a wide spectrum of users—from digitally savvy buyers to elderly customers and field agents.
 
@@ -148,7 +148,7 @@ footerImpact: {
       `,
     },
     image:
-      "/CHSBC_Banner.png",
+      "/Coverimage.svg",
     logo: "/CHL_Logo.svg",
     content: `
       <h2>Project Overview 1</h2>
