@@ -29,7 +29,7 @@ const About = () => {
           </motion.h3>
 
           <motion.div
-            className="relative mt-5"
+            className="relative mt-10"
             whileHover={{ y: -2 }}
             whileTap={{ y: 2 }}
           >

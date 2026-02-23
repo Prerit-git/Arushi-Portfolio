@@ -6,6 +6,7 @@ import { usePathname } from "next/navigation";
 
 import Loader from "./components/Loader";
 import Navbar from "./components/Navbar";
+import Contact from "./components/Contact";
 
 export default function Providers({ children }: { children: React.ReactNode }) {
   const [loading, setLoading] = useState(true);
@@ -30,6 +31,7 @@ export default function Providers({ children }: { children: React.ReactNode }) {
         >
           {children}
         </motion.main>
+      <Contact/>
       </AnimatePresence>
 
       {/* Loader overlay */}

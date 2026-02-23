@@ -42,10 +42,10 @@ export default async function CaseStudyDetail({ params }: CaseStudyPageProps) {
 
         <img
           src={data.image}
-          className="w-full h-auto md:h-[445px] rounded-lg"
+          className="w-auto md:w-[1098px] h-auto md:h-[445px] rounded-lg"
         />
 
-        <h2 className="text-[20px] md:text-[48px] text-[#A90D0D] font-[400] ">{data.title}</h2>
+        <h2 className="text-[20px] md:text-[48px] text-[#A90D0D] font-[400] pt-[32px]">{data.title}</h2>
         <p className="text-[16px] text-[#4F4D4D]">{data.description}</p>
 
         </div>

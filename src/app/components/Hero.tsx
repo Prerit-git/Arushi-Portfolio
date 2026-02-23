@@ -78,9 +78,11 @@ export default function Hero() {
   >
     <div className="absolute -bottom-[5px] left-[6px] z-[-1] bg-red-800 w-[172px] h-[46px] rounded-[4px]" />
 
+      <a href="/Arushi Mathur_Resume 2025.docx">
     <button className="z-10 bg-[#FFE2E2] text-black p-[10px] font-extrabold text-[16px] w-[172px] h-[46px] rounded-[4px] gap-2 flex items-center justify-center cursor-pointer">
       Download CV <span><MdOutlineFileDownload className='w-5 h-5'/></span>
     </button>
+      </a>
   </motion.div>
 
   <img
@@ -96,8 +98,7 @@ export default function Hero() {
         <div className="flex-1 flex flex-col items-center md:items-start justify-start md:justify-center px-10 md:px-5 pt-2 md:pt-0">
           <h2 className="text-6xl md:text-[128px] leading-tight">DESIGNER</h2>
           <p className="mt-4 text-[18px] text-white leading-[110%] text-center md:text-left">
-            Hi, I’m a designer dedicated to crafting beautiful things and
-            experiences that actually help people.
+            Designing with empathy. Building with intention. Delivering with impact.
           </p>
         </div>
       </section>

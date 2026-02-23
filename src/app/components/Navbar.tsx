@@ -4,6 +4,7 @@ import React, { useState, useEffect, SVGProps } from "react";
 import Image from "next/image";
 import { motion, AnimatePresence, MotionProps } from "framer-motion";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 interface NavItem {
   name: string;
@@ -19,11 +20,14 @@ const navItems: NavItem[] = [
 
 type MotionPathProps = MotionProps & SVGProps<SVGPathElement>;
 
-const Path = (props: MotionPathProps) => (
+const Path = ({
+  isCaseStudyPage,
+  ...props
+}: MotionPathProps & { isCaseStudyPage: boolean }) => (
   <motion.path
     fill="transparent"
     strokeWidth="3"
-    stroke="white"
+    stroke={isCaseStudyPage ? "#1e1e1e" : "white"}
     strokeLinecap="round"
     {...props}
   />
@@ -32,9 +36,11 @@ const Path = (props: MotionPathProps) => (
 const MenuToggle = ({
   toggle,
   isOpen,
+  isCaseStudyPage,
 }: {
   toggle: () => void;
   isOpen: boolean;
+  isCaseStudyPage: boolean;
 }) => (
   <button
     onClick={toggle}
@@ -43,6 +49,7 @@ const MenuToggle = ({
   >
     <svg width="24" height="24" viewBox="0 0 24 24">
       <Path
+        isCaseStudyPage={isCaseStudyPage}
         variants={{
           closed: { d: "M 3 6 L 21 6" },
           open: { d: "M 6 6 L 18 18" },
@@ -50,6 +57,7 @@ const MenuToggle = ({
         animate={isOpen ? "open" : "closed"}
       />
       <Path
+        isCaseStudyPage={isCaseStudyPage}
         d="M 3 12 L 21 12"
         variants={{
           closed: { opacity: 1 },
@@ -59,6 +67,7 @@ const MenuToggle = ({
         animate={isOpen ? "open" : "closed"}
       />
       <Path
+        isCaseStudyPage={isCaseStudyPage}
         variants={{
           closed: { d: "M 3 18 L 21 18" },
           open: { d: "M 6 18 L 18 6" },
@@ -72,9 +81,11 @@ const MenuToggle = ({
 const MobileNav = ({
   toggle,
   isOpen,
+  isCaseStudyPage,
 }: {
   toggle: () => void;
   isOpen: boolean;
+  isCaseStudyPage: boolean;
 }) => {
   const sidebar = {
     open: (height = 1000) => ({
@@ -112,7 +123,9 @@ const MobileNav = ({
                 <Link
                   href={item.href}
                   onClick={toggle}
-                  className="text-4xl font-extrabold text-[#1e1e1e] hover:text-teal-400 transition-colors duration-300 block p-2"
+                  className={`text-4xl font-extrabold ${
+                    isCaseStudyPage ? "text-[#1e1e1e]" : "text-white"
+                  } hover:text-teal-400 transition-colors duration-300 block p-2`}
                 >
                   {item.name}
                 </Link>
@@ -128,64 +141,39 @@ const MobileNav = ({
 const Navbar: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isVisible, setIsVisible] = useState(true);
-  const [hasScrolled, setHasScrolled] = useState(false);
+
+  const pathname = usePathname();
+  const isCaseStudyPage = pathname.startsWith("/case-study");
 
   const toggleOpen = () => setIsOpen(!isOpen);
+
   const logoUrl = "/ArushiLogo.svg";
 
   useEffect(() => {
     let lastScrollY = window.scrollY;
 
     const handleScroll = () => {
-      const hero = document.getElementById("hero");
-      if (!hero) return;
-
-      const rect = hero.getBoundingClientRect();
-      const inHero = rect.bottom > 0;
-
-      if (inHero) {
-        setIsVisible(true);
-        return;
-      }
-
-      if (!hasScrolled && window.scrollY > 10) {
-        setHasScrolled(true);
-      }
-
-      if (!hasScrolled) return;
-
       if (window.scrollY > lastScrollY) {
         setIsVisible(false);
       } else {
         setIsVisible(true);
       }
-
       lastScrollY = window.scrollY;
     };
 
     window.addEventListener("scroll", handleScroll);
-
     return () => window.removeEventListener("scroll", handleScroll);
-  }, [hasScrolled]);
+  }, []);
 
   return (
     <motion.nav
-      onMouseEnter={() => setIsVisible(true)}
-      onMouseLeave={() => {
-        const hero = document.getElementById("hero");
-        if (!hero) return;
-        const rect = hero.getBoundingClientRect();
-        if (rect.bottom < 0) {
-          setIsVisible(false);
-        }
-      }}
       initial={{ y: -100 }}
       animate={{ y: isVisible ? 0 : -120 }}
       transition={{ type: "spring", stiffness: 100, damping: 20 }}
       className="fixed top-0 left-0 right-0 z-50 p-4 bg-transparent"
     >
       <div className="max-w-7xl mx-auto flex items-center justify-between">
-        <Link href="#" className="flex md:hidden items-center space-x-2 ">
+        <Link href="/" className="flex md:hidden items-center space-x-2">
           <Image
             src={logoUrl}
             alt="Logo"
@@ -198,7 +186,7 @@ const Navbar: React.FC = () => {
 
         <div className="hidden lg:flex items-center justify-center mt-10 w-full pl-4">
           <div className="flex gap-[24px] px-[32px] py-[8px] items-center bg-custom-gradient backdrop-blur-sm rounded-sm">
-            <Link href="#" className="flex items-center">
+            <Link href="/" className="flex items-center">
               <Image
                 src={logoUrl}
                 alt="Logo"
@@ -208,11 +196,16 @@ const Navbar: React.FC = () => {
                 priority
               />
             </Link>
+
             {navItems.map((item) => (
               <Link
                 key={item.name}
                 href={item.href}
-                className="text-white text-[18px] hover:text-[#FF0000] hover:font-bold uppercase transition-colors duration-200 px-3"
+                className={`${
+                  isCaseStudyPage
+                    ? "text-[#1e1e1e] hover:text-red-500"
+                    : "text-white hover:text-[#FF0000]"
+                } text-[18px] uppercase transition-colors duration-300 px-3`}
               >
                 {item.name}
               </Link>
@@ -221,11 +214,19 @@ const Navbar: React.FC = () => {
         </div>
 
         <div className="lg:hidden">
-          <MenuToggle toggle={toggleOpen} isOpen={isOpen} />
+          <MenuToggle
+            toggle={toggleOpen}
+            isOpen={isOpen}
+            isCaseStudyPage={isCaseStudyPage}
+          />
         </div>
       </div>
 
-      <MobileNav toggle={toggleOpen} isOpen={isOpen} />
+      <MobileNav
+        toggle={toggleOpen}
+        isOpen={isOpen}
+        isCaseStudyPage={isCaseStudyPage}
+      />
     </motion.nav>
   );
 };

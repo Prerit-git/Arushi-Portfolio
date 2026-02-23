@@ -125,7 +125,7 @@ const StackedCards: React.FC = () => {
           }}
           data-index={i}
         >
-          <div className="card-inner will-change-transform bg-cover bg-center rounded-[16px] flex flex-col md:flex-row overflow-hidden transform-origin-top px-5 md:px-15 py-6 md:py-18 gap-2 shadow-lg h-auto md:h-[520px]" style={{ backgroundImage: `url(${backgroundImg})` }}>
+          <div className="card-inner will-change-transform bg-cover bg-center rounded-[16px] flex flex-col md:flex-row overflow-hidden transform-origin-top px-5 md:px-15 pb-6 md:pb-18 pt-8 gap-2 shadow-lg h-auto md:h-[520px]" style={{ backgroundImage: `url(${backgroundImg})` }}>
             <div className="flex-1 flex flex-col gap-[8px] justify-between">
               <div className="relative w-[100px] h-[30px] md:w-[135px] md:h-[40px] mb-2 md:mb-0">
                 <Image
@@ -138,7 +138,7 @@ const StackedCards: React.FC = () => {
               </div>
 
               <div>
-                <div className="text-[#9A211F] font-bold bg-[#fce8e8] p-[10px] rounded w-fit mb-0 md:mb-3">
+                <div className="text-[#9A211F] font-bold bg-[#fce8e8] p-[10px] rounded w-fit mb-3">
                   <h6 className="text-[14px] md:text-[18px]">{tag}</h6>
                 </div>
 
@@ -183,12 +183,12 @@ const StackedCards: React.FC = () => {
   {/* Shadow / offset layer — DESKTOP ONLY */}
   <motion.div
     className="
-      hidden md:flex
-      absolute -bottom-5 left-1
+      flex
+      absolute -bottom-1 md:-bottom-5 left-1
       z-40
       bg-red-800
       pointer-events-none
-      w-[172px] h-[46px]
+      w-[130px] md:w-[172px] h-[40px] md:h-[46px]
       rounded-[4px]
       items-center justify-center
     "

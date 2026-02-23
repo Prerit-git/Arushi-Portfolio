@@ -47,13 +47,14 @@ const DecisionandOutcome = () => {
           </ul>
           <video
             src="/chsbcDecision1.mp4"
-            className="h-[304px] w-full mt-[16px]"
+            className="h-[304px] w-full mt-[16px] border border-gray-200 rounded-lg"
             autoPlay
             loop
             muted
             playsInline
             controls
           />
+          <p className="text-[#4F4D4D] text-[12px] text-center italic">Structural IA Changes Reflected in Global Navigation</p>
         </div>
 
         <div className="col-span-10 md:col-span-8 mt-18 flex flex-col gap-[16px]">
@@ -81,13 +82,14 @@ const DecisionandOutcome = () => {
           </ul>
           <video
             src="/chsbcDecision2.mp4"
-            className="h-[304px] w-full mt-[16px]"
+            className="h-[304px] w-full mt-[16px] border border-gray-200 rounded-lg"
             autoPlay
             loop
             muted
             playsInline
             controls
           />
+          <p><p className="text-[#4F4D4D] text-[12px] text-center italic">Structural IA Changes Reflected in Global Navigation</p></p>
         </div>
 
         <div className="col-span-10 md:col-span-8 mt-18 flex flex-col gap-[16px]">
@@ -115,13 +117,14 @@ const DecisionandOutcome = () => {
           </ul>
           <video
             src="/chsbcDecision3.mp4"
-            className="h-[304px] w-full mt-[16px]"
+            className="h-[304px] w-full mt-[16px] border border-gray-200 rounded-lg"
             autoPlay
             loop
             muted
             playsInline
             controls
           />
+          <p className="text-[#4F4D4D] text-[12px] text-center italic">Structural IA Changes Reflected in Global Navigation</p>
         </div>
       </div>
     </section>
