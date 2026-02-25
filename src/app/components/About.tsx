@@ -5,7 +5,7 @@ import { RxDoubleArrowRight } from "react-icons/rx";
 
 const About = () => {
   return (
-    <section className="relative h-screen w-full overflow-hidden bg-white" id="about">
+    <section className="relative h-auto md:h-screen w-full overflow-hidden bg-white" id="about">
       <Image
         src="/about_gradient_bg.svg"
         alt="Background"
@@ -19,7 +19,7 @@ const About = () => {
       <div className="relative z-20 h-full flex items-start md:items-center px-5 md:px-[90px] py-20 md:py-0">
         <div className="w-full md:max-w-2xl flex flex-col gap-2 text-[#000000]">
           <motion.h3
-            className="text-[30px] md:text-[48px]"
+            className="text-[38px] md:text-[48px]"
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, ease: "easeOut" }}
@@ -29,7 +29,7 @@ const About = () => {
           </motion.h3>
 
           <motion.div
-            className="relative mt-10"
+            className="relative mt-[32px]"
             whileHover={{ y: -2 }}
             whileTap={{ y: 2 }}
           >

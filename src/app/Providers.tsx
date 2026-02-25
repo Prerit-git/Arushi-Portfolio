@@ -6,7 +6,7 @@ import { usePathname } from "next/navigation";
 
 import Loader from "./components/Loader";
 import Navbar from "./components/Navbar";
-import Contact from "./components/Contact";
+// import Contact from "./components/Contact";
 
 export default function Providers({ children }: { children: React.ReactNode }) {
   const [loading, setLoading] = useState(true);
@@ -31,14 +31,14 @@ export default function Providers({ children }: { children: React.ReactNode }) {
         >
           {children}
         </motion.main>
-      <Contact/>
+      {/* <Contact/> */}
       </AnimatePresence>
 
       {/* Loader overlay */}
       <AnimatePresence>
         {loading && (
           <motion.div
-            className="fixed inset-0 z-50 flex items-center justify-center bg-[#1E1E1E]"
+            className="fixed inset-0 z-999 flex items-center justify-center bg-[#1E1E1E]"
             initial={{ opacity: 1 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}

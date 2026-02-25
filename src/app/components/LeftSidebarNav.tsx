@@ -30,7 +30,7 @@ export default function LeftSidebarNav() {
             const id = entry.target.id;
 
             setVisibleOrder((prev) =>
-              prev.includes(id) ? prev : [...prev, id]
+              prev.includes(id) ? prev : [...prev, id],
             );
 
             setSelected(id);
@@ -40,7 +40,7 @@ export default function LeftSidebarNav() {
       {
         threshold: 0.1,
         rootMargin: "0px 0px -30% 0px",
-      }
+      },
     );
 
     sections.forEach((sec) => {
@@ -87,7 +87,7 @@ export default function LeftSidebarNav() {
     <div
       className={`
         space-y-4 hidden md:block
-        transition-all duration-300 ease-in-out absolute z-99 top-15
+        transition-all duration-300 ease-in-out absolute z-90 top-15
         ${
           isScrolling
             ? "opacity-100 translate-x-0"
@@ -120,15 +120,14 @@ export default function LeftSidebarNav() {
   const mobileDropdown = (
     <div
       className={`
-        md:hidden sticky top-0 z-50
-        bg-white border-b px-4 py-3
-        transition-all duration-300 ease-in-out
-        ${
-          isScrolling
-            ? "opacity-100 translate-y-0"
-            : "opacity-0 -translate-y-3 pointer-events-none"
-        }
-      `}
+      md:hidden fixed bottom-4 left-0 w-full z-50 px-4
+      transition-all duration-300 ease-in-out
+      ${
+        isScrolling
+          ? "opacity-100 translate-y-0"
+          : "opacity-0 translate-y-6 pointer-events-none"
+      }
+    `}
     >
       <select
         value={selected}
@@ -137,25 +136,17 @@ export default function LeftSidebarNav() {
           scrollToSection(e.target.value);
         }}
         className="
-          w-full border rounded-xl px-4 py-3
-          text-base font-semibold text-gray-800
-          focus:outline-none
-        "
+        w-full border rounded-2xl px-4 py-4
+        text-base font-semibold text-gray-800
+        bg-white shadow-lg
+        focus:outline-none
+      "
       >
-        <option value="" disabled>
-          Jump to section
-        </option>
-
-        {visibleOrder.map((id) => {
-          const sec = sections.find((s) => s.id === id);
-          if (!sec) return null;
-
-          return (
-            <option key={sec.id} value={sec.id}>
-              {sec.label}
-            </option>
-          );
-        })}
+        {sections.map((sec) => (
+          <option key={sec.id} value={sec.id}>
+            {sec.label}
+          </option>
+        ))}
       </select>
     </div>
   );

@@ -27,7 +27,7 @@ const Path = ({
   <motion.path
     fill="transparent"
     strokeWidth="3"
-    stroke={isCaseStudyPage ? "#1e1e1e" : "white"}
+    stroke={isCaseStudyPage ? "#ffffff" : "white"}
     strokeLinecap="round"
     {...props}
   />
@@ -44,7 +44,7 @@ const MenuToggle = ({
 }) => (
   <button
     onClick={toggle}
-    className="relative z-50 p-3 rounded-full bg-[#333333] backdrop-blur-md focus:outline-none transition duration-300"
+    className="relative z-61 p-3 rounded-full bg-[#333333] backdrop-blur-md focus:outline-none transition duration-300"
     aria-label="Toggle Navigation"
   >
     <svg width="24" height="24" viewBox="0 0 24 24">
@@ -115,7 +115,7 @@ const MobileNav = ({
           animate="open"
           exit="closed"
           variants={sidebar}
-          className="fixed h-screen inset-0 z-40 lg:hidden bg-[#FFE2E2] flex items-center justify-center p-8"
+          className="fixed h-screen inset-0 z-60 lg:hidden bg-[#FFE2E2] flex items-center justify-center p-8"
         >
           <ul className="flex flex-col space-y-8 text-center">
             {navItems.map((item) => (

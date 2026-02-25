@@ -89,7 +89,7 @@ const DecisionandOutcome = () => {
             playsInline
             controls
           />
-          <p><p className="text-[#4F4D4D] text-[12px] text-center italic">Structural IA Changes Reflected in Global Navigation</p></p>
+          <p className="text-[#4F4D4D] text-[12px] text-center italic">Structural IA Changes Reflected in Global Navigation</p>
         </div>
 
         <div className="col-span-10 md:col-span-8 mt-18 flex flex-col gap-[16px]">

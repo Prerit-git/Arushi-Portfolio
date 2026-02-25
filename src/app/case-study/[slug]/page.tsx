@@ -1,4 +1,5 @@
 import AccordionSection from "@/app/components/AccordionSection";
+import Contact from "@/app/components/Contact";
 import DecisionandOutcome from "@/app/components/DecisionandOutcome";
 import FooterImpactSection from "@/app/components/FooterImpactSection";
 import ImpactSection from "@/app/components/ImpactSection";
@@ -129,6 +130,7 @@ export default async function CaseStudyDetail({ params }: CaseStudyPageProps) {
           </div>
         </div>
       </div>
+        <Contact />
     </div>
     </>
   );

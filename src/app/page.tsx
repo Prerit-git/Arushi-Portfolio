@@ -5,7 +5,7 @@ import { motion, AnimatePresence } from "framer-motion";
 // import Loader from "./components/Loader";
 // import Navbar from "./components/Navbar";
 import CaseStudies from "./components/CaseStudies";
-// import Contact from "./components/Contact";
+import Contact from "./components/Contact";
 import Hero from "./components/Hero";
 
 export default function Home() {
@@ -47,7 +47,7 @@ export default function Home() {
           </motion.div>
 
           <CaseStudies />
-          {/* <Contact /> */}
+          <Contact />
         </div>
       )}
     </>

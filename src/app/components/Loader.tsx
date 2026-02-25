@@ -34,7 +34,7 @@ export default function Loader() {
     <AnimatePresence>
       {isVisible && (
         <motion.div
-          className="loader-container fixed inset-0 z-50 flex flex-col items-center justify-center bg-[#1E1E1E]"
+          className="loader-container fixed inset-0 z-999 flex flex-col items-center justify-center bg-[#1E1E1E]"
           initial={{ opacity: 1, scale: 1 }}
           exit={{ opacity: 0, scale: 1.5 }}
           transition={{ duration: 1.2, ease: "easeInOut" }}
