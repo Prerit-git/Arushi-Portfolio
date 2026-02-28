@@ -7,6 +7,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import CaseStudies from "./components/CaseStudies";
 import Contact from "./components/Contact";
 import Hero from "./components/Hero";
+import BlogsSection from "./components/BlogsSection";
 
 export default function Home() {
   const [loading, setLoading] = useState(true);
@@ -47,6 +48,7 @@ export default function Home() {
           </motion.div>
 
           <CaseStudies />
+          <BlogsSection/>
           <Contact />
         </div>
       )}

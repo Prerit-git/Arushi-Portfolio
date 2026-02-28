@@ -175,7 +175,11 @@ const StackedCards: React.FC = () => {
     >
       View Case Study 
       <span>
-        <RxDoubleArrowRight className="w-4 h-4"/>
+        <img
+              src="/arrow-up-right.png"
+              alt="arrow-icon"
+              className="h-[20px] w-[20px]"
+            />
       </span>
     </motion.button>
   </Link>
