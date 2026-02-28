@@ -9,6 +9,7 @@
     "lint": "eslint"
   },
   "dependencies": {
+    "@tailwindcss/typography": "^0.5.19",
     "gsap": "^3.13.0",
     "motion": "^12.23.22",
     "next": "^16.0.10",

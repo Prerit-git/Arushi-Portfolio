@@ -9,7 +9,7 @@ export default function BlogCard({ post }: Props) {
   const featuredImage = post._embedded?.["wp:featuredmedia"]?.[0]?.source_url;
 
   return (
-    <Link href={`/blog/${post.slug}`}>
+    <Link href={`/blogs/${post.slug}`}>
       <div className="group bg-white rounded-[8px] shadow-sm hover:shadow-lg transition duration-300 overflow-hidden">
         <div className="p-6">
           {featuredImage && (
@@ -24,7 +24,7 @@ export default function BlogCard({ post }: Props) {
 
           <div className="flex justify-between items-center pt-8">
             <h2
-              className="text-[24px] text-gray-900 font-semibold transition"
+              className="text-[24px] text-gray-900 font-semibold transition h-[64px]"
               dangerouslySetInnerHTML={{ __html: post.title.rendered }}
             />
             <img
