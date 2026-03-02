@@ -147,6 +147,12 @@ footerImpact: {
         </ul>
       `,
     },
+
+    nextRead:{
+      title: "Canara HSBC Life • UX Revamp",
+      description: "Redesigned a high-traffic insurance website to reduce a 75% homepage drop-off and improve lead quality by simplifying information architecture, personalizing campaign journeys, and rethinking complex financial interactions.",
+      imageUrl: "/Coverimage.svg",
+    },
     image:
       "/Coverimage.svg",
     logo: "/CHL_Logo.svg",

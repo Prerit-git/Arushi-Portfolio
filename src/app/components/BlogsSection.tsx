@@ -1,9 +1,10 @@
+"use client"
+
 import { WPPost } from "@/types/wordpress";
 import BlogCard from "./BlogCard";
 import { useEffect, useState } from "react";
 import { getPosts } from "@/lib/getPosts";
 import { motion } from "framer-motion";
-import { RxDoubleArrowRight } from "react-icons/rx";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
 

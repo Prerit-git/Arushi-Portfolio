@@ -255,3 +255,19 @@ h1, h2, h3, h4, h5, h6 {
   background-color: #FFE2E2;
   border-radius: 4px;
 }
+
+.nextReadStyle{
+  position: relative;
+  padding-bottom: 5px;
+}
+
+.nextReadStyle::after{
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 160px;
+  height: 3px;
+  background-color: #FFE2E2;
+  border-radius: 4px;
+}

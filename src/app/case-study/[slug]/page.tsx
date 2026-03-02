@@ -1,10 +1,13 @@
 import AccordionSection from "@/app/components/AccordionSection";
+import BackButton from "@/app/components/BackButton";
+import BlogsSection from "@/app/components/BlogsSection";
 import Contact from "@/app/components/Contact";
 import DecisionandOutcome from "@/app/components/DecisionandOutcome";
 import FooterImpactSection from "@/app/components/FooterImpactSection";
 import ImpactSection from "@/app/components/ImpactSection";
 import KeyLearnings from "@/app/components/KeyLearnings";
 import LeftSidebarNav from "@/app/components/LeftSidebarNav";
+import NextReadCard from "@/app/components/NextReadCard";
 import ProblemSection from "@/app/components/ProblemSection";
 import ProjectBrief from "@/app/components/ProjectBrief";
 import { caseStudies } from "@/data/caseStudies";
@@ -38,8 +41,9 @@ export default async function CaseStudyDetail({ params }: CaseStudyPageProps) {
             height={40}
             className="bg-white p-2"
             priority
-          />
+            />
         </div>
+            <BackButton/>
 
         <img
           src={data.image}
@@ -127,9 +131,18 @@ export default async function CaseStudyDetail({ params }: CaseStudyPageProps) {
                 impactBrief={data.footerImpact?.impactBrief ?? ""}
                 content={data.footerImpact?.content ?? ""}              />
             </section>
+
+            <section>
+              <NextReadCard
+              title={data.nextRead?.title ?? ""}
+              description={data.nextRead?.description ?? ""}
+              imageUrl={data.nextRead?.imageUrl ?? ""}
+              />
+            </section>
           </div>
         </div>
       </div>
+      <BlogsSection/>
         <Contact />
     </div>
     </>

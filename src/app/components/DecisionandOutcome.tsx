@@ -89,7 +89,7 @@ const DecisionandOutcome = () => {
             playsInline
             controls
           />
-          <p className="text-[#4F4D4D] text-[12px] text-center italic">Structural IA Changes Reflected in Global Navigation</p>
+          <p className="text-[#4F4D4D] text-[12px] text-center italic">Funnel-Aligned Campaign Landing Experiences</p>
         </div>
 
         <div className="col-span-10 md:col-span-8 mt-18 flex flex-col gap-[16px]">
@@ -124,7 +124,7 @@ const DecisionandOutcome = () => {
             playsInline
             controls
           />
-          <p className="text-[#4F4D4D] text-[12px] text-center italic">Structural IA Changes Reflected in Global Navigation</p>
+          <p className="text-[#4F4D4D] text-[12px] text-center italic">Reducing Cognitive Load in High-Stakes Financial Decision & Lead Capture Journeys</p>
         </div>
       </div>
     </section>
