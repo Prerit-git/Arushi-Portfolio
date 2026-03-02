@@ -4,7 +4,7 @@ export async function getPosts(): Promise<WPPost[]> {
   try {
     const res = await fetch(
       "https://blogs.designedbyarushi.com/wp-json/wp/v2/posts?_embed",
-      { next: { revalidate: 60 } }
+      // { next: { revalidate: 60 } }
     );
     if (!res.ok) return [];
     return await res.json();
