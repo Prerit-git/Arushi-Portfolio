@@ -24,7 +24,7 @@ export default function ProjectBrief({ data }: ProjectBriefProps) {
         </h4>
         <div className="w-full h-[2px] bg-[#A90D0D] mb-6" />
 
-        <p className="text-[14px] text-[#4F4D4D] leading-[130%] whitespace-pre-line">
+        <p className="text-[#4F4D4D] leading-[130%] whitespace-pre-line">
           {data.brief}
         </p>
       </div>
@@ -40,28 +40,28 @@ export default function ProjectBrief({ data }: ProjectBriefProps) {
         {/* META GRID */}
         <div className="grid grid-cols-2 gap-x-[57px] gap-y-[28px] mb-[28px] mt-15">
           <div>
-            <p className="text-[16px] text-[#4F4D4D] font-bold">
+            <p className=" text-[#4F4D4D] font-bold">
               Role
             </p>
             <p className="text-[#4F4D4D] text-[14px]">{data.role}</p>
           </div>
 
           <div>
-            <p className="text-[16px] text-[#4F4D4D] font-bold">
+            <p className=" text-[#4F4D4D] font-bold">
               Timeline
             </p>
             <p className="text-[#4F4D4D] text-[14px]">{data.timeline}</p>
           </div>
 
           <div>
-            <p className="text-[16px] text-[#4F4D4D] font-bold">
+            <p className=" text-[#4F4D4D] font-bold">
               Team
             </p>
             <p className="text-[#4F4D4D] text-[14px]">{data.team}</p>
           </div>
 
           <div>
-            <p className="text-[16px] text-[#4F4D4D] font-bold">
+            <p className=" text-[#4F4D4D] font-bold">
               Tools
             </p>
             <p className="text-[#4F4D4D] text-[14px]">{data.skills}</p>
@@ -70,10 +70,10 @@ export default function ProjectBrief({ data }: ProjectBriefProps) {
 
         {/* BULLET LIST */}
         <div>
-          <p className="text-[#4F4D4D] font-bold text-[14px] mb-4">
+          <p className="text-[#4F4D4D] font-bold mb-4">
             I led UX strategy and execution end-to-end:
           </p>
-          <ul className="list-disc list-inside text-[#4F4D4D] text-[14px] leading-[130%]">
+          <ul className="list-disc list-inside text-[#4F4D4D] leading-[130%]">
             {data.responsibilities.map((item: string, index: number) => (
               <li key={index}>{item}</li>
             ))}

@@ -14,7 +14,7 @@ export default function ContinueReading({ posts }: Props) {
   const router = useRouter();
 
   return (
-    <div className="px-5 md:px-[90px] py-10 pb-20 md:py-20 flex flex-col gap-20 bg-[#FFBBE6]">
+    <div className="px-5 md:px-[90px] py-10 pb-20 md:py-20 flex flex-col gap-10 bg-[#FFBBE6]">
       <h1 className="text-[40px] md:text-[80px] text-white font-semibold">
         Continue Reading
       </h1>

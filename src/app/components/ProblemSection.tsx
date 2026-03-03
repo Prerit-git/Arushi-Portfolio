@@ -18,7 +18,7 @@ export default function ProblemSection({ problemBrief, keyInsight, content }: Pr
           THE CORE PROBLEM
         </h4>
         <div className="w-full h-[2px] bg-[#A90D0D] mb-6" />
-        <p className="text-[14px] text-[#4F4D4D] leading-[130%] whitespace-pre-line">
+        <p className=" text-[#4F4D4D] leading-[130%] whitespace-pre-line">
           {problemBrief}
         </p>
       </div>
@@ -27,7 +27,7 @@ export default function ProblemSection({ problemBrief, keyInsight, content }: Pr
         {/* <h2 className="text-4xl font-bold text-[#1E1E1E] mb-6">{title}</h2> */}
 
         <div
-          className="text-[14px] text-[#4F4D4D] leading-[140%] space-y-6 px-[10px] md:px-0"
+          className=" text-[#4F4D4D] leading-[140%] space-y-6 px-[10px] md:px-0"
           dangerouslySetInnerHTML={{ __html: content }}
         />
       <div className="flex justify-start mt-[32px]">
@@ -43,7 +43,7 @@ export default function ProblemSection({ problemBrief, keyInsight, content }: Pr
     <h6 className="font-bold text-[18px]">Key Insight</h6>
     <p
       dangerouslySetInnerHTML={{ __html: keyInsight }}
-      className="text-[14px] font-bold leading-[130%] mt-[16px]"
+      className="font-bold leading-[130%] mt-[16px]"
     ></p>
   </div>
 </div>

@@ -170,7 +170,7 @@ h1, h2, h3, h4, h5, h6 {
 .blog-content .highlight-box p{
   font-size: 32px;
   font-style: italic;
-  font-weight: 600;
+  font-weight: 700;
   color: #25293F;
   line-height: 1.2;
   margin: 0;
@@ -236,8 +236,13 @@ h1, h2, h3, h4, h5, h6 {
 
 /* Bullet color */
 .blog-content .wp-block-group ul li::marker {
-  color: #ffffff;
+  color: #FFE2FC;
   font-size: 20px;
+}
+
+.blog-content .wp-block-group .big-dots li::marker {
+  color: #FFE2FC;
+  font-size: 35px;
 }
 
 .blog-content .wp-block-group h3 {

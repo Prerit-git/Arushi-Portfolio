@@ -15,7 +15,7 @@ export default function FooterImpactSection({ impactBrief, content }: FooterImpa
           IMPACT
         </h4>
         <div className="w-full h-[2px] bg-[#A90D0D] mb-6" />
-        <p className="text-[14px] text-[#4F4D4D] leading-[130%] whitespace-pre-line">
+        <p className=" text-[#4F4D4D] leading-[130%] whitespace-pre-line">
           {impactBrief}
         </p>
       </div>
@@ -24,7 +24,7 @@ export default function FooterImpactSection({ impactBrief, content }: FooterImpa
         {/* <h2 className="text-4xl font-bold text-[#1E1E1E] mb-6">{title}</h2> */}
 
         <div
-          className="text-[14px] text-[#4F4D4D] leading-[140%] space-y-6 px-[10px] md:px-0"
+          className=" text-[#4F4D4D] leading-[140%] space-y-6 px-[10px] md:px-0"
           dangerouslySetInnerHTML={{ __html: content }}
         />
 

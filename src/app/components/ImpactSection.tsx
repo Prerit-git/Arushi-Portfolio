@@ -38,13 +38,13 @@ export default function ImpactSection({ data }: Props) {
           STRATEGY
         </h4>
         <div className="w-full h-[2px] bg-[#A90D0D] mb-6" />
-        <p className="text-[14px] text-[#4F4D4D] leading-[130%]">
+        <p className=" text-[#4F4D4D] leading-[130%]">
           I focused on <strong>reducing cognitive load</strong> at every decision point by:
         </p>
       </div>
 
       <div>
-        <div className="flex md:grid grid-cols-1 md:grid-cols-2 gap-[25px] flex-col items-center">
+        <div className="flex md:grid grid-cols-1 md:grid-cols-2 gap-[25px] flex-col items-center mt-[50px]">
           {topItems.map((item, index) => (
             <div
               key={index}
