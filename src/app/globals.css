@@ -264,14 +264,18 @@ h1, h2, h3, h4, h5, h6 {
 .nextReadStyle{
   position: relative;
   padding-bottom: 5px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
 }
 
 .nextReadStyle::after{
   content: "";
-  position: absolute;
+  /* position: absolute;
   left: 0;
-  bottom: 0;
-  width: 160px;
+  bottom: 0; */
+  width: 260px;
   height: 3px;
   background-color: #FFE2E2;
   border-radius: 4px;

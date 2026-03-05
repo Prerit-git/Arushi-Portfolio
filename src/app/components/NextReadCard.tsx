@@ -17,11 +17,11 @@ export default function NextReadCard({
   onClick,
 }: NextReadCardProps) {
   return (
-    <section className="w-full bg-[#25293F] rounded-2xl px-6 py-8 md:px-10 md:py-12">
-      <p className="text-[32px] font-bold text-white nextReadStyle">
+    <section className="w-full bg-[#25293F] rounded-2xl px-6 py-8 md:px-8 md:py-8">
+      <p className="text-[32px] font-bold text-white text-center nextReadStyle">
         Your next read
       </p>
-      <div className="flex flex-col lg:flex-row items-center gap-8 py-10">
+      <div className="flex flex-col lg:flex-row items-center gap-6 py-8">
         {/* Image Section */}
         <div className="w-full lg:w-1/2">
           <div className="w-full pt-4">

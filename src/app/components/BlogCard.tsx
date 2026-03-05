@@ -11,7 +11,7 @@ export default function BlogCard({ post }: Props) {
 
   return (
     <Link href={`/blogs/${post.slug}`}>
-      <div className="group bg-white rounded-[8px] shadow-sm hover:shadow-lg transition duration-300 overflow-hidden w-[384px]">
+      <div className="group bg-white rounded-[8px] shadow-sm hover:shadow-lg transition duration-300 overflow-hidden w-auto md:w-[384px]">
         <div className="p-6">
           {featuredImage && (
             <div className="overflow-hidden rounded-lg">
