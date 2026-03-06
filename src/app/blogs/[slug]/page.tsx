@@ -28,6 +28,7 @@ export default async function BlogDetailPage(props: Props) {
   return (
     <section className="pt-20 text-white">
       <div className="max-w-6xl mx-auto py-16 px-6">
+        <div className="w-full flex justify-between items-center mb-[20px]">
 
         <BackButton/>
 
@@ -46,6 +47,7 @@ export default async function BlogDetailPage(props: Props) {
             year: "numeric",
           })}
         </p>
+        </div>
         <p
           className="text-[32px] md:text-[64px] font-bold mb-4 leading-[110%]"
           dangerouslySetInnerHTML={{ __html: post.title.rendered }}

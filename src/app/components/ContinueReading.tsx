@@ -19,7 +19,7 @@ export default function ContinueReading({ posts }: Props) {
         Continue Reading
       </h1>
 
-      <div className="grid md:grid-cols-3 gap-8">
+      <div className="grid md:grid-cols-3 gap-24">
         {posts.map((post) => (
           <BlogCard key={post.id} post={post} />
         ))}

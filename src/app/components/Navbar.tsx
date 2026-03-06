@@ -151,20 +151,30 @@ const Navbar: React.FC = () => {
   const logoUrl = "/ArushiLogo.svg";
 
   useEffect(() => {
-    let lastScrollY = window.scrollY;
+  let lastScrollY = window.scrollY;
 
-    const handleScroll = () => {
-      if (window.scrollY > lastScrollY) {
-        setIsVisible(false);
-      } else {
-        setIsVisible(true);
-      }
-      lastScrollY = window.scrollY;
-    };
+  const handleScroll = () => {
+    const currentScrollY = window.scrollY;
 
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+    // Always show navbar near top
+    if (currentScrollY < 50) {
+      setIsVisible(true);
+    } 
+    // scrolling down
+    else if (currentScrollY > lastScrollY) {
+      setIsVisible(false);
+    } 
+    // scrolling up
+    else {
+      setIsVisible(true);
+    }
+
+    lastScrollY = currentScrollY;
+  };
+
+  window.addEventListener("scroll", handleScroll);
+  return () => window.removeEventListener("scroll", handleScroll);
+}, []);
 
   return (
     <motion.nav

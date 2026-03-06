@@ -29,7 +29,7 @@ const BlogsSection = ()=>{
         <section className="px-5 md:px-[90px] py-10 pb-20 md:py-20 flex flex-col gap-10 bg-[#FFBBE6] h-auto" id="blog-section">
         <h1 className="text-[40px] md:text-[80px] text-white">Blogs</h1>
 
-        <div className="grid md:grid-cols-3 gap-[32px]">
+        <div className="grid md:grid-cols-3 gap-[96px]">
       {posts.slice(0, 3).map((post) => (
         <BlogCard key={post.id} post={post} />
       ))}

@@ -32,6 +32,9 @@ export default async function CaseStudyDetail({ params }: CaseStudyPageProps) {
     </div>
     <div className="bg-white w-full pt-10 md:pt-25">
       <div className="w-full  mx-0 md:mx-auto pt-10 pb-32 px-4">
+          <div className="pl-2 md:pl-[96px]">
+            <BackButton/>
+          </div>
         <div className="w-full max-w-6xl mx-auto">
         <div className="mb-5">
           <Image
@@ -43,7 +46,6 @@ export default async function CaseStudyDetail({ params }: CaseStudyPageProps) {
             priority
             />
         </div>
-            <BackButton/>
 
         <img
           src={data.image}
