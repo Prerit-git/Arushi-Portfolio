@@ -1,29 +1,43 @@
 "use client"
 
 import Image from "next/image"
-import { useRouter } from "next/navigation";
+import { useRouter } from "next/navigation"
 
-const BackButton = () => {
-    const router = useRouter();
+const BackButton = ({
+  textColor = "#cccccc",
+  imageSrc = "/arrow-left.png",
+  label = "back",
+  fallbackRoute = "/blogs",
+}) => {
+
+  const router = useRouter()
+
+  const handleClick = () => {
+    if (window.history.length > 1) {
+      router.back()
+    } else {
+      router.push(fallbackRoute)
+    }
+  }
 
   return (
-    <button className="flex gap-2 items-center mb-3 cursor-pointer" onClick={() => {
-  if (window.history.length > 1) {
-    router.back();
-  } else {
-    router.push("/blogs");
-  }
-}}>
-              <span>
-                <Image
-                  src={"/arrow-left.png"}
-                  width={24}
-                  height={24}
-                  alt="arrow-icon"
-                />
-              </span>
-              <p className="text-[20px] text-[#CCCCCC]">back</p>
-            </button>
+    <button
+      className="flex gap-2 items-center mb-3 cursor-pointer"
+      onClick={handleClick}
+    >
+      <span>
+        <Image
+          src={imageSrc}
+          width={24}
+          height={24}
+          alt="back-icon"
+        />
+      </span>
+
+      <p style={{ color: textColor }} className="text-[20px]">
+        {label}
+      </p>
+    </button>
   )
 }
 

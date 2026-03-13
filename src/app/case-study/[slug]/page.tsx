@@ -32,8 +32,8 @@ export default async function CaseStudyDetail({ params }: CaseStudyPageProps) {
     </div>
     <div className="bg-white w-full pt-10 md:pt-25">
       <div className="w-full  mx-0 md:mx-auto pt-10 pb-32 px-4">
-          <div className="pl-2 md:pl-[96px]">
-            <BackButton/>
+          <div className="pl-2 md:pl-[70px]">
+            <BackButton imageSrc="/arrow-left-black.png" textColor="#000000"/>
           </div>
         <div className="w-full max-w-6xl mx-auto">
         <div className="mb-5">
