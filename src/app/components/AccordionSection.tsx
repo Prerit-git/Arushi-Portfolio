@@ -55,7 +55,7 @@ export default function AccordionSection({ items }: Props) {
     Single Accordion Row
 --------------------------- */
 
-function AccordionRow({
+export function AccordionRow({
   isOpen,
   title,
   content,
