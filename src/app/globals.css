@@ -303,3 +303,52 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* About page style */
+/* 🔁 Vertical infinite loop */
+@keyframes verticalLoop {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-50%);
+  }
+}
+
+/* 🔁 Horizontal infinite loop */
+@keyframes horizontalLoop {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+/* ⚡ Fast + smooth animation */
+.animate-verticalLoop {
+  animation: verticalLoop 10s linear infinite;
+}
+
+.animate-horizontalLoop {
+  animation: horizontalLoop 3s linear infinite;
+}
+
+/* ✨ Fade mask (premium look) */
+.slider-mask-vertical {
+  mask-image: linear-gradient(
+    to bottom,
+    transparent,
+    black 20%,
+    black 80%,
+    transparent
+  );
+}
+
+.slider-mask-horizontal {
+  mask-image: linear-gradient(
+    to right,
+    transparent,
+    black 20%,
+    black 80%,
+    transparent
+  );
+}

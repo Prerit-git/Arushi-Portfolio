@@ -62,7 +62,7 @@ export default function AboutAccordion({
               className={`w-full flex justify-between items-center transition-all ${headerClass}`}
             >
               <h1
-                className={`text-[32px] font-normal ${
+                className={`text-[25px] md:text-[32px] font-normal text-left leading-tight md:leading-normal ${
                   isOpen ? "text-[#FFE2E2]" : "text-white"
                 }`}
               >
