@@ -1,9 +1,12 @@
+"use client"
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { MdKeyboardDoubleArrowRight } from "react-icons/md";
 import { RxDoubleArrowRight } from "react-icons/rx";
+import { useRouter } from "next/navigation";
 
 const About = () => {
+  const router = useRouter()
   return (
     <section className="relative h-auto md:h-screen w-full overflow-hidden bg-white" id="about">
       <Image
@@ -35,6 +38,7 @@ const About = () => {
           >
             <motion.button
               className="absolute -bottom-8 z-30 bg-[#FFE2E2] text-black p-[10px] font-semibold text-[16px] w-[172px] h-[46px] rounded-[4px] flex items-center justify-center cursor-pointer gap-2"
+              onClick={()=>router.push("/about")}
             >
               Give it a try <span><RxDoubleArrowRight className="w-5 h-5"/></span>
             </motion.button>

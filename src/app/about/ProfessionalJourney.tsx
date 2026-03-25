@@ -38,17 +38,17 @@ export default function ProfessionalJourney() {
 
         {/* ✅ Mobile → Horizontal Slider */}
         <div className="md:hidden w-full overflow-hidden slider-mask-horizontal pt-5">
-          <div className="animate-horizontalLoop flex items-center">
-            {[...icons, ...icons, ...icons, ...icons].map((icon, i) => (
-              <img
-                key={i}
-                src={icon}
-                alt="tool"
-                className="w-12 h-12 mx-4 opacity-80 hover:opacity-100 transition"
-              />
-            ))}
-          </div>
-        </div>
+  <div className="animate-horizontalLoop flex items-center w-max">
+    {[...icons, ...icons].map((icon, i) => (
+      <img
+        key={i}
+        src={icon}
+        alt="tool"
+        className="w-12 h-12 mx-4 opacity-80"
+      />
+    ))}
+  </div>
+</div>
       </div>
 
       {/* 🔹 Content */}

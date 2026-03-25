@@ -1,9 +1,18 @@
 
+import { useIsMobile } from "@/lib/useIsMobile";
 import AboutAccordion from "./AboutAccordion";
 import { aboutAccordionData } from "@/data/aboutAccordion";
+import { useEffect } from "react";
 
-export default function ApproachSection({ targetRef }: { targetRef: any }) {
+export default function ApproachSection({ targetRef, onReady  }: { targetRef: any, onReady:any }) {
+  const isMobile = useIsMobile();
+  useEffect(() => {
+    if (isMobile !== null) {
+      onReady?.();
+    }
+  }, [isMobile]);
 
+  if (isMobile === null) return null;
   return (
     <section className="flex flex-col lg:flex-row h-screen w-full mx-auto px-0 md:px-[90px] py-30">
       
@@ -26,7 +35,7 @@ export default function ApproachSection({ targetRef }: { targetRef: any }) {
 
         contentClass="pb-4 text-white text-[16px] md:text-[20px] leading-[120%]"
 
-        defaultOpenIndex={0}
+        defaultOpenIndex={isMobile ? 0 : null}
       />
       </div>
     </section>

@@ -19,7 +19,7 @@ export const aboutAccordionData: AccordionItemType[] = [
       <li>structuring information clearly</li>
       <li>guiding users through decision flows</li>
       <li>removing unnecessary friction</li>
-      </ul>
+      </ul><br/>
       <p>Good design doesn’t remove complexity — it organizes it.</p>
     `,
   },
@@ -33,7 +33,7 @@ export const aboutAccordionData: AccordionItemType[] = [
       <li>reduce development rework</li>
       <li>maintain cross-platform consistency</li>
       <li>accelerate product delivery</li>
-      </ul>
+      </ul><br/>
       <p>Design should not just solve today's problem — it should enable future growth.</p>
     `,
   },

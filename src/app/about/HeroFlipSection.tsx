@@ -1,11 +1,12 @@
 "use client";
 
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { MdOutlineFileDownload } from "react-icons/md";
 import ApproachSection from "./ApproachSection";
+import Image from "next/image";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -14,8 +15,10 @@ export default function HeroFlipSection() {
   const sectionRef = useRef<HTMLElement | null>(null);
   const nextSectionRef = useRef<HTMLElement | null>(null);
   const targetRef = useRef<HTMLDivElement | null>(null);
+  const [isLayoutReady, setIsLayoutReady] = useState(false);
 
   useEffect(() => {
+    if (!isLayoutReady) return;
     if (window.innerWidth < 768) return;
 
     const image = imageRef.current;
@@ -62,11 +65,11 @@ export default function HeroFlipSection() {
         });
 
         ScrollTrigger.refresh();
-      }, 100); // 👈 important
+      }, 100); 
     });
 
     return () => ctx.revert();
-  }, []);
+  }, [isLayoutReady]);
 
   return (
     <>
@@ -83,7 +86,7 @@ export default function HeroFlipSection() {
       <section
         id=""
         ref={sectionRef}
-        className="flex flex-col lg:flex-row justify-between items-center h-[80vh] md:h-screen w-full mx-auto px-5 md:px-[90px] pt-20 md:pt-30 mb-5 md:mb-0"
+        className="flex flex-col lg:flex-row justify-between items-center h-auto md:h-screen w-full mx-auto px-5 md:px-[90px] pt-20 md:pt-30 mb-5 md:mb-0"
       >
         {/* Left section */}
         <div className="flex-1 flex flex-col">
@@ -124,6 +127,7 @@ export default function HeroFlipSection() {
               </button>
             </a>
           </motion.div>
+          <Image src={"/Homepage banner image.svg"} width={373} height={490} alt="homepage banner image" className="flex md:hidden pt-10"/>
         </div>
 
         {/* Center Image */}
@@ -146,7 +150,7 @@ export default function HeroFlipSection() {
       </section>
 
       <section ref={nextSectionRef}>
-        <ApproachSection targetRef={targetRef} />
+        <ApproachSection targetRef={targetRef} onReady={() => setIsLayoutReady(true)}/>
       </section>
     </>
   );

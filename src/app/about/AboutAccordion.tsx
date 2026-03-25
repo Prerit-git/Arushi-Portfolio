@@ -2,7 +2,7 @@
 
 import { hover } from "motion";
 import Image from "next/image";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { BsArrowDown } from "react-icons/bs";
 
 export type AccordionItemType = {
@@ -36,6 +36,16 @@ export default function AboutAccordion({
   const [openIndexes, setOpenIndexes] = useState<number[]>(
     defaultOpenIndex !== null ? [defaultOpenIndex] : []
   );
+
+  
+
+  useEffect(() => {
+    if (defaultOpenIndex !== null) {
+      setOpenIndexes([defaultOpenIndex]);
+    } else {
+      setOpenIndexes([]);
+    }
+  }, [defaultOpenIndex]);
 
   const toggle = (index: number) => {
     if (allowMultiple) {
@@ -90,9 +100,14 @@ export default function AboutAccordion({
               }`}
             >
               <div
-                className={`${contentClass}`}
-                dangerouslySetInnerHTML={{ __html: item.content }}
-              />
+  className={`
+    ${contentClass}
+    [&_p]:mb-3
+    [&_ul]:list-disc [&_ul]:pl-5
+    [&_li]:mb-1
+  `}
+  dangerouslySetInnerHTML={{ __html: item.content }}
+/>
             </div>
           </div>
         );

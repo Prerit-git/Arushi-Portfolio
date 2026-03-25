@@ -325,11 +325,22 @@ h1, h2, h3, h4, h5, h6 {
 
 /* ⚡ Fast + smooth animation */
 .animate-verticalLoop {
-  animation: verticalLoop 10s linear infinite;
+  animation: verticalLoop 12s linear infinite;
+}
+
+@keyframes horizontalLoop {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
 }
 
 .animate-horizontalLoop {
-  animation: horizontalLoop 3s linear infinite;
+  animation: horizontalLoop 12s linear infinite;
+  will-change: transform;
+  transform: translate3d(0, 0, 0);
 }
 
 /* ✨ Fade mask (premium look) */
