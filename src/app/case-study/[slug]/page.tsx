@@ -5,6 +5,7 @@ import Contact from "@/app/components/Contact";
 import DecisionandOutcome from "@/app/components/DecisionandOutcome";
 import FooterImpactSection from "@/app/components/FooterImpactSection";
 import ImpactSection from "@/app/components/ImpactSection";
+import KeyDecisionWrapper from "@/app/components/KeyDecisionWrapper";
 import KeyLearnings from "@/app/components/KeyLearnings";
 import LeftSidebarNav from "@/app/components/LeftSidebarNav";
 import NextReadCard from "@/app/components/NextReadCard";
@@ -110,7 +111,8 @@ export default async function CaseStudyDetail({ params }: CaseStudyPageProps) {
             </section>
 
             <section id="dec-outcome" className="scroll-mt-24">
-              <DecisionandOutcome/>
+              {/* <DecisionandOutcome /> */}
+              <KeyDecisionWrapper/>
             </section>
 
             {/* Accordion Section */}

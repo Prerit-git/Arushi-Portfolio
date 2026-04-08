@@ -1,5 +1,6 @@
 "use client";
 
+import { usePathname } from "next/navigation";
 import { useState } from "react";
 
 export interface KeyItem {
@@ -22,15 +23,15 @@ export default function KeyLearnings({ data }: Props) {
 
   // Mobile click state
   const [flipped, setFlipped] = useState<boolean[]>(
-    Array(keyItems.length).fill(false)
+    Array(keyItems.length).fill(false),
   );
 
   const toggleFlip = (index: number) => {
-    setFlipped(prev =>
-      prev.map((val, i) => (i === index ? !val : val))
-    );
+    setFlipped((prev) => prev.map((val, i) => (i === index ? !val : val)));
   };
 
+  const pathname = usePathname();
+  const IBPage = pathname.includes("indusind-bank-study");
   return (
     <section className="w-full max-w-6xl mx-auto pb-20 grid grid-cols-1 md:grid-cols-2 gap-0 md:gap-[50px]">
       <div className="pr-0 md:pr-20">
@@ -38,9 +39,21 @@ export default function KeyLearnings({ data }: Props) {
           Key Learnings
         </h4>
         <div className="w-full h-[2px] bg-[#A90D0D] mb-6" />
-        <p className=" text-[#4F4D4D] leading-[130%]">
-          Beyond the metrics, this revamp shaped my perspective on scalable personalization, stakeholder negotiation, and designing within real-world constraints.
-        </p>
+
+        {IBPage ? (
+          <p className=" text-[#4F4D4D] leading-[130%]">
+            This project pushed me to think beyond structure and deeply consider
+            storytelling as a core aspect of UX. It highlighted how the way
+            information is framed and sequenced can shape user perception as
+            much as the content itself.
+          </p>
+        ) : (
+          <p className=" text-[#4F4D4D] leading-[130%]">
+            Beyond the metrics, this revamp shaped my perspective on scalable
+            personalization, stakeholder negotiation, and designing within
+            real-world constraints.
+          </p>
+        )}
       </div>
 
       <div>
@@ -55,9 +68,7 @@ export default function KeyLearnings({ data }: Props) {
               <div className="flip-inner relative w-full h-full rounded-3xl transform-style-3d transition-transform duration-500 ease-in-out transform-gpu">
                 {/* FRONT */}
                 <div className="absolute inset-0 bg-[#1E1E1E] text-white p-6 rounded-3xl shadow-lg flex items-center justify-center backface-hidden">
-                  <p className="text-[18px] leading-[115%]">
-                    {item.title}
-                  </p>
+                  <p className="text-[18px] leading-[115%]">{item.title}</p>
                 </div>
 
                 {/* BACK */}

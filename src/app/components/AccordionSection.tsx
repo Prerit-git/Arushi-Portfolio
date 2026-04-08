@@ -1,5 +1,6 @@
 "use client";
 
+import { usePathname } from "next/navigation";
 import React, { useState, useRef, useEffect } from "react";
 import { FaChevronDown } from "react-icons/fa";
 
@@ -20,6 +21,9 @@ export default function AccordionSection({ items }: Props) {
     setOpenId((prev) => (prev === id ? null : id));
   };
 
+  const pathname = usePathname();
+        const IBPage = pathname.includes("indusind-bank-study");
+
   return (
     <section className="w-full max-w-6xl mx-auto pb-20 grid grid-cols-1 md:grid-cols-2 gap-[0px] md:gap-[20px]">
       <div className="pr-0 md:pr-20">
@@ -27,7 +31,9 @@ export default function AccordionSection({ items }: Props) {
              CONSTRAINTS
             </h4>
             <div className="w-full h-[2px] bg-[#A90D0D] mb-6" />
-            <p>A key challenge throughout the project was balancing competing priorities across business, engineering, and compliance while making deliberate trade-offs to protect scalability and impact.</p>
+            
+            {IBPage ? <p>The project presented multiple challenges across content complexity, stakeholder alignment, and system limitations.</p>
+            : <p>A key challenge throughout the project was balancing competing priorities across business, engineering, and compliance while making deliberate trade-offs to protect scalability and impact.</p>}
           </div>
 
         {/* RIGHT COLUMN */}

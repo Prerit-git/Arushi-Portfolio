@@ -1,5 +1,6 @@
 "use client";
 
+import { usePathname } from "next/navigation";
 import { useState } from "react";
 
 export interface ImpactItem {
@@ -31,6 +32,9 @@ export default function ImpactSection({ data }: Props) {
     );
   };
 
+  const pathname = usePathname();
+    const shouldShowImage = pathname.includes("indusind-bank-study");
+
   return (
     <section className="w-full max-w-6xl mx-auto pb-20 grid grid-cols-1 md:grid-cols-2 gap-0 md:gap-[50px]">
       <div className="pr-0 md:pr-20">
@@ -38,9 +42,17 @@ export default function ImpactSection({ data }: Props) {
           STRATEGY
         </h4>
         <div className="w-full h-[2px] bg-[#A90D0D] mb-6" />
-        <p className=" text-[#4F4D4D] leading-[130%]">
-          I focused on <strong>reducing cognitive load</strong> at every decision point by:
-        </p>
+        
+        {shouldShowImage ? (
+          <p className=" text-[#4F4D4D] leading-[130%]">
+            I focused on turning the platform into a structured impact storytelling system by:
+          </p>
+        ) : (
+          <p className=" text-[#4F4D4D] leading-[130%]">
+            I focused on <strong>reducing cognitive load</strong> at every
+            decision point by:
+          </p>
+        )}
       </div>
 
       <div>
@@ -55,9 +67,7 @@ export default function ImpactSection({ data }: Props) {
               <div className="flip-inner relative w-full h-full rounded-3xl transform-style-3d transition-transform duration-500 ease-in-out transform-gpu">
                 {/* FRONT */}
                 <div className="absolute inset-0 bg-[#1E1E1E] text-white p-6 rounded-3xl shadow-lg flex items-center justify-center backface-hidden">
-                  <p className="text-[18px] leading-[115%]">
-                    {item.title}
-                  </p>
+                  <p className="text-[18px] leading-[115%]">{item.title}</p>
                 </div>
 
                 {/* BACK */}

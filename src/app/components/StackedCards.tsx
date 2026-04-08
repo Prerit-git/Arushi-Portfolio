@@ -24,7 +24,7 @@ const cardsData = [
     backgroundImg: "/CaseStudy1BG.svg"
   },
   {
-    slug: "mg-case-study",
+    slug: "indusind-bank-study",
     tag: "2025",
     title: "Opendoor/Mainstay • BLOX design system",
     description:
@@ -34,17 +34,17 @@ const cardsData = [
     logo: "CHL_Logo.svg",
     backgroundImg: "/CaseStudy1BG.svg"
   },
-  {
-    slug: "case-study-3",
-    tag: "2025",
-    title: "Opendoor/Mainstay • BLOX design system",
-    description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab dicta error nam eaque. Eum fuga laborum quos expedita iste saepe similique, unde possimus quia at magnam sed cupiditate? Reprehenderit, harum!",
-    image:
-      "/Casestudy1cover.svg",
-    logo: "CHL_Logo.svg",
-    backgroundImg: "/CaseStudy1BG.svg"
-  },
+  // {
+  //   slug: "case-study-3",
+  //   tag: "2025",
+  //   title: "Opendoor/Mainstay • BLOX design system",
+  //   description:
+  //     "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab dicta error nam eaque. Eum fuga laborum quos expedita iste saepe similique, unde possimus quia at magnam sed cupiditate? Reprehenderit, harum!",
+  //   image:
+  //     "/Casestudy1cover.svg",
+  //   logo: "CHL_Logo.svg",
+  //   backgroundImg: "/CaseStudy1BG.svg"
+  // },
   // {
   //   slug: "case-study-4",
   //   tag: "2025",
