@@ -2,11 +2,13 @@
 import { motion } from "framer-motion";
 
 import Image from "next/image";
+import Link from "next/link";
 
 interface NextReadCardProps {
   title: string;
   description: string;
   imageUrl: string;
+  ctaLink: string;
   onClick?: () => void;
 }
 
@@ -14,6 +16,7 @@ export default function NextReadCard({
   title,
   description,
   imageUrl,
+  ctaLink,
   onClick,
 }: NextReadCardProps) {
   return (
@@ -42,6 +45,7 @@ export default function NextReadCard({
             {description}
           </p>
 
+          <Link href={ctaLink}>
           <motion.div
             className="relative mt-[32px]"
             whileHover={{ y: -2 }}
@@ -59,6 +63,7 @@ export default function NextReadCard({
             </motion.button>
             <motion.div className="absolute left-[5px] bg-red-800 text-black p-[10px] font-extrabold text-[16px] w-[172px] h-[46px] rounded-[4px] flex items-center justify-center cursor-pointer" />
           </motion.div>
+          </Link>
         </div>
       </div>
     </section>

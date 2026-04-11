@@ -133,7 +133,7 @@ export default async function CaseStudyDetail({ params }: CaseStudyPageProps) {
             <section id="footerImpact" className="scroll-mt-24">
               <FooterImpactSection
                 impactBrief={data.footerImpact?.impactBrief ?? ""}
-                content={data.footerImpact?.content ?? ""}              />
+                content={data.footerImpact?.content ?? ""} />
             </section>
 
             <section>
@@ -141,6 +141,7 @@ export default async function CaseStudyDetail({ params }: CaseStudyPageProps) {
               title={data.nextRead?.title ?? ""}
               description={data.nextRead?.description ?? ""}
               imageUrl={data.nextRead?.imageUrl ?? ""}
+              ctaLink={data.nextRead?.ctaLink ?? ""}
               />
             </section>
           </div>

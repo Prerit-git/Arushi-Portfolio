@@ -26,13 +26,13 @@ const cardsData = [
   {
     slug: "indusind-bank-study",
     tag: "2025",
-    title: "Opendoor/Mainstay • BLOX design system",
+    title: "IndusInd Bank • Redesigning CSR",
     description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab dicta error nam eaque. Eum fuga laborum quos expedita iste saepe similique, unde possimus quia at magnam sed cupiditate? Reprehenderit, harum!",
+      "Designing a system that brings clarity, structure, and depth to complex CSR initiatives. Enabling users to explore and engage with these initiatives through structured journeys.",
     image:
-      "/Casestudy1cover.svg",
-    logo: "CHL_Logo.svg",
-    backgroundImg: "/CaseStudy1BG.svg"
+      "/caseStudy2Cover.svg",
+    logo: "/IndusBankLogo.png",
+    backgroundImg: "/caseStudy2Bg.svg"
   },
   // {
   //   slug: "case-study-3",

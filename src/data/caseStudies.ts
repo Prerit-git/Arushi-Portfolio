@@ -156,10 +156,11 @@ The company initiated a full UX revamp to align the experience with modern use
     },
 
     nextRead: {
-      title: "Canara HSBC Life • UX Revamp",
+      title: "IndusInd Bank • Redesigning CSR",
       description:
-        "Redesigned a high-traffic insurance website to reduce a 75% homepage drop-off and improve lead quality by simplifying information architecture, personalizing campaign journeys, and rethinking complex financial interactions.",
-      imageUrl: "/Coverimage.svg",
+        "Designing a system that brings clarity, structure, and depth to complex CSR initiatives. Enabling users to explore and engage with these initiatives through structured journeys.",
+      imageUrl: "/IndusIndBankCover.svg",
+      ctaLink: "/case-study/indusind-bank-study"
     },
     image: "/Coverimage.svg",
     logo: "/CHL_Logo.svg",
@@ -345,8 +346,9 @@ The platform lacked content depth, structure, and narrative clarity resulting in
       description:
         "Redesigned a high-traffic insurance website to reduce a 75% homepage drop-off and improve lead quality by simplifying information architecture, personalizing campaign journeys, and rethinking complex financial interactions.",
       imageUrl: "/Coverimage.svg",
+      ctaLink: "/case-study/canara-hsbc-study"
     },
-    image: "/IndusindBankCover.svg",
+    image: "/IndusIndBankCover.svg",
     logo: "/indusLogo.jpg",
     content: `
       <h2>Project Overview 1</h2>
