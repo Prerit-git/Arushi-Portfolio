@@ -2,44 +2,54 @@
 
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import Loader from "./components/Loader";
-import Navbar from "./components/Navbar";
-// import CaseStudies from "./components/CaseStudies";
-// import Contact from "./components/Contact";
+// import Loader from "./components/Loader";
+// import Navbar from "./components/Navbar";
+import CaseStudies from "./components/CaseStudies";
+import Contact from "./components/Contact";
 import Hero from "./components/Hero";
+import BlogsSection from "./components/BlogsSection";
 
 export default function Home() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    const timer = setTimeout(() => setLoading(false), 3000);
+  if (!loading && window.location.hash) {
+    const id = window.location.hash.replace("#", "");
+
+    requestAnimationFrame(() => {
+      const el = document.getElementById(id);
+      if (el) {
+        el.scrollIntoView({ behavior: "smooth" });
+      }
+    });
+  }
+}, [loading]);
+
+
+  useEffect(() => {
+    const timer = setTimeout(() => setLoading(false), 1000);
     return () => clearTimeout(timer);
   }, []);
 
   return (
     <>
-      {/* Loader animation */}
-      <AnimatePresence>{loading && <Loader />}</AnimatePresence>
+      {/* <AnimatePresence>{loading && <Loader />}</AnimatePresence> */}
 
-      {/* Main content after loader */}
       {!loading && (
-        <div className="relative bg-[#1E1E1E] text-[#FFE2E2]">
-          <div className="absolute inset-0 bg-black opacity-60 z-99"></div>
-          {/* Only animate content */}
+        <div className="bg-[#1E1E1E] text-[#FFE2E2]">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 1, ease: "easeOut" }}
           >
-            <Navbar />
+            {/* <Navbar /> */}
             <Hero />
           </motion.div>
 
-          {/* Other static components */}
-          {/* <About /> */}
-          {/* <CaseStudies />
-          <Contact /> */}
+          <CaseStudies />
+          <BlogsSection/>
+          <Contact />
         </div>
       )}
     </>

@@ -1,30 +1,54 @@
+"use client"
+import Image from "next/image";
 import { motion } from "framer-motion";
+import { MdKeyboardDoubleArrowRight } from "react-icons/md";
+import { RxDoubleArrowRight } from "react-icons/rx";
+import { useRouter } from "next/navigation";
 
 const About = () => {
+  const router = useRouter()
   return (
-    <section
-      className="h-screen flex items-start md:items-center bg-[#FFE2E2] px-5 md:px-[90px] py-20 md:py-0"
-      id="about"
-    >
-      <div className="w-full md:max-w-3xl flex flex-col gap-2">
-        <motion.h3
-          className="text-[30px] md:text-[48px] text-[#333333]"
-          initial={{ opacity: 0, y: 50 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1, ease: "easeOut" }}
-          viewport={{ amount: 0.5 }}
-        >
-         Lorem ipsum dolor, sit amet consectetur adipisicing elit. Tenetur culpa quam doloremque, odit ullam beatae, rem iste eius numquam delectus dolorum laudantium excepturi facilis repellat temporibus et. Vero eum fugiat harum doloremque in ullam corrupti vel magnam. Iusto, corrupti magnam!
-        </motion.h3>
-      <motion.button
-            whileHover={{ scale: 1.05, y: -2 }}
-            whileTap={{ scale: 0.95, y: 2 }}
-            className="bg-[#FFE2E2] text-black p-[10px] font-extrabold text-[16px] w-[172px] h-[46px] rounded-[4px] border-r-7 border-b-7 border-red-800 md:flex items-center justify-center cursor-pointer"
-          >
-            Get in touch
-          </motion.button>
-      </div>
+    <section className="relative h-auto md:h-screen w-full overflow-hidden bg-white" id="about">
+      <Image
+        src="/about_gradient_bg.svg"
+        alt="Background"
+        fill
+        priority
+        style={{ objectFit: "cover" }}
+        className="z-0"
+      />
 
+      {/* Overlay Content */}
+      <div className="relative z-20 h-full flex items-start md:items-center px-5 md:px-[90px] py-20 md:py-0">
+        <div className="w-full md:w-1/2 flex flex-col gap-2 text-[#000000]">
+          <motion.h3
+            className="text-[38px] md:text-[48px]"
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1, ease: "easeOut" }}
+            viewport={{ amount: 0.5 }}
+          >
+            Hi, I’m Arushi Mathur, a Product Designer with 7+ years of experience creating user-friendly, scalable digital products. I blend research, strategy, and visual design to build intuitive solutions that deliver real impact.
+          </motion.h3>
+
+          <motion.div
+            className="relative mt-[32px]"
+            whileHover={{ y: -2 }}
+            whileTap={{ y: 2 }}
+          >
+            <motion.button
+              className="absolute -bottom-8 z-30 bg-[#FFE2E2] text-black p-[10px] font-semibold text-[16px] w-[172px] h-[46px] rounded-[4px] flex items-center justify-center cursor-pointer gap-2"
+              onClick={()=>router.push("/about")}
+            >
+              Give it a try <span><RxDoubleArrowRight className="w-5 h-5"/></span>
+            </motion.button>
+            <motion.div
+              className="absolute -bottom-[37px] left-[5px] z-20 bg-red-800 text-black p-[10px] font-extrabold text-[16px] w-[172px] h-[46px] rounded-[4px] flex items-center justify-center cursor-pointer"
+            />
+          </motion.div>
+        </div>
+        <div className="hidden md:block md:w-1/2" />
+      </div>
     </section>
   );
 };
