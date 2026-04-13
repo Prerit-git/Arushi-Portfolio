@@ -159,7 +159,7 @@ The company initiated a full UX revamp to align the experience with modern use
       title: "IndusInd Bank • Redesigning CSR",
       description:
         "Designing a system that brings clarity, structure, and depth to complex CSR initiatives. Enabling users to explore and engage with these initiatives through structured journeys.",
-      imageUrl: "/IndusIndBankCover.svg",
+      imageUrl: "/IndusIndBankCover.jpeg",
       ctaLink: "/case-study/indusind-bank-study"
     },
     image: "/Coverimage.svg",
@@ -348,7 +348,7 @@ The platform lacked content depth, structure, and narrative clarity resulting in
       imageUrl: "/Coverimage.svg",
       ctaLink: "/case-study/canara-hsbc-study"
     },
-    image: "/IndusIndBankCover.svg",
+    image: "/IndusIndBankCover.jpeg",
     logo: "/indusLogo.jpg",
     content: `
       <h2>Project Overview 1</h2>

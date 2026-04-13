@@ -98,7 +98,7 @@ const IBKeyDecisions = () => {
           <p className="text-[#4F4D4D]">
             Improved how users perceive impact, not just access information.
           </p>
-          <div className="relative w-full aspect-video mt-[16px] overflow-hidden">
+          <div className="relative w-full aspect-video mt-[16px] overflow-hidden rounded-xl">
             <iframe
               className="absolute top-0 left-0 w-full h-full"
               src="https://www.youtube.com/embed/nMlsvfbUsDo?autoplay=1&loop=1&playlist=nMlsvfbUsDo&controls=0&mute=1&rel=0"
@@ -140,7 +140,7 @@ const IBKeyDecisions = () => {
             detailed exploration.
           </p>
 
-          <div className="relative w-full aspect-video mt-[16px] overflow-hidden">
+          <div className="relative w-full aspect-video mt-[16px] overflow-hidden rounded-xl">
             <iframe
               className="absolute top-0 left-0 w-full h-full"
               src="https://www.youtube.com/embed/eOhQlZJq2is?autoplay=1&loop=1&playlist=eOhQlZJq2is&controls=0&mute=1&rel=0"

@@ -20,7 +20,7 @@ const About = () => {
 
       {/* Overlay Content */}
       <div className="relative z-20 h-full flex items-start md:items-center px-5 md:px-[90px] py-20 md:py-0">
-        <div className="w-full md:max-w-2xl flex flex-col gap-2 text-[#000000]">
+        <div className="w-full md:w-1/2 flex flex-col gap-2 text-[#000000]">
           <motion.h3
             className="text-[38px] md:text-[48px]"
             initial={{ opacity: 0, y: 50 }}
@@ -47,6 +47,7 @@ const About = () => {
             />
           </motion.div>
         </div>
+        <div className="hidden md:block md:w-1/2" />
       </div>
     </section>
   );

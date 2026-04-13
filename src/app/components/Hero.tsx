@@ -16,33 +16,47 @@ export default function Hero() {
   const nextSectionRef = useRef<HTMLElement | null>(null);
 
   useEffect(() => {
-    if (window.innerWidth < 768) return;
+  if (window.innerWidth < 768) return;
 
+  const ctx = gsap.context(() => {
     if (imageRef.current && sectionRef.current && nextSectionRef.current) {
+      
+      // Calculate exact distance to center of About section
+      const getImageCenter = () => {
+        const imgRect = imageRef.current!.getBoundingClientRect();
+        const nextRect = nextSectionRef.current!.getBoundingClientRect();
+        
+        // Image ke center se About section ke center tak ka vertical distance
+        const scrollDistance = nextRect.top + (nextRect.height / 2) - (imgRect.top + (imgRect.height / 2));
+        return scrollDistance;
+      };
+
       gsap.to(imageRef.current, {
         scrollTrigger: {
           trigger: sectionRef.current,
-          start: "top top",                             
-          end: () => `+=${nextSectionRef.current!.offsetHeight * 0.8}`, 
+          start: "top top",
+          end: "bottom top", 
           scrub: true,
           onUpdate: (self) => {
-            const progress = self.progress; 
-            const angle = progress * 180;
-
-            if (angle > 90) {
+            // Smoothly swap image at 50% scroll
+            if (self.progress > 0.5) {
               imageRef.current!.src = "/2ndImageHomePage.png";
             } else {
               imageRef.current!.src = "/Homepage banner image.svg";
             }
           },
         },
-        y: "150%",         
-        x: 500,        
-        rotateY: 180,   
+        // Dynamic Calculation
+        y: () => getImageCenter(), 
+        x: "30vw", // Viewport width use karein taaki screens ke hisaab se adjust ho
+        rotateY: 180,
         ease: "none",
       });
     }
-  }, []);
+  });
+
+  return () => ctx.revert(); // Cleanup memory
+}, []);
 
   return (
     <>
