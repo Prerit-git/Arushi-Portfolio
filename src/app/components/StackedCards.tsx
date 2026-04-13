@@ -32,7 +32,7 @@ const cardsData = [
     image:
       "/caseStudy2Cover.svg",
     logo: "/IndusBankLogo.png",
-    backgroundImg: "/caseStudy2Bg.svg"
+    backgroundImg: "/IndusIndBankCoverBg.svg"
   },
   // {
   //   slug: "case-study-3",
