@@ -1,10 +1,12 @@
 import { WPPost } from "@/types/wordpress";
 
 export async function getPosts(): Promise<WPPost[]> {
-  const baseUrl = process.env.NEXT_PUBLIC_WORDPRESS_API_URL || process.env.WORDPRESS_API_URL;
+  const baseUrl = process.env.NEXT_PUBLIC_WORDPRESS_API_URL || "https://blogs.designedbyarushi.com/wp-json/wp/v2";
 
   try {
-    const res = await fetch(`${baseUrl}/posts?_embed`);
+    const res = await fetch(`${baseUrl}/posts`, { 
+      cache: 'no-store'
+    });
     if (!res.ok) return [];
     return await res.json();
   } catch (err) {
