@@ -275,6 +275,11 @@ h1, h2, h3, h4, h5, h6 {
   height: 642px;
 }
 
+.blog-content .image-custom-height img{
+  height: 379px;
+  width: 1000px !important;
+}
+
 @media(max-width: 768px){
   .blog-content .wp-block-image img{
   width: 100%;
@@ -343,7 +348,6 @@ h1, h2, h3, h4, h5, h6 {
   transform: translate3d(0, 0, 0);
 }
 
-/* ✨ Fade mask (premium look) */
 .slider-mask-vertical {
   mask-image: linear-gradient(
     to bottom,

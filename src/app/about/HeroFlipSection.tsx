@@ -11,11 +11,12 @@ import Image from "next/image";
 gsap.registerPlugin(ScrollTrigger);
 
 export default function HeroFlipSection() {
-  const imageRef = useRef<HTMLImageElement | null>(null);
+  const imageRef = useRef<HTMLDivElement | null>(null);
   const sectionRef = useRef<HTMLElement | null>(null);
   const nextSectionRef = useRef<HTMLElement | null>(null);
   const targetRef = useRef<HTMLDivElement | null>(null);
   const [isLayoutReady, setIsLayoutReady] = useState(false);
+  const [showBackImage, setShowBackImage] = useState(false);
 
   useEffect(() => {
     if (!isLayoutReady) return;
@@ -29,15 +30,12 @@ export default function HeroFlipSection() {
     if (!image || !section || !nextSection || !target) return;
 
     const ctx = gsap.context(() => {
-      // 🔥 force scroll to top before measuring
       window.scrollTo(0, 0);
 
-      // wait for layout to settle
       setTimeout(() => {
         const imageRect = image.getBoundingClientRect();
         const targetRect = target.getBoundingClientRect();
 
-        // 🔥 FIX: correct delta calculation
         const deltaX = targetRect.left - imageRect.left;
         const deltaY = targetRect.top - imageRect.top;
 
@@ -53,19 +51,17 @@ export default function HeroFlipSection() {
             scrub: true,
 
             onUpdate: (self) => {
-              const angle = self.progress * 180;
-
-              if (angle > 90) {
-                image.src = "/2ndImageHomePage.png";
+              if (self.progress > 0.5) {
+                setShowBackImage(true);
               } else {
-                image.src = "/Homepage banner image.svg";
+                setShowBackImage(false);
               }
             },
           },
         });
 
         ScrollTrigger.refresh();
-      }, 100); 
+      }, 100);
     });
 
     return () => ctx.revert();
@@ -127,17 +123,41 @@ export default function HeroFlipSection() {
               </button>
             </a>
           </motion.div>
-          <Image src={"/Homepage banner image.svg"} width={373} height={490} alt="homepage banner image" className="flex md:hidden pt-10"/>
+          <video
+            src="/about_page_video.mp4"
+            autoPlay
+            loop
+            muted
+            playsInline
+            className="flex md:hidden h-[450px] w-full object-cover rounded-xl mt-10"
+          />
         </div>
 
-        {/* Center Image */}
+        {/* Center Image/Video Flip Container */}
         <motion.div className="hidden md:flex justify-center items-center rounded-xl p-0 relative z-2">
-          <img
+          <div
             ref={imageRef}
-            src="/Homepage banner image.svg"
-            alt="Portrait"
-            className="h-[280px] md:h-[468px] w-auto md:w-[364px] object-cover rounded-xl"
-          />
+            className="h-[280px] md:h-[468px] w-auto md:w-[364px] relative"
+            style={{ transformStyle: "preserve-3d" }}
+          >
+            {!showBackImage ? (
+              <video
+                src="/about_page_video.mp4"
+                autoPlay
+                loop
+                muted
+                playsInline
+                className="h-full w-full object-cover rounded-xl"
+              />
+            ) : (
+              <img
+                src="/about_page_image.jpg"
+                alt="Portrait"
+                className="h-full w-full object-cover rounded-xl"
+                style={{ transform: "rotateY(180deg)" }}
+              />
+            )}
+          </div>
         </motion.div>
 
         {/* Right section
@@ -150,7 +170,10 @@ export default function HeroFlipSection() {
       </section>
 
       <section ref={nextSectionRef}>
-        <ApproachSection targetRef={targetRef} onReady={() => setIsLayoutReady(true)}/>
+        <ApproachSection
+          targetRef={targetRef}
+          onReady={() => setIsLayoutReady(true)}
+        />
       </section>
     </>
   );
