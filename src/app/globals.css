@@ -280,6 +280,15 @@ h1, h2, h3, h4, h5, h6 {
   width: 1000px !important;
 }
 
+.blog-content .remove-bg-color{
+  background-color: transparent !important;
+  padding: 0px !important;
+}
+.blog-content .remove-bg-color .wp-block-group{
+  background-color: transparent !important;
+  padding: 0px !important;
+}
+
 @media(max-width: 768px){
   .blog-content .wp-block-image img{
   width: 100%;
