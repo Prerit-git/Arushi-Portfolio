@@ -40,7 +40,7 @@ const About = () => {
               className="absolute -bottom-8 z-30 bg-[#FFE2E2] text-black p-[10px] font-semibold text-[16px] w-[172px] h-[46px] rounded-[4px] flex items-center justify-center cursor-pointer gap-2"
               onClick={()=>router.push("/about")}
             >
-              Give it a try <span><RxDoubleArrowRight className="w-5 h-5"/></span>
+              Know More <span><Image src={"/arrow-right.png"} width={20} height={20} alt="arrow-right"/></span>
             </motion.button>
             <motion.div
               className="absolute -bottom-[37px] left-[5px] z-20 bg-red-800 text-black p-[10px] font-extrabold text-[16px] w-[172px] h-[46px] rounded-[4px] flex items-center justify-center cursor-pointer"
