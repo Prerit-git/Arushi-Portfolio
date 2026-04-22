@@ -89,7 +89,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .blog-content p {
-  font-size: 18px;
+  font-size: 16px !important;
   line-height: auto;
   margin-bottom: 20px;
   color: #ffffff;
@@ -114,7 +114,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .blog-content li {
   margin-bottom: 8px;
-  font-size: 18px;
+  font-size: 16px;
   color: #d1d5db;
 }
 
@@ -208,6 +208,7 @@ h1, h2, h3, h4, h5, h6 {
   font-size: 32px;
   font-weight: 600;
   /* margin-bottom: 20px; */
+  line-height: 1.0;
   color: #ffffff;
 }
 
@@ -229,7 +230,7 @@ h1, h2, h3, h4, h5, h6 {
 /* Bullet styling */
 .blog-content .wp-block-group ul li {
   margin-bottom: 16px;
-  font-size: 20px;
+  font-size: 16px;
   /* line-height: 1.8; */
   color: #ffffff;
 }
@@ -280,6 +281,10 @@ h1, h2, h3, h4, h5, h6 {
   width: 1000px !important;
 }
 
+.blog-content .h-130 img{
+    height: 379px !important;
+  }
+
 .blog-content .remove-bg-color{
   background-color: transparent !important;
   padding: 0px !important;
@@ -290,10 +295,14 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 @media(max-width: 768px){
+  
   .blog-content .wp-block-image img{
   width: 100%;
   height: 370px;
 }
+  .blog-content .h-130 img{
+    height: 130px !important;
+  }
 }
 
 .nextReadStyle{
