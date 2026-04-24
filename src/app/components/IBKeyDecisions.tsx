@@ -66,7 +66,7 @@ const IBKeyDecisions = () => {
           /> */}
           <Image src={"/IBImage.svg"} alt="ibImage" width={500} height={500} />
           <p className="text-[#4F4D4D] text-[12px] text-center italic">
-            Funnel-Aligned Campaign Landing Experiences
+            Low fidelity wireframes 
           </p>
         </div>
 
@@ -109,7 +109,7 @@ const IBKeyDecisions = () => {
             ></iframe>
           </div>
           <p className="text-[#4F4D4D] text-[12px] text-center italic">
-            Structural IA Changes Reflected in Global Navigation
+            New home page structure through storytelling
           </p>
         </div>
 
@@ -151,8 +151,7 @@ const IBKeyDecisions = () => {
             ></iframe>
           </div>
           <p className="text-[#4F4D4D] text-[12px] text-center italic">
-            Reducing Cognitive Load in High-Stakes Financial Decision & Lead
-            Capture Journeys
+            Simplified navigation and project pages
           </p>
         </div>
       </div>

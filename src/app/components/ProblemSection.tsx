@@ -50,7 +50,7 @@ export default function ProblemSection({
             alt="IBimage"
             className="w-full mt-8"
           />
-          <p className="text-[#4F4D4D] italic text-[12px] text-center">Funnel-Aligned Campaign Landing Experiences</p>
+          <p className="text-[#4F4D4D] italic text-[12px] text-center">Existing website home page</p>
           </div>
         )}
         <div className="flex justify-start mt-[32px]">

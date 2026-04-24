@@ -185,9 +185,9 @@ The company initiated a full UX revamp to align the experience with modern use
     description:
       "Designing a system that brings clarity, structure, and depth to complex CSR initiatives. Enabling users to explore and engage with these initiatives through structured journeys.",
     projectBrief: {
-      brief: `IndusInd Bank runs extensive CSR initiatives across multiple domains. However, the existing website failed to reflect the depth, scale, and impact of this work.
+      brief: `IndusInd Bank runs extensive CSR initiatives across multiple domains. However, the existing website failed to reflect the depth, scale, and impact of this work.
 
-The platform lacked content depth, structure, and narrative clarity resulting in a significant gap between actual impact and perceived impact.
+The platform lacked content depth, structure, and narrative clarity resulting in a significant gap between actual impact and perceived impact.
 `,
       role: "Lead UX Designer",
       team: "UX Director, 2 UX Designers, Product Managers, Tech Lead, Developers",
