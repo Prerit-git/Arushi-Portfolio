@@ -125,7 +125,7 @@ const MobileNav = ({
                   href={item.href}
                   onClick={toggle}
                   className={`text-4xl font-extrabold ${
-                    isCaseStudyPage ? "text-[#1e1e1e]" : "text-white"
+                    isCaseStudyPage ? "text-[#1e1e1e]" : "text-[#1e1e1e]"
                   } hover:text-teal-400 transition-colors duration-300 block p-2`}
                 >
                   {item.name}
