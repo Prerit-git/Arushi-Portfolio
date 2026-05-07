@@ -49,7 +49,7 @@ export default async function BlogDetailPage(props: Props) {
         </p>
         </div>
         <p
-          className="text-[32px] md:text-[64px] font-bold mb-4 leading-[110%] capitalize"
+          className="text-[32px] md:text-[64px] font-bold mb-4 leading-[110%]"
           dangerouslySetInnerHTML={{ __html: post.title.rendered }}
         />
 

@@ -2,7 +2,7 @@ export const caseStudies = [
   {
     slug: "canara-hsbc-study",
     tag: "2024",
-    title: "UX Revamp for Canara HSBC Life Insurance",
+    title: "UX revamp for canara HSBC life insurance",
     description:
       "Led an end-to-end UX revamp for a large-scale insurance platform serving diverse user groups including elderly users and field agents.",
     projectBrief: {
@@ -181,7 +181,7 @@ The company initiated a full UX revamp to align the experience with modern use
   {
     slug: "indusind-bank-study",
     tag: "2024",
-    title: "Redesigning CSR for Discovery and Depth",
+    title: "Redesigning CSR for discovery and depth",
     description:
       "Designing a system that brings clarity, structure, and depth to complex CSR initiatives. Enabling users to explore and engage with these initiatives through structured journeys.",
     projectBrief: {
