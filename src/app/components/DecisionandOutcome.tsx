@@ -8,13 +8,13 @@ const DecisionandOutcome = () => {
         <div className="w-full h-[2px] bg-[#A90D0D] mb-6" />
         <ul className=" text-[#4F4D4D] space-y-4">
           <li>
-            <span className="font-bold">Decision 1:</span> Flatten the Information Architecture
+            <span className="font-bold">Decision 1:</span> Flatten the information architecture
           </li>
           <li>
-            <span className="font-bold">Decision 2:</span> Personalize Campaign Landing Pages by Funnel Stage
+            <span className="font-bold">Decision 2:</span> Personalize campaign landing pages by funnel stage
           </li>
           <li>
-            <span className="font-bold">Decision 3:</span> Rethink Calculators & Product Pages as Decision Tools
+            <span className="font-bold">Decision 3:</span> Rethink calculators & product pages as decision tools
           </li>
         </ul>
       </div>
@@ -25,7 +25,7 @@ const DecisionandOutcome = () => {
         {/* RIGHT COLUMN */}
         <div className="col-span-10 md:col-span-8 mt-18 flex flex-col gap-[16px]">
           <p className="text-[16px] font-bold">
-            Decision 1: Flatten the Information Architecture
+            Decision 1: Flatten the information architecture
           </p>
           <p className=" text-[#9CA3C7] font-bold">PROBLEM</p>
           <p className=" text-[#4F4D4D]">
@@ -54,12 +54,12 @@ const DecisionandOutcome = () => {
             playsInline
             controls
           />
-          <p className="text-[#4F4D4D] text-[12px] text-center italic">Structural IA Changes Reflected in Global Navigation</p>
+          <p className="text-[#4F4D4D] text-[12px] text-center italic">Structural IA changes reflected in global navigation</p>
         </div>
 
         <div className="col-span-10 md:col-span-8 mt-18 flex flex-col gap-[16px]">
           <p className="text-[16px] font-bold">
-            Decision 2: Personalize Campaign Landing Pages by Funnel Stage
+            Decision 2: Personalize campaign landing pages by funnel stage
           </p>
           <p className=" text-[#9CA3C7] font-bold">PROBLEM</p>
           <p className=" text-[#4F4D4D]">
@@ -89,12 +89,12 @@ const DecisionandOutcome = () => {
             playsInline
             controls
           />
-          <p className="text-[#4F4D4D] text-[12px] text-center italic">Funnel-Aligned Campaign Landing Experiences</p>
+          <p className="text-[#4F4D4D] text-[12px] text-center italic">Funnel-aligned campaign landing experiences</p>
         </div>
 
         <div className="col-span-10 md:col-span-8 mt-18 flex flex-col gap-[16px]">
           <p className="text-[16px] font-bold">
-            Decision 3: Rethink Calculators & Product Pages as Decision Tools
+            Decision 3: Rethink calculators & product pages as decision tools
           </p>
           <p className=" text-[#9CA3C7] font-bold">PROBLEM</p>
           <p className=" text-[#4F4D4D]">
